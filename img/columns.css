@@ -1,0 +1,62 @@
+body {
+  padding:0; margin:0;
+  overflow: hidden;
+  font-family:"ヒラギノ丸ゴ Pro W4","ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","HG丸ｺﾞｼｯｸM-PRO","HGMaruGothicMPRO";
+}
+
+#columns {
+  position:absolute;
+  bottom:0; right:0;
+  margin:0; padding:2.5vw;
+  width:95vw;
+  display: flex;
+  flex-flow: row-reverse;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+.column img {
+  pointer-events:none;
+}
+.column:first-child {
+  border:none;
+  position:fixed;
+  bottom:0; left:0;
+  width:100%;
+  height:100%;
+}
+.column:first-child img {
+  min-height:100%; height:auto;
+  max-width:100%; width:auto;
+  position:absolute;
+  top:50%; left:50%;
+  padding:0; margin:0;
+  transform:translate(-50%,-50%);
+  -webkit-transform:translate(-50%,-50%);
+}
+.column:not(:first-child){
+  flex: 0 0 auto;
+  display:inline-block;
+  position:relative;
+  padding:0; margin:0;
+  width:auto; height:15vh;
+  border:2.5px solid transparent;
+}
+.column:not(:first-child):hover {
+  cursor:grab;
+  border:2.5px solid #fff;
+}
+
+.column:not(:first-child) img {
+  height:100%; width:auto;
+}
+.column:not(:first-child) #text {
+  display:none;
+}
+
+@media screen and (max-width: 500px){
+.column:first-child img {
+  max-height:auto; min-height:auto;
+  max-width:auto; width:auto;
+}
+}
