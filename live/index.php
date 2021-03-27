@@ -96,14 +96,6 @@ fclose($fp);
 <?php else: ?>
 <?php endif; ?>
 </ul>
-
-<a id="onmouse_button" target="_parent">?</a>
-<div id="onmouse">
-<div id="onmouse_open">
-<p>Google ハングアウトの仕様をヒントに、このウェブページを作成しました。</p>
-<p>ページ下部に並ぶサムネイルを画面中央にドラッグすると、メイン表示が入れ替わります。</p>
-</div>
-</div>
 </body>
 <script type="text/javascript">
 $(function() {
