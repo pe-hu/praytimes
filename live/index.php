@@ -32,6 +32,7 @@ fclose($fp);
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+<link rel="icon" href="/img/icon.png">
 <link href="styles.css" rel="stylesheet">
 <link href="/img/onmouse.css" rel="stylesheet">
 <title>プレイタイムズ | a place of pray/play for us</title>
