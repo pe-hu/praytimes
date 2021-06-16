@@ -129,7 +129,7 @@ $(function() {
         e.preventDefault();
       }
       this.classList.add('over');
-      e.dataTransfer.dropEffect = 'move'; 
+      e.dataTransfer.dropEffect = 'move';
       return false;
     }
 
@@ -137,12 +137,12 @@ $(function() {
     }
 
     function handleDragLeave(e) {
-      this.classList.remove('over'); 
+      this.classList.remove('over');
     }
 
     function handleDrop(e) {
       if (e.stopPropagation) {
-        e.stopPropagation(); 
+        e.stopPropagation();
       }
 
       if (dragSrcEl != this) {
