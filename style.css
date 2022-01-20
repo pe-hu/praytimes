@@ -2,8 +2,8 @@ html, body {overflow-x: hidden; font-family:"ヒラギノ丸ゴ Pro W4","ヒラ�
 a {color: #000; text-decoration: none; cursor:pointer;}
 b {color: #f3c5c6;}
 .pehu, .presents {position:fixed; z-index:100;}
-.pehu {color:#000; font-family: "MS Mincho"; display:inline-block; margin:2vh 2.5vw; font-size:1.5vw; left:0;}
-.presents {color:#f3c5c6; float: right; margin:1.5vh 2.5vw; font-size:2vw; right:0;}
+.pehu {color:#000; font-family: "MS Mincho"; display:inline-block; margin:2vh 2.5vw; font-size:1.5vw; left:0; bottom:0;}
+.presents {color:#f3c5c6; float: right; margin:1.5vh 2.5vw; font-size:2vw; right:0; bottom:0;}
 #greeting {color:#000; margin:2.5vh 0 0 2.5vw; font-size:1.5vw; width:60vw; float:left;  position:relative;}
 h1 {font-size:2.5vw; font-weight:500;}
 .link {color:#f3c5c6; padding:1vw 2vw; border: 0.2vw solid #f3c5c6; position:relative;}

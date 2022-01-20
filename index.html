@@ -5,8 +5,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta name="viewport" content="width=device-width">
 <link rel="icon" href="img/icon.png">
-<link href="styles.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
 <title>プレイタイムズ | a place of pray/play for us</title>
+<style>
+#index {
+    position: fixed;
+    z-index: 1000;
+    top:0;
+}
+
+</style>
 </head>
 <body>
 <span class="pehu">
@@ -54,5 +62,22 @@ and Something Special by Pehu and Our Friends
     <p><a class="link" href="https://www.youtube.com/playlist?list=PLNxErRQ8jPVbIFHfPsN82Xzrt7t2LTB55">Playlist</a></p>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLNxErRQ8jPVbIFHfPsN82Xzrt7t2LTB55" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
+<hr/>
+<div id="index"></div>
+<script type="text/javascript">
+
+$('a[href^="#"]').click(function(){
+   var speed = 500;　//スクロールスピード
+   var href= $(this).attr("href");
+   var target = $(href == "#" || href == "" ? 'html' : href);
+   var position = target.offset().top;
+   $("html, body").animate({scrollTop:position}, speed, "swing");
+   return false;
+ });
+
+$(function(){
+    $("#index").load("/menu/");
+})
+</script>
 </body>
 </html>
