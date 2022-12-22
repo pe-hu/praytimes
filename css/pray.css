@@ -1,0 +1,93 @@
+#pray {
+  line-height: 200%;
+}
+
+.piece {
+  line-height: 150%;
+}
+
+#pray,
+#live {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#pray {
+  background-color: #F3C5C6;
+  box-sizing: border-box;
+  border-radius: 2rem;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0;
+  margin: auto;
+  overflow: hidden;
+  filter: blur(0.5vw);
+  -webkit-filter: blur(0.5vw);
+  transition: all 5s;
+  width: 0;
+  height: 0;
+  max-width: 550px;
+  max-height: -webkit-fill-available;
+  z-index: 50;
+}
+
+.open #pray {
+  padding: 0.5rem 2rem;
+  margin: auto;
+  overflow: auto;
+  filter: blur(0);
+  -webkit-filter: blur(0);
+  transition: all 10s;
+  width: 90%;
+  height: 80vh;
+}
+
+#pray u {
+  background-color: #fff;
+  color: #F3C5C6;
+  border-radius: 2.5rem;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+}
+
+.piece {
+  border: 1px solid #fff;
+  display: block;
+  font-size: 75%;
+  padding: 1vw 2.5vw;
+  margin: 2.5vw 0 5vw;
+  border-radius: 5vw;
+  clear: both;
+}
+
+.piece a {
+  background-color: #F3C5C6;
+  color: #fff;
+  border-radius: 1rem;
+}
+
+.piece i {
+  font-style: normal;
+  font-size: 150%;
+}
+
+#click {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 0;
+  margin: 1rem 1.25rem;
+  text-decoration: none;
+  z-index: 100;
+}
+
+#click:hover {
+  cursor: pointer;
+  transition: 2.5s;
+}
+
+img#click {
+  width: 4.5rem;
+}

@@ -1,0 +1,73 @@
+html {
+  height: -webkit-fill-available;
+}
+
+body,
+#randomdraggable,
+#randomdraggable li,
+#randomdraggable li img {
+  padding: 0;
+  margin: 0;
+}
+
+#randomdraggable,
+#randomdraggable li,
+#randomdraggable li img {
+  display: block;
+  box-sizing: border-box;
+}
+
+body {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  max-height: -webkit-fill-available;
+}
+
+#randomdraggable {
+  display: flex;
+  flex-flow: row-reverse;
+  list-style: none;
+  padding: 1rem;
+  margin: 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  width: 100%;
+}
+
+#randomdraggable li {
+  flex: none;
+  scroll-snap-align: start;
+  border: 2.5px solid transparent;
+  margin-left: 0.5rem;
+  height: 15vh;
+}
+
+#randomdraggable li:hover {
+  border: 2.5px solid #fff;
+  cursor: pointer;
+}
+
+#randomdraggable li img {
+  height: 100%;
+  width: auto;
+}
+
+#randomdraggable::-webkit-scrollbar {
+  width: 2rem;
+  height: 2rem;
+  background: #fff;
+}
+
+#randomdraggable::-webkit-scrollbar-thumb {
+  border-radius: 2.5rem;
+  background: #f3c5c6;
+}
