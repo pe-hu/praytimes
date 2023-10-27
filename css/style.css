@@ -46,7 +46,11 @@ footer {
     margin: 0;
     overflow-x: auto;
     width: 100%;
+}
+
+#randomdraggable li {
     height: 10rem;
+    max-height: 15vh;
 }
 
 #randomdraggable li img {
