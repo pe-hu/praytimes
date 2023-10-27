@@ -59,10 +59,10 @@ a.download:before {
 }
 
 a.download {
-  font-size: 2rem;
-  line-height: 15rem;
-  width: 15rem;
-  height: 15rem;
+  font-weight: 600;
+  line-height: 10rem;
+  width: 10rem;
+  height: 10rem;
 }
 
 a.download:before {
