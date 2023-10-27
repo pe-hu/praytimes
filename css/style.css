@@ -62,7 +62,7 @@ footer {
 #randomdraggable li {
     flex: auto;
     height: 10rem;
-    max-height: 20vh;
+    max-height: 15vw;
 }
 
 #randomdraggable li img {
