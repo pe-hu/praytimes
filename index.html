@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no">
-  <script src="js/index.js"></script>
+  <script src="index.js"></script>
 
   <script type="text/javascript">
     async function fetchHTML(url = '', query = '') {
@@ -15,12 +15,12 @@
           document.querySelector(query).innerHTML = html
         });
     }
-    
-    let directory = "inn/pray/";
+
+    let directory = "inn/img/";
 
     document.addEventListener('readystatechange', event => {
       if (event.target.readyState === 'interactive') {
-        indexJSON("inn/pray/index.json")
+        indexJSON("inn/img/index.json")
       } else if (event.target.readyState === 'complete') {
         fetchHTML('content.html', '#content')
       }
@@ -39,8 +39,8 @@
   <!--for Twitter-->
   <meta content="summary_large_image" name="twitter:card">
   <meta content="http://praytimes.pe.hu/" property="og:url">
-  <meta content="http://praytimes.pe.hu/img/live.jpeg" property="og:image">
-  <meta content="http://praytimes.pe.hu/img/live.jpeg" name="twitter:image:src">
+  <meta content="http://praytimes.pe.hu/inn/card.png" property="og:image">
+  <meta content="http://praytimes.pe.hu/inn/card.png" name="twitter:image:src">
 
   <link rel="icon" href="inn/icon.png" type="image/png">
   <link rel="stylesheet" href="css/index.css">
@@ -51,7 +51,7 @@
 <body>
   <header>
     <time id="date" class="pehu"></time>
-    <span>Presents</span>
+    <button type="button"></button>
   </header>
   <main id="live">
     <h1>

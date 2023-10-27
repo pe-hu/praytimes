@@ -1,7 +1,7 @@
 {
-  "title" : "2020.06.27 - 2021.01.30",
-  "date" : "∧°┐ | creative, community space",
+  "date" : "2020.06.27 - 2021.01.30",
   "datetime" : "2021/01/30 18:00:00",
+  "description" : "at BnA Alter Museum",
 
   "randomdraggable" : [
     {
@@ -30,19 +30,19 @@
     },
     {
       "img" : "006.JPG",
-      "alt" : "私たちの身の回りにあった、今の気持ちを表すもの・自分を象徴するものを展示しました。"
+      "alt" : "特別企画展「楽観のテクニック」で、現代美術作品「プレイタイムズ」を発表しました。"
     },
     {
       "img" : "007.JPG",
-      "alt" : "We will presented our first contemporary art works at the exhibition called 'The Technique of Optimism'."
-    },
-    {
-      "img" : "008.JPG",
       "alt" : "Special Thanks to 立花鐵工所"
     },
     {
+      "img" : "008.JPG",
+      "alt" : "We will presented our first contemporary art works at the exhibition called 'The Technique of Optimism'."
+    },
+    {
       "img" : "009.JPG",
-      "alt" : "特別企画展「楽観のテクニック」で、現代美術作品「プレイタイムズ」を発表しました。"
+      "alt" : "私たちの身の回りにあった、今の気持ちを表すもの・自分を象徴するものを展示しました。"
     },
     {
       "img" : "010.JPG",

@@ -5,44 +5,62 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no">
-  <script src="../js/index.js"></script>
+  <script src="../index.js"></script>
 
   <script type="text/javascript">
-    let directory = "symbol/";
+    let directory;
+    let id;
 
-    indexJSON("symbol/index.json")
+    // URLにアンカーがある場合
+    const urlHash = location.hash;
+    if (urlHash) {
+      id = urlHash.replace('#', '')
+    } else {
+      id = "pieces"
+    }
+
+    directory = id + "/";
+    indexJSON(id + "/index.json")
   </script>
 
   <!--og:meta-->
   <meta content="website" property="og:type">
-  <title>プレイタイムズ | a place of pray/play for us</title>
-  <meta content="プレイタイムズ | a place of pray/play for us" property="og:title">
-  <meta content="プレイタイムズ とは、異なる場所や同じ場所で営まれる生活を集め、鑑賞することを目的とした、私たちにとっての祈り／遊びの場です。" name="description">
-  <meta
-    content="This is a place of pray / play for us to gather and appreciate life in different places or in the same place."
-    property="og:description">
+  <title>楽観のテクニック The Technique of Optimism</title>
+  <meta content="楽観のテクニック The Technique of Optimism" property="og:title">
+  <meta content="2020.06.27 - 2021.01.30 | BnA Alter Museum SCG (Stair Case Gallery) にて開催された特別企画展に、インスタレーション作品「プレイタイムズ」を発表しました。" name="description">
+  <meta content="2020.06.27 - 2021.01.30 | BnA Alter Museum SCG (Stair Case Gallery) にて開催された特別企画展に、インスタレーション作品「プレイタイムズ」を発表しました。" property="og:description">
 
   <!--for Twitter-->
   <meta content="summary_large_image" name="twitter:card">
-  <meta content="http://praytimes.pe.hu/img/" property="og:url">
-  <meta content="http://praytimes.pe.hu/img/live.jpeg" property="og:image">
-  <meta content="http://praytimes.pe.hu/img/live.jpeg" name="twitter:image:src">
+  <meta content="http://praytimes.pe.hu/inn/" property="og:url">
+  <meta content="http://praytimes.pe.hu/inn/card.png" property="og:image">
+  <meta content="http://praytimes.pe.hu/inn/card.png" name="twitter:image:src">
 
   <link rel="icon" href="icon.png" type="image/png">
   <link rel="stylesheet" href="../css/index.css">
   <link rel="stylesheet" href="../css/randomdraggable.css">
+  <style>
+    h1 {
+      color: #fff;
+      display: grid;
+      place-items: center;
+      height: 25vh;
+    }
+
+    h2 {
+      -webkit-text-stroke: 0.05rem #fff;
+    }
+  </style>
 </head>
 
 <body>
   <header>
     <time id="date"></time>
-    <button></button>
+    <button type="button"></button>
   </header>
   <main id="live">
-    <h1>
-      <img src="logo_white.png" alt="プレイタイムズ">
-    </h1>
-    <h2 id="alt">2020.06.27 - 2021.01.30</h2>
+    <h1 id="alt"></h1>
+    <h2 id="note"></h2>
     <ul id="randomdraggable"></ul>
   </main>
 </body>

@@ -13,36 +13,22 @@
   margin: 0;
   overflow-x: auto;
   width: 100%;
-  height: 20vh;
+  height: 10rem;
 }
 
-#randomdraggable li {
+#randomdraggable li img {
   border: 2.5px solid transparent;
-  transition: 0.25s;
+  border-radius: 0.5rem;
+  transition: 0.5s;
 }
 
-#randomdraggable li:hover {
+#randomdraggable li img:hover {
   border: 2.5px solid #fff;
   cursor: pointer;
-}
-
-#randomdraggable li,
-#randomdraggable li img {
-  border-radius: 0.25rem;
+  filter: brightness(1.5);
 }
 
 #randomdraggable li img {
   height: 100%;
   width: auto;
-}
-
-#randomdraggable::-webkit-scrollbar {
-  width: 2rem;
-  height: 2rem;
-  background: #fff;
-}
-
-#randomdraggable::-webkit-scrollbar-thumb {
-  border-radius: 2.5rem;
-  background: #f3c5c6;
 }

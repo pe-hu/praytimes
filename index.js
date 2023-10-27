@@ -47,18 +47,44 @@ function randomdraggable(obj) {
   const live = document.querySelector('#live');
   const randomdRaggable = document.querySelector('#randomdraggable');
   const alt = document.querySelector('#alt');
-  alt.textContent = obj.title;
+  alt.innerHTML = obj.description;
+
+  if (obj.note) {
+    const note = document.querySelector('#note');
+    for (let i = 0; i < obj.note.length; i++) {
+      if (i === 0) {
+        note.innerHTML = obj.note[i] + "<br>"
+      } else {
+        note.innerHTML += obj.note[i] + "<br>"
+      }
+    }
+  }
 
   const images = shuffle(obj.randomdraggable)
   for (let i = 0; i < images.length; i++) {
     if (i === 0) {
       live.style.backgroundImage = 'url(' + directory + images[i].img + ')'
     }
+
     const li = document.createElement('li');
     const img = document.createElement('img');
     img.src = directory + images[i].img;
     img.addEventListener('click', function () {
-      alt.innerHTML = images[i].alt
+      if (images[i].alt) {
+        alt.innerHTML = images[i].alt
+      }
+
+      if (images[i].note) {
+        const note = document.querySelector('#note');
+        for (let ii = 0; ii < images[i].note.length; ii++) {
+          if (ii === 0) {
+            note.innerHTML = images[i].note[ii] + "<br>"
+          } else {
+            note.innerHTML += images[i].note[ii] + "<br>"
+          }
+        }
+      }
+
       live.style.backgroundImage = 'url(' + directory + images[i].img + ')'
     })
 
