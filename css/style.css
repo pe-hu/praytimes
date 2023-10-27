@@ -1,0 +1,67 @@
+header {
+    position: fixed;
+    z-index: 100;
+}
+
+header,
+#live {
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#content,
+header,
+footer {
+    gap: 1rem;
+    display: flex;
+    align-items: start;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+header,
+footer {
+    padding: 0.5rem;
+}
+
+#live {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100vh;
+    max-height: -webkit-fill-available;
+    overflow: auto;
+}
+
+#randomdraggable {
+    place-self: end;
+    display: flex;
+    gap: 0.5rem;
+    list-style: inside none;
+    padding: 1rem;
+    margin: 0;
+    overflow-x: auto;
+    width: 100%;
+    height: 10rem;
+}
+
+#randomdraggable li img {
+    border: 2.5px solid transparent;
+    border-radius: 0.5rem;
+    transition: 0.5s;
+}
+
+#randomdraggable li img:hover {
+    border: 2.5px solid #fff;
+    cursor: pointer;
+    filter: brightness(1.5);
+}
+
+#randomdraggable li img {
+    height: 100%;
+    width: auto;
+}

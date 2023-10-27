@@ -16,21 +16,22 @@ function thisDate(obj) {
   dataTime.addEventListener('click', function (event) {
     let ago = new Date(obj.datetime);
     let diff = new Date().getTime() - ago.getTime();
-
     let progress = new Date(diff);
+    let now;
     if (progress.getUTCFullYear() - 1970) {
-      event.target.textContent = progress.getUTCFullYear() - 1970 + '年前';
+      now = progress.getUTCFullYear() - 1970 + '年前';
     } else if (progress.getUTCMonth()) {
-      event.target.textContent = progress.getUTCMonth() + 'ヶ月前';
+      now = progress.getUTCMonth() + 'ヶ月前';
     } else if (progress.getUTCDate() - 1) {
-      event.target.textContent = progress.getUTCDate() - 1 + '日前';
+      now = progress.getUTCDate() - 1 + '日前';
     } else if (progress.getUTCHours()) {
-      event.target.textContent = progress.getUTCHours() + '時間前';
+      now = progress.getUTCHours() + '時間前';
     } else if (progress.getUTCMinutes()) {
-      event.target.textContent = progress.getUTCMinutes() + '分前';
+      now = progress.getUTCMinutes() + '分前';
     } else {
-      event.target.textContent = 'たった今';
+      now = 'たった今';
     }
+    event.target.textContent = event.target.textContent === obj.date ? now : obj.date;
   });
 }
 
