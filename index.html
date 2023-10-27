@@ -1,40 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no">
-  <meta property="og:locale" content="ja_JP" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@pe_hu_" />
-  <link rel="icon" href="img/icon.png">
-  <link href="css/style.css" rel="stylesheet">
-  <link href="css/index.css" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="js/index.js"></script>
+
   <script type="text/javascript">
-  $(function () {
-    $("#content").load("join.html");
-  })
+    async function fetchHTML(url = '', query = '') {
+      fetch(url)
+        .then(response => response.text())
+        .then(html => {
+          document.querySelector(query).innerHTML = html
+        });
+    }
+    
+    let directory = "inn/pray/";
+
+    document.addEventListener('readystatechange', event => {
+      if (event.target.readyState === 'interactive') {
+        indexJSON("inn/pray/index.json")
+      } else if (event.target.readyState === 'complete') {
+        fetchHTML('content.html', '#content')
+      }
+    });
   </script>
+
+  <!--og:meta-->
+  <meta content="website" property="og:type">
+  <title>プレイタイムズ | a place of pray/play for us</title>
+  <meta content="プレイタイムズ | a place of pray/play for us" property="og:title">
+  <meta content="プレイタイムズ とは、異なる場所や同じ場所で営まれる生活を集め、鑑賞することを目的とした、私たちにとっての祈り／遊びの場です。" name="description">
+  <meta
+    content="This is a place of pray / play for us to gather and appreciate life in different places or in the same place."
+    property="og:description">
+
+  <!--for Twitter-->
+  <meta content="summary_large_image" name="twitter:card">
+  <meta content="http://praytimes.pe.hu/" property="og:url">
+  <meta content="http://praytimes.pe.hu/img/live.jpeg" property="og:image">
+  <meta content="http://praytimes.pe.hu/img/live.jpeg" name="twitter:image:src">
+
+  <link rel="icon" href="inn/icon.png" type="image/png">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/content.css">
+  <link rel="stylesheet" href="css/randomdraggable.css">
 </head>
 
 <body>
-  <div id="header">
-    <a href="img/inn/index.html" target="live">Installation View</a>
-    <a href="img/pray/index.html" target="live">Through The Window</a>
-  </div>
-
+  <header>
+    <time id="date" class="pehu"></time>
+    <span>Presents</span>
+  </header>
   <main id="live">
-    <img class="center" src="img/logo_white.png">
-    <b class="date">at BnA Alter Museum</b>
-    <iframe name="live" src="img/symbol/index.html"></iframe>
+    <h1>
+      <img src="inn/logo_white.png" alt="プレイタイムズ">
+    </h1>
+    <h2 id="alt"></h2>
+    <ul id="randomdraggable"></ul>
   </main>
-
-  <section id="content"></section>
-
+  <article id="content"></article>
   <footer>
+    <a class="pehu" href="https://pehu.creative-community.space/" target="_blank">
+      ∧°┐ | creative, community space
+    </a>
+    <span>Presents</span>
   </footer>
 </body>
 

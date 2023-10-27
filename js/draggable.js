@@ -53,6 +53,6 @@ function addDnDHandlers(elem) {
 }
 
 function PageLoad() {
-  var cols = document.querySelectorAll('.draggable li');
+  var cols = document.querySelectorAll('#draggable li');
   [].forEach.call(cols, addDnDHandlers);
 }
