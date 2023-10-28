@@ -45,7 +45,7 @@ function shuffle(arrays) {
 }
 
 function randomdraggable(obj) {
-  const live = document.querySelector('#live');
+  const main = document.querySelector('main');
   const randomdRaggable = document.querySelector('#randomdraggable');
   const alt = document.querySelector('#alt');
   alt.innerHTML = obj.description;
@@ -64,7 +64,7 @@ function randomdraggable(obj) {
   const images = shuffle(obj.randomdraggable)
   for (let i = 0; i < images.length; i++) {
     if (i === 0) {
-      live.style.backgroundImage = 'url(' + directory + images[i].img + ')'
+      main.style.backgroundImage = 'url(' + directory + images[i].img + ')'
     }
 
     const li = document.createElement('li');
@@ -86,7 +86,7 @@ function randomdraggable(obj) {
         }
       }
 
-      live.style.backgroundImage = 'url(' + directory + images[i].img + ')'
+      main.style.backgroundImage = 'url(' + directory + images[i].img + ')'
     })
 
     li.appendChild(img);

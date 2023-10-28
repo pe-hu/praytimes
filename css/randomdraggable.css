@@ -4,7 +4,6 @@ main {
     background-repeat: no-repeat;
     display: grid;
     place-items: center;
-    position: relative;
     width: 100%;
     overflow: auto;
 }
@@ -35,6 +34,7 @@ main {
 
 header,
 footer {
+    width: 100%;
     gap: 1rem;
     padding: 0.5rem;
     display: flex;

@@ -49,8 +49,7 @@ a {
   text-decoration: none;
 }
 
-a.link,
-#modal a {
+a.link {
   display: inline-block;
   border: 0.123rem solid #f3c5c6;
   padding: 0.25rem;
@@ -58,13 +57,11 @@ a.link,
 
 a.link:hover,
 button:hover,
-#modal a:hover,
 #date:hover {
   cursor: pointer;
 }
 
 a.link:hover,
-#modal a:hover,
 #date:hover {
   color: #fff;
 }
@@ -74,13 +71,8 @@ a.link:hover,
 }
 
 a.link:hover,
-#modal a:hover,
 #date:hover {
   background-color: #f3c5c6;
-}
-
-dialog::backdrop {
-  background-color: #f3c5c677;
 }
 
 h1,
@@ -102,6 +94,7 @@ h3,
 }
 
 h2,
+select,
 #note,
 #content a {
   font-size: 111%;
@@ -125,17 +118,16 @@ h1,
   max-width: 90%;
 }
 
-#modal {
-  width: 90%;
-  max-width: 550px;
+button,
+select {
+  appearance: none;
+  background: transparent;
+  font-family: inherit;
 }
 
 button {
-  appearance: none;
-  background: transparent;
   border: none;
   outline: none;
-  font-family: inherit;
 }
 
 header button {
@@ -149,10 +141,6 @@ header button {
 
 #modal button {
   float: right;
-}
-
-#modal a {
-  margin: 0.5rem;
 }
 
 hr {
