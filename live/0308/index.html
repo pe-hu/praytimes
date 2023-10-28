@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/live.css">
+  <link rel="icon" href="../../img/icon.png">
+
+  <script src="../head.js" async></script>
+  <script type="text/javascript">
+  document.addEventListener('readystatechange', event => {
+    if (event.target.readyState === 'loading') {
+      // 文書の読み込み中に実行する
+    }
+
+    else if (event.target.readyState === 'interactive') {
+      const liveSelect = document.querySelector('#menu select');
+      const liveMenu = Object.entries(images);
+      liveMenu.forEach((src) => {
+
+        const liveDate = document.createElement('option');
+        liveDate.innerText = src[0] + 'のプレイタイムズ';
+        liveDate.setAttribute("value", Object.values(src[1])[0]);
+
+        liveSelect.appendChild(liveDate);
+      });
+
+      const viewAll = document.createElement('option');
+      viewAll.innerText = 'すべて見る';
+      viewAll.setAttribute("value", '/2020/');
+      liveSelect.appendChild(viewAll);
+    }
+
+    else if (event.target.readyState === 'complete') {
+      let btnAll = document.querySelectorAll('#menu img, #pray');
+      let open = document.querySelector('body');
+
+      let btnToggleclass = function(el) {
+        el.classList.toggle('open');
+      }
+
+      btnAll.forEach((btn) => {
+        btn.addEventListener('click', function() {
+          btnToggleclass(open);
+        }, false);
+      });
+
+      const selectMenu = document.querySelector('#menu select');
+      const optionMenu = document.querySelectorAll("#menu select option");
+
+      selectMenu.addEventListener('change', function() {
+        window.location.replace(optionMenu[this.selectedIndex].value);
+      });
+    }
+  });
+  </script>
+</head>
+
+<body>
+  <nav id="menu">
+    <select>
+      <option selected disabled>2020年のプレイタイムズ</option>
+    </select>
+    <img id="click" src="../../img/icon.png" alt="come on join us !">
+  </nav>
+
+  <main id="play">
+    <ul id="randomdraggable" class="random draggable">
+      <li>
+        <iframe src="https://www.youtube.com/embed/AnqKtwk7mKU?controls=0&disablekb=1&playsinline=1&modestbranding=1&rel=0" allowfullscreen playsinline frameborder="0"></iframe>
+      </li>
+    </ul>
+  </main>
+
+  <main id="pray" hidden>
+    <section>
+      <p><u class="title"></u></p>
+      <p class="members">
+        芥川亜由弥<br/>
+        中尾香織<br/>
+        ささじまかずま<br/>
+        筒井一隆<br/>
+        船川翔司
+      </p>
+      <p>が、<b>搬入</b>をした記録です。</p>
+    </section>
+  </main>
+
+  <article id="howto">
+    <h1 class="title"></h1>
+    <section>
+      <p>
+        3月6日・7日・8日の3日間、楽観のテクニックで発表するプレイタイムズの搬入を行いました。
+      </p>
+      <div class="piece">
+        <p>
+          <u>チャンネル 1</u><br>
+          展示室内に設置した定点カメラ
+        </p>
+        <p>
+          <u>チャンネル 2</u><br>
+          3月6日のプレイタイムズ
+        </p>
+        <p>
+          <u>チャンネル 3</u><br>
+          展示室内を写す俺
+        </p>
+        <p>
+          <u>チャンネル 4</u><br>
+          展示室に適当においていたiPhone
+        </p>
+        <p>
+          <u>チャンネル 5</u><br>
+          プレイタイムズについてTKにインタビューを受ける中尾
+        </p>
+        <p>
+          <u>チャンネル 6</u><br>
+          布を買いに行くふなさん
+        </p>
+      </div>
+    </section>
+    <section>
+      <p>
+        3月6日の朝、展示室に足場を組み、プロジェクターを天井に固定する作業を行いました。<br>
+        用意していた器具をうまく天井に取り付けられず、器具に穴さえ開けられればうまくいくはずだって、中尾さんがいくつかの鉄工所に電話をかけたら 加工しますよ と行ってくれたところがあって、急いでタクシーでそこまで行った。<br>
+        そのときに出会ったタクシー運転手と鉄工所の方たちがすごく素敵な人たちだった。その2人には展覧会の招待状を送りたい。
+      </p>
+      <p>
+        鉄工所で加工してもらった器具を無事天井に取り付け、その他のおおよその配置も決まったところで、足場を解体しながら展示室の床にプレイタイムズを投影。<br>
+        この時プレイタイムズに初めて参加したこの展覧会のキュレーター TKが「面白い！」って喜んでくれて、さらに自信がついた。自信はあったけど間違ってなかったんだってホッとした。<br>
+        仕事で搬入には参加できなかったあくちゃんが、喜ぶTKが写るプレイタイムズの記録を残してくれていた。床に流れるリアルタイムのプレイタイムズに戸惑うTKはすごくキュートだった。
+      </p>
+    </section>
+    <section>
+      <p>3月6日のプレイタイムズ</p>
+      <div class="piece">
+        <p>
+          <u>チャンネル 1</u><br>
+          展示室内に設置した定点カメラ
+        </p>
+        <p>
+          <u>チャンネル 2</u><br>
+          2月2日のプレイタイムズ
+        </p>
+        <p>
+          <u>チャンネル 3</u><br>
+          プレイタイムズに参加しながら仕事から帰えるあくちゃん
+        </p>
+        <p>
+          <u>チャンネル 4</u><br>
+          客室で横になりながら搬入初日を振り返る俺
+        </p>
+        <p>
+          <u>チャンネル 5</u><br>
+          搬入を終え、展示室と隣接する客室を行き来しながら搬入初日を振り返る中尾さん
+        </p>
+      </div>
+    </section>
+    <section>
+      <p>
+        3月7日、BnAに、TK・ふなさん・あくちゃん・中尾さん・俺が集まった。<br>
+        この日の主な作業は、会場内に「もの」を配置すること。昨日の搬入を終えてなんか物足りなさを感じたので、自分たちの身の回りにある今の気持ちを表すものや自分を象徴するもを持ち寄ることにした。<br/>
+        部屋にものを配置する作業は飾りつけとさほど変わらないはずだけど、白い手袋をつけてそれっぽくすれば美術っぽくなる。作業中、TKが白い手袋をアート手袋と呼んでいることを思い出して、そういうことかってふと思った。
+      </p>
+      <p>
+        3月8日、朝10時からのプレイタイムズをすこし遅刻して確か10時半からそれぞれのスマートフォンからプレイタイムズに集まった。<br>
+        最後の仕上げに取り掛かる俺とあくちゃん、音声ガイド用のインタビューに挑む中尾さんとTK、プレイタイムズをきれいに投影するために床に貼る布を探しに行くふなさん、プレイタイムズに対するエモーショナルな部分が無作為に入れ替わるこの日のプレイタイムズの記録は、特別な見ごたえがあると思う。
+      </p>
+    </section>
+  </article>
+  <script src="../script.js"></script>
+</body>
+</html>

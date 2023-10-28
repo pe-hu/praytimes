@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/live.css">
+  <link rel="icon" href="../../img/icon.png">
+
+  <script src="../head.js" async></script>
+  <script type="text/javascript">
+  document.addEventListener('readystatechange', event => {
+    if (event.target.readyState === 'loading') {
+      // 文書の読み込み中に実行する
+    }
+
+    else if (event.target.readyState === 'interactive') {
+      const liveSelect = document.querySelector('#menu select');
+      const liveMenu = Object.entries(images);
+      liveMenu.forEach((src) => {
+
+        const liveDate = document.createElement('option');
+        liveDate.innerText = src[0] + 'のプレイタイムズ';
+        liveDate.setAttribute("value", Object.values(src[1])[0]);
+
+        liveSelect.appendChild(liveDate);
+      });
+
+      const viewAll = document.createElement('option');
+      viewAll.innerText = 'すべて見る';
+      viewAll.setAttribute("value", '/2020/');
+      liveSelect.appendChild(viewAll);
+    }
+
+    else if (event.target.readyState === 'complete') {
+      let btnAll = document.querySelectorAll('#menu img, #pray');
+      let open = document.querySelector('body');
+
+      let btnToggleclass = function(el) {
+        el.classList.toggle('open');
+      }
+
+      btnAll.forEach((btn) => {
+        btn.addEventListener('click', function() {
+          btnToggleclass(open);
+        }, false);
+      });
+
+      const selectMenu = document.querySelector('#menu select');
+      const optionMenu = document.querySelectorAll("#menu select option");
+
+      selectMenu.addEventListener('change', function() {
+        window.location.replace(optionMenu[this.selectedIndex].value);
+      });
+    }
+  });
+  </script>
+</head>
+
+<body>
+  <nav id="menu">
+    <select>
+      <option selected disabled>2020年のプレイタイムズ</option>
+    </select>
+    <img id="click" src="../../img/icon.png" alt="come on join us !">
+  </nav>
+
+  <main id="play">
+    <ul id="randomdraggable" class="random draggable">
+      <li>
+        <iframe src="https://www.youtube.com/embed/MQsOJ9NNrho?controls=0&disablekb=1&playsinline=1&modestbranding=1&rel=0" allowfullscreen playsinline frameborder="0"></iframe>
+      </li>
+    </ul>
+  </main>
+
+  <main id="pray" hidden>
+    <section>
+      <p><u class="title"></u></p>
+      <p class="members">
+        芥川亜由弥<br>
+        中尾香織<br>
+        ささじまかずま<br>
+        船川翔司
+      </p>
+      <p>が、<b>昆虫を写した</b>記録です。</p>
+    </section>
+  </main>
+
+  <article id="howto">
+    <h1 class="title"></h1>
+    <section>
+      <p>
+        i found a very beautiful butterfly with vivid blue. i tried hard to follow the butterfly to film her. most insects fly so that it was difficult to film them.<br />
+        but, i was thinking that it would be nice if all were here with me and went to follow the butterfly together.
+      </p>
+      <hr/>
+      <p>
+        びっくりするくらい青くて綺麗な蝶々が飛んでいて、必死で追いかけて撮影していました。<br />
+        蝶々もですが、虫は比較的飛ぶものが多く、想像以上に撮影することが難しいということに気付かされました。<br />
+        ただ、みんながここに一緒にいて、一緒に青い蝶々見れたらいいのにと、思っていました。
+      </p>
+    </section>
+    <section>
+      <p>
+        I had felt a lit bit nervous for that day.<br />
+        I couldn't good images to make a great performance.<br />
+        I just walked to a neighborhood park and i had the surprise to met a lot of insects here.<br />
+        I chased butterflies while keeping silent, but i wanted to show them to other participants and i knocked on my iPhone to make a noise.<br />
+        I still don't know other participants could find that butterflies.<br />
+        Please let me know if you found those butterflies on this プレイタイムズ.
+      </p>
+      <hr/>
+      <p>
+        この日のテーマにあまり気乗りしなくて、正直ちょっとやる気がなかったんだけど、近くの公園にいったらそこでたくさんの昆虫を見つけることができたから驚いた。<br />
+        花の蜜を吸う白い蝶を静かに追いかけた。ほかの参加者にもその姿を見てほしくて時々iPhoneのマイクを叩きながら。<br />
+        結局それに気づいた人がいたのかわかんないけど、終わる頃には結局なんかいい気分だった。
+      </p>
+    </section>
+    <section>
+      <p>
+        I can see some kind of living things outside here now.<br />
+        Feeling I am being comfortably filled. <br />
+        I wanted everyone to see grasshoppers with red wings look like they are flying and some stick insects. They are cool. I tried to film them but they were living their lives and moving fast, so I gave up.<br />
+        But I filmed a big black beautiful butterfly, spiders and ants, and grass where many insects must be there.<br />
+        I was into researching my surround that time but I was happy to know the time other people watching living things surround them.
+      </p>
+      <hr/>
+      <p>
+        今私がいる場所にはたくさんの生き物がいて、外にいると何か生き物が動いているのが見れます。こころが満たされます。<br />
+        赤いハネでもう飛んじゃってるようなおもしろいバッタとか、ナナフシもかっこよくて見てほしかったけどそんな都合よくいないし、みんな良く動くからうつすのが難しくて諦めました。<br />
+        でもきれいな黒い大きな蝶が現れて、ひらひら風の中を飛んでいるところをうつしたり、蜘蛛や蟻や、たくさんの生き物がいるであろう草むらをうつしたりしました。<br />
+        ちょっと自分の周りに夢中になっちゃったけど、いろんな場所にいる人たちがそれぞれの周りにいる生き物を見る時間を知れてよかったです。
+      </p>
+    </section>
+  </article>
+  <script src="../script.js"></script>
+</body>
+</html>
