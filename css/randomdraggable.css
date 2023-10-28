@@ -58,6 +58,8 @@ footer {
     margin: 0;
     overflow-x: auto;
     width: 100%;
+    position: relative;
+    z-index: 10;
 }
 
 #randomdraggable li {
