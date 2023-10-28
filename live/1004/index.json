@@ -1,10 +1,12 @@
 {
   "title" : "10月4日のプレイタイムズ",
-  "description" : "wanna be youth・2n2n・芥川亜由弥・中尾香織・ささじまかずま が、靴の上から靴を履いた記録です。",
-  "author" : "∧° ┐ | creative, community space",
-  "email" : "we.are.pe.hu@gmail.com",
-  "type" : "website",
-  "twitter" : "@pe_hu_",
-  "card" : "summary",
-  "src" : "image.jpeg"
+  "description" : "wanna be youth・2n2n・芥川亜由弥・中尾香織・ささじまかずま が、靴の上から靴を履いた記録",
+  "author" : [
+    "wanna be youth",
+    "2n2n",
+    "芥川亜由弥",
+    "中尾香織",
+    "ささじまかずま"
+  ],
+  "youtube" : "LPlODq-ZKTE"
 }

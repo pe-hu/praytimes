@@ -1,10 +1,12 @@
 {
   "title" : "9月6日のプレイタイムズ",
-  "description" : "宙空一派・Ibuki Kakita・芥川亜由弥・中尾香織・ささじまかずま が、近方ぼやぼやをした記録です。",
-  "author" : "∧° ┐ | creative, community space",
-  "email" : "we.are.pe.hu@gmail.com",
-  "type" : "website",
-  "twitter" : "@pe_hu_",
-  "card" : "summary",
-  "src" : "image.jpeg"
+  "description" : "宙空一派・Ibuki Kakita・芥川亜由弥・中尾香織・ささじまかずま が、近方ぼやぼやをした記録",
+  "author" : [
+    "宙空一派",
+    "Ibuki Kakita",
+    "芥川亜由弥",
+    "中尾香織",
+    "ささじまかずま"
+  ],
+  "youtube" : "4iRCoFB2qZw"
 }

@@ -1,107 +1,14 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="format-detection" content="telephone=no" />
-  <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="../../css/live.css">
-  <link rel="icon" href="../../img/icon.png">
-
-  <style>
-    #howto section {
-      max-width: 550px;
-      margin: auto;
-    }
-  </style>
-
-  <script src="../head.js" async></script>
-  <script type="text/javascript">
-  document.addEventListener('readystatechange', event => {
-    if (event.target.readyState === 'loading') {
-      // 文書の読み込み中に実行する
-    }
-
-    else if (event.target.readyState === 'interactive') {
-      const liveSelect = document.querySelector('#menu select');
-      const liveMenu = Object.entries(images);
-      liveMenu.forEach((src) => {
-
-        const liveDate = document.createElement('option');
-        liveDate.innerText = src[0] + 'のプレイタイムズ';
-        liveDate.setAttribute("value", Object.values(src[1])[0]);
-
-        liveSelect.appendChild(liveDate);
-      });
-
-      const viewAll = document.createElement('option');
-      viewAll.innerText = 'すべて見る';
-      viewAll.setAttribute("value", '/2020/');
-      liveSelect.appendChild(viewAll);
-    }
-
-    else if (event.target.readyState === 'complete') {
-      let btnAll = document.querySelectorAll('#menu img, #pray');
-      let open = document.querySelector('body');
-
-      let btnToggleclass = function(el) {
-        el.classList.toggle('open');
-      }
-
-      btnAll.forEach((btn) => {
-        btn.addEventListener('click', function() {
-          btnToggleclass(open);
-        }, false);
-      });
-
-      const selectMenu = document.querySelector('#menu select');
-      const optionMenu = document.querySelectorAll("#menu select option");
-
-      selectMenu.addEventListener('change', function() {
-        window.location.replace(optionMenu[this.selectedIndex].value);
-      });
-    }
-  });
-  </script>
-</head>
-
-<body>
-  <nav id="menu">
-    <select>
-      <option selected disabled>2020年のプレイタイムズ</option>
-    </select>
-    <img id="click" src="../../img/icon.png" alt="come on join us !">
-  </nav>
-
-  <main id="play">
-    <ul id="randomdraggable" class="random draggable">
-      <li>
-        <iframe src="https://www.youtube.com/embed/7UI5u-suxig?controls=0&disablekb=1&playsinline=1&modestbranding=1&rel=0" allowfullscreen playsinline frameborder="0"></iframe>
-      </li>
-    </ul>
-  </main>
-
-  <main id="pray" hidden>
-    <section>
-      <p><u class="title"></u></p>
-      <p class="members">
-        Yuto Ohashi<br>
-        Kenny Pain<br>
-        芥川亜由弥<br>
-        中尾香織<br>
-        ささじまかずま
-      </p>
-      <p>が、<b>空を見上げた</b>記録です。</p>
-    </section>
-  </main>
-
-  <article id="howto">
-    <h1><small>Yuto Ohashi</small><br/>Re​:​code proto​-​memory - p​.​s. I recall</h1>
-    <section>
-      <p><img src="https://f4.bcbits.com/img/a3040971947_10.jpg" width="100%"></p>
-      <p><iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album=1504722230/size=small/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless><a href="https://yuto-ohashi.bandcamp.com/album/re-code-proto-memory-p-s-i-recall">Re:code proto-memory - p.s. I recall by Yuto Ohashi</a></iframe></p>
-    </section>
-  </article>
-  <script src="../script.js"></script>
-</body>
-</html>
+<section>
+  <h3>
+    <small>Yuto Ohashi</small><br />
+    Re:code proto-memory - p.s. I recall
+  </h3>
+  <p><img src="https://f4.bcbits.com/img/a3040971947_10.jpg" width="100%"></p>
+  <iframe style="border: 0; width: 100%; height: 42px;"
+    src="https://bandcamp.com/EmbeddedPlayer/album=1504722230/size=small/bgcol=ffffff/linkcol=0687f5/transparent=true/"
+    seamless>
+    <a href="https://yuto-ohashi.bandcamp.com/album/re-code-proto-memory-p-s-i-recall">
+      Re:code proto-memory - p.s. I recall by Yuto Ohashi
+    </a>
+  </iframe>
+</section>

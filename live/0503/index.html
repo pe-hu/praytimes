@@ -1,136 +1,40 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="format-detection" content="telephone=no" />
-  <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="../../css/live.css">
-  <link rel="icon" href="../../img/icon.png">
-
-  <script src="../head.js" async></script>
-  <script type="text/javascript">
-  document.addEventListener('readystatechange', event => {
-    if (event.target.readyState === 'loading') {
-      // 文書の読み込み中に実行する
-    }
-
-    else if (event.target.readyState === 'interactive') {
-      const liveSelect = document.querySelector('#menu select');
-      const liveMenu = Object.entries(images);
-      liveMenu.forEach((src) => {
-
-        const liveDate = document.createElement('option');
-        liveDate.innerText = src[0] + 'のプレイタイムズ';
-        liveDate.setAttribute("value", Object.values(src[1])[0]);
-
-        liveSelect.appendChild(liveDate);
-      });
-
-      const viewAll = document.createElement('option');
-      viewAll.innerText = 'すべて見る';
-      viewAll.setAttribute("value", '/2020/');
-      liveSelect.appendChild(viewAll);
-    }
-
-    else if (event.target.readyState === 'complete') {
-      let btnAll = document.querySelectorAll('#menu img, #pray');
-      let open = document.querySelector('body');
-
-      let btnToggleclass = function(el) {
-        el.classList.toggle('open');
-      }
-
-      btnAll.forEach((btn) => {
-        btn.addEventListener('click', function() {
-          btnToggleclass(open);
-        }, false);
-      });
-
-      const selectMenu = document.querySelector('#menu select');
-      const optionMenu = document.querySelectorAll("#menu select option");
-
-      selectMenu.addEventListener('change', function() {
-        window.location.replace(optionMenu[this.selectedIndex].value);
-      });
-    }
-  });
-  </script>
-</head>
-
-<body>
-  <nav id="menu">
-    <select>
-      <option selected disabled>2020年のプレイタイムズ</option>
-    </select>
-    <img id="click" src="../../img/icon.png" alt="come on join us !">
-  </nav>
-
-  <main id="play">
-    <ul id="randomdraggable" class="random draggable">
-      <li>
-        <iframe src="https://www.youtube.com/embed/YrDo1Zg2avg?controls=0&disablekb=1&playsinline=1&modestbranding=1&rel=0" allowfullscreen playsinline frameborder="0"></iframe>
-      </li>
-    </ul>
-  </main>
-
-  <main id="pray" hidden>
-    <section>
-      <p><u class="title"></u></p>
-      <p class="members">
-        woopheadclrms<br/>
-        2n2n<br/>
-        芥川亜由弥<br/>
-        中尾香織<br/>
-        ささじまかずま
-      </p>
-      <p>が、<b>食事</b>をした記録です。</p>
-    </section>
-  </main>
-
-  <article id="howto">
-    <h1><small>Tandoori chicken</small><br/>タンドリーチキンのレシピ</h1>
-    <section>
-      <p>
-        材料 2人前<br>
-        鶏肉 200g<br>
-        ☆カレー粉 大さじ1<br>
-        ☆ケチャップ 大さじ1<br>
-        ☆ヨーグルト 大さじ1<br>
-        ☆にんにくチューブ 大さじ2
-      </p>
-      <p>
-        作り方<br>
-        ① 鶏肉をひと口大より少し大きめに切る<br>
-        ② 袋に☆を入れ、もみ混ぜる<br>
-        ③ ☆を入れた袋に鶏肉を入れ、もみ混ぜる<br>
-        ※ ☆は、鶏肉がベチャベチャになるぐらいがベスト<br>
-        上記の分量で足りないと思ったら、1：1：1：2で足す<br>
-        <br>
-        ④ 10分くらい浸け置いて、焼く
-      </p>
-    </section>
-    <section>
-      <p>
-        INGREDIENTS for 2 people）<br>
-        Chicken 200g<br>
-        ☆curry powder 1 tbsp<br>
-        ☆ketchup 1 tbsp<br>
-        ☆yogurt 1 tbsp<br>
-        ☆grated garlic 2 tbsp
-      </p>
-      <p>
-        HOW TO COOK<br>
-        ① cut chicken bigger than bite-size<br>
-        ② put ☆ into a plastic bag and mix them<br>
-        ③ put the chicken into ☆ the bag and crumple it<br>
-        ※ chicken should be gooey with ☆, if it seems not enough, <br>
-        add ☆ in the ratio of 1:1:1:2<br>
-        <br>
-        ④ after 10mins, fry it.
-      </p>
-    </section>
-  </article>
-  <script src="../script.js"></script>
-</body>
-</html>
+<section>
+  <p>
+    材料 2人前<br>
+    鶏肉 200g<br>
+    ☆カレー粉 大さじ1<br>
+    ☆ケチャップ 大さじ1<br>
+    ☆ヨーグルト 大さじ1<br>
+    ☆にんにくチューブ 大さじ2
+  </p>
+  <p>
+    作り方<br>
+    ① 鶏肉をひと口大より少し大きめに切る<br>
+    ② 袋に☆を入れ、もみ混ぜる<br>
+    ③ ☆を入れた袋に鶏肉を入れ、もみ混ぜる<br>
+    ※ ☆は、鶏肉がベチャベチャになるぐらいがベスト<br>
+    上記の分量で足りないと思ったら、1：1：1：2で足す<br>
+    <br>
+    ④ 10分くらい浸け置いて、焼く
+  </p>
+</section>
+<section>
+  <p>
+    INGREDIENTS for 2 people）<br>
+    Chicken 200g<br>
+    ☆curry powder 1 tbsp<br>
+    ☆ketchup 1 tbsp<br>
+    ☆yogurt 1 tbsp<br>
+    ☆grated garlic 2 tbsp
+  </p>
+  <p>
+    HOW TO COOK<br>
+    ① cut chicken bigger than bite-size<br>
+    ② put ☆ into a plastic bag and mix them<br>
+    ③ put the chicken into ☆ the bag and crumple it<br>
+    ※ chicken should be gooey with ☆, if it seems not enough, <br>
+    add ☆ in the ratio of 1:1:1:2<br>
+    <br>
+    ④ after 10mins, fry it.
+  </p>
+</section>

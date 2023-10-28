@@ -1,115 +1,13 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="format-detection" content="telephone=no" />
-  <link rel="stylesheet" href="../../css/style.css">
-  <link rel="stylesheet" href="../../css/live.css">
-  <link rel="icon" href="../../img/icon.png">
-
-  <style>
-    #howto section {
-      max-width: 750px;
-      margin: auto;
-    }
-  </style>
-
-  <script src="../head.js" async></script>
-  <script type="text/javascript">
-  document.addEventListener('readystatechange', event => {
-    if (event.target.readyState === 'loading') {
-      // 文書の読み込み中に実行する
-    }
-
-    else if (event.target.readyState === 'interactive') {
-      const liveSelect = document.querySelector('#menu select');
-      const liveMenu = Object.entries(images);
-      liveMenu.forEach((src) => {
-
-        const liveDate = document.createElement('option');
-        liveDate.innerText = src[0] + 'のプレイタイムズ';
-        liveDate.setAttribute("value", Object.values(src[1])[0]);
-
-        liveSelect.appendChild(liveDate);
-      });
-
-      const viewAll = document.createElement('option');
-      viewAll.innerText = 'すべて見る';
-      viewAll.setAttribute("value", '/2020/');
-      liveSelect.appendChild(viewAll);
-    }
-
-    else if (event.target.readyState === 'complete') {
-      let btnAll = document.querySelectorAll('#menu img, #pray');
-      let open = document.querySelector('body');
-
-      let btnToggleclass = function(el) {
-        el.classList.toggle('open');
-      }
-
-      btnAll.forEach((btn) => {
-        btn.addEventListener('click', function() {
-          btnToggleclass(open);
-        }, false);
-      });
-
-      const selectMenu = document.querySelector('#menu select');
-      const optionMenu = document.querySelectorAll("#menu select option");
-
-      selectMenu.addEventListener('change', function() {
-        window.location.replace(optionMenu[this.selectedIndex].value);
-      });
-    }
-  });
-  </script>
-</head>
-
-<body>
-  <nav id="menu">
-    <select>
-      <option selected disabled>2020年のプレイタイムズ</option>
-    </select>
-    <img id="click" src="../../img/icon.png" alt="come on join us !">
-  </nav>
-
-  <main id="play">
-    <ul id="randomdraggable" class="random draggable">
-      <li>
-        <iframe src="https://www.youtube.com/embed/LfpdOdqrqSI?controls=0&disablekb=1&playsinline=1&modestbranding=1&rel=0" allowfullscreen playsinline frameborder="0"></iframe>
-      </li>
-    </ul>
-  </main>
-
-  <main id="pray" hidden>
-    <section>
-      <p><u class="title"></u></p>
-      <p class="members">
-        Ibuki Kakita<br/>
-        芥川亜由弥<br/>
-        中尾香織<br/>
-        ささじまかずま
-      </p>
-      <p>が、<b>水を写した</b>記録です。</p>
-    </section>
-  </main>
-
-  <article id="howto">
-    <h1 class="title"></h1>
-    <section>
-      <p>
-        俺にとってプレイタイムズは、ぼーっとするための場所。毎月1度の記録の時間には、ぼーっとするための具体的な行為をお題として選んでいる。<br>
-        記録の時間以外にも、ぼーっととしたいときに窓を眺めるようにプレイタイムズを訪れる。ここにいながら今いる場所ではないどこかへ行ける感覚が心地いい。
-      </p>
-      <p>
-        この日のテーマは、水を写す。バケツにジップロックに入れたスマホを落としたり、窓を勢いよく洗ったりする様子を撮影した。<br/>
-        水の近くにずっとスマホをおいていたせいか、プレイタイムズのあとまる一日スマホの電源が入らなくなった。でもまあいい。
-      </p>
-      <p>
-        コミュニケーションツールが担う「伝える」という目的に対する（笑）って感じ。それがプレイタイムズらしさだと思う。
-      </p>
-    </section>
-  </article>
-  <script src="../script.js"></script>
-</body>
-</html>
+<section>
+  <p>
+    俺にとってプレイタイムズは、ぼーっとするための場所。毎月1度の記録の時間には、ぼーっとするための具体的な行為をお題として選んでいる。<br>
+    記録の時間以外にも、ぼーっととしたいときに窓を眺めるようにプレイタイムズを訪れる。ここにいながら今いる場所ではないどこかへ行ける感覚が心地いい。
+  </p>
+  <p>
+    この日のテーマは、水を写す。バケツにジップロックに入れたスマホを落としたり、窓を勢いよく洗ったりする様子を撮影した。<br/>
+    水の近くにずっとスマホをおいていたせいか、プレイタイムズのあとまる一日スマホの電源が入らなくなった。でもまあいい。
+  </p>
+  <p>
+    コミュニケーションツールが担う「伝える」という目的に対する（笑）って感じ。それがプレイタイムズらしさだと思う。
+  </p>
+</section>

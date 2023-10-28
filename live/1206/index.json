@@ -1,10 +1,11 @@
 {
   "title" : "12月6日のプレイタイムズ",
-  "description" : "Rie Kai・芥川亜由弥・中尾香織・ささじまかずま が、何かに落ちたり何かを落とした記録です。",
-  "author" : "∧° ┐ | creative, community space",
-  "email" : "we.are.pe.hu@gmail.com",
-  "type" : "website",
-  "twitter" : "@pe_hu_",
-  "card" : "summary",
-  "src" : "image.jpeg"
+  "description" : "Rie Kai・芥川亜由弥・中尾香織・ささじまかずま が、何かに落ちたり何かを落とした記録",
+  "author" : [
+    "Rie Kai",
+    "芥川亜由弥",
+    "中尾香織",
+    "ささじまかずま"
+  ],
+  "youtube" : "Ur2Yxipmg5w"
 }
