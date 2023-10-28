@@ -20,6 +20,11 @@ main {
     }
 }
 
+#player {
+    height: 100vh;
+    max-height: -webkit-fill-available;
+}
+
 header {
     position: fixed;
     z-index: 100;

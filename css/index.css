@@ -44,6 +44,22 @@ header button {
   margin: 0;
 }
 
+#date,
+#modal,
+fieldset {
+  padding: 0.5rem;
+}
+
+a.link,
+select {
+  padding: 0.25rem;
+}
+
+legend {
+  padding: 0.25rem 0;
+  margin: 0.25rem;
+}
+
 a {
   color: #000;
   text-decoration: none;
@@ -52,7 +68,6 @@ a {
 a.link {
   display: inline-block;
   border: 0.123rem solid #f3c5c6;
-  padding: 0.25rem;
 }
 
 a.link:hover,
@@ -88,13 +103,12 @@ h3,
 }
 
 #date,
-#modal {
+#modal,
+select {
   font-size: 125%;
-  padding: 0.5rem;
 }
 
 h2,
-select,
 #note,
 #content a {
   font-size: 111%;
@@ -122,10 +136,13 @@ button,
 select {
   appearance: none;
   background: transparent;
+  color: #f3c5c6;
   font-family: inherit;
 }
 
-button {
+button,
+select,
+fieldset {
   border: none;
   outline: none;
 }

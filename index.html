@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no">
+  <script src="date.js"></script>
   <script src="index.js"></script>
-
   <script type="text/javascript">
     async function fetchHTML(url = '', query = '') {
       fetch(url)
@@ -20,12 +20,14 @@
 
     document.addEventListener('readystatechange', event => {
       if (event.target.readyState === 'interactive') {
+        dateJson(directory + "index.json")
         indexJSON(directory + "index.json")
       } else if (event.target.readyState === 'complete') {
         fetchHTML('content.html', '#content')
       }
     });
   </script>
+  <script src="live/2020.js"></script>
 
   <!--og:meta-->
   <meta content="website" property="og:type">
@@ -70,13 +72,11 @@
 
   <dialog id="modal">
     <button type="button" id="closeBtn">×</button>
-    <select></select>
+    <fieldset>
+      <legend>LIVE</legend>
+      <select id="twenty"></select>
+    </fieldset>
   </dialog>
-  
-  <script>
-    ///
-  </script>
-  <script src="live/script.js"></script>
 </body>
 
 </html>

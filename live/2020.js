@@ -1,3 +1,5 @@
+'use strict'
+
 const play = {
   '3月8日': ['0308', 'AnqKtwk7mKU'],
   '4月5日': ['0405', 'bVyJ3xpF9jI'],
@@ -13,11 +15,17 @@ const play = {
 
 document.addEventListener('readystatechange', event => {
   if (event.target.readyState === 'interactive') {
-    const select = document.querySelector('#modal select');
+    const select = document.querySelector('#modal #twenty');
+    const option = document.createElement('option');
+    option.innerText = '2020年のプレイタイムズ';
+    option.setAttribute("disabled", "true");
+    option.setAttribute("selected", "true");
+    select.appendChild(option);
+
     const live = Object.entries(play);
     live.forEach((src) => {
       const option = document.createElement('option');
-      option.innerText = src[0] + 'のプレイタイムズ・ライブ';
+      option.innerText = src[0] + 'のプレイタイムズ';
       option.setAttribute("value", Object.values(src[1])[0]);
       select.appendChild(option);
     });

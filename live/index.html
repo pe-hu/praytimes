@@ -5,7 +5,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no">
-  <script src="script.js"></script>
+  <script src="../date.js"></script>
+  <script src="youtube.js"></script>
+  <script>
+    ///
+    document.addEventListener('readystatechange', event => {
+      if (event.target.readyState === 'interactive') {
+        dateJson("index.json")
+        indexJSON("index.json")
+      } else if (event.target.readyState === 'complete') {
+        ///
+      }
+    });
+  </script>
+  <script src="2020.js"></script>
   <link rel="icon" href="icon.png" type="image/png">
   <link rel="stylesheet" href="../css/index.css">
   <link rel="stylesheet" href="../css/randomdraggable.css">
@@ -13,6 +26,7 @@
 
 <body>
   <header>
+    <time id="date"></time>
     <button type="button"></button>
   </header>
 
@@ -22,7 +36,10 @@
 
   <dialog id="modal">
     <button type="button" id="closeBtn">×</button>
-    <select></select>
+    <fieldset>
+      <legend>LIVE</legend>
+      <select id="twenty"></select>
+    </fieldset>
   </dialog>
 </body>
 
