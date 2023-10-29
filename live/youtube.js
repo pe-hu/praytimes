@@ -41,7 +41,6 @@ document.addEventListener('readystatechange', event => {
         title.textContent = Object.values(src[i])[0];
         readme.textContent = Object.values(src[i][1])[2];
       })
-
       li.appendChild(img);
       randomdRaggable.appendChild(li);
     }
@@ -55,7 +54,6 @@ document.addEventListener('readystatechange', event => {
         }
       })
     });
-
     player.loadVideoById({ videoId: 'AnqKtwk7mKU' });
 
     const scrollElement = document.querySelector('#randomdraggable');
