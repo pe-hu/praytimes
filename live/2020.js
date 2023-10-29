@@ -86,7 +86,7 @@ document.addEventListener('readystatechange', event => {
 
     openBtns.forEach((openBtn) => {
       openBtn.addEventListener('click', () => {
-        openModal()
+        openModal();
       });
     });
 
