@@ -9,6 +9,7 @@ let player;
 function onYouTubePlayerAPIReady() {
   player = new YT.Player('player', {
     playerVars: {
+      'playsinline': 1,
       'controls': 0
     }
   });
