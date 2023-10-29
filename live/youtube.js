@@ -38,7 +38,7 @@ document.addEventListener('readystatechange', event => {
       img.addEventListener('click', function () {
         const title = document.querySelector('h2');
         const readme = document.querySelector('#readme');
-        title.innerHTML = '<b>' + Object.values(src[i])[0] + '</b>のプレイタイムズ';
+        title.innerHTML = Object.values(src[i])[0] + 'のプレイタイムズ';
         readme.textContent = Object.values(src[i][1])[2] + 'です。';
       })
       li.appendChild(img);
