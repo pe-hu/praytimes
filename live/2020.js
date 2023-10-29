@@ -33,15 +33,21 @@ document.addEventListener('readystatechange', event => {
 
   else if (event.target.readyState === 'complete') {
     const dialogModal = document.querySelector('#modal'),
-      openBtn = document.querySelector('header button'),
+      openBtns = document.querySelectorAll('header button, #content button'),
       closeBtn = document.querySelector('#closeBtn');
 
-    openBtn.addEventListener('click', () => {
+    function openModal() {
       if (typeof dialogModal.showModal === "function") {
         dialogModal.showModal();
       } else {
         alert("The <dialog> API is not supported by this browser");
       }
+    }
+
+    openBtns.forEach((openBtn) => {
+      openBtn.addEventListener('click', () => {
+        openModal()
+      });
     });
 
     closeBtn.addEventListener('click', () => {

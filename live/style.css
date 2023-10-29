@@ -1,0 +1,51 @@
+#player {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(cover.jpeg);
+}
+
+article {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 70vh);
+    height: 100%;
+}
+
+#player {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70vh;
+    height: 100%;
+}
+
+@media screen and (max-width: 111vh) {
+    article,
+    #player {
+        position: relative;
+        width: 100%;
+    }
+
+    #player {
+        height: 140vw;
+    }
+}
+
+h1 {
+    padding: 0;
+    margin: 0;
+}
+
+article {
+    padding: 1rem;
+}
+
+article section {
+    padding-top: 1rems;
+}
+
+header {
+    flex-flow: row-reverse;
+}

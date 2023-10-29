@@ -18,7 +18,7 @@
 
     document.addEventListener('readystatechange', event => {
       if (event.target.readyState === 'interactive') {
-        const main = document.querySelector('main');
+        const main = document.querySelector('#player');
         const randomdRaggable = document.querySelector('#randomdraggable');
         const src = shuffle(Object.entries(play2020))
         for (let i = 0; i < src.length; i++) {
@@ -56,20 +56,7 @@
   <link rel="icon" href="icon.png" type="image/png">
   <link rel="stylesheet" href="../css/index.css">
   <link rel="stylesheet" href="../css/randomdraggable.css">
-  <style>
-    #player {
-      float: left;
-      background-image: url(cover.jpeg);
-    }
-
-    article {
-      float: left;
-    }
-
-    header {
-      flex-flow: row-reverse;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -77,20 +64,24 @@
     <button type="button"></button>
   </header>
 
-  <main id="player">
+  <main>
+    <div id="player"></div>
+    <article>
+      <h1>
+        <b>2020年</b>
+        の プレイタイムズ
+      </h1>
+      <section id="readme">
+        <p>
+          私たちは、毎月第一日曜日の午前10時から30分、プレイタイムズに集まった生活を記録しました。
+        </p>
+        <p>
+          We were recording the screen of プレイタイムズ on the first Sunday of the month.
+        </p>
+      </section>
+    </article>
     <ul id="randomdraggable"></ul>
   </main>
-  <article>
-    <h1><b>2020年</b>のプレイタイムズ</h1>
-    <section id="readme">
-      <p>
-        私たちは、毎月第一日曜日の午前10時から30分、プレイタイムズに集まった生活を記録しました。
-      </p>
-      <p>
-        We were recording the screen of プレイタイムズ on the first Sunday of the month.
-      </p>
-    </section>
-  </article>
 
   <dialog id="modal">
     <button type="button" id="closeBtn">×</button>

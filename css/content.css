@@ -37,7 +37,7 @@
   position: relative;
 }
 
-a.download {
+.download {
   display: block;
   position: absolute;
   top: 50%;
@@ -46,37 +46,15 @@ a.download {
   z-index: 1;
 }
 
-a.download:before {
-  content: "";
-  position: absolute;
-  z-index: 0;
-  -webkit-transform: rotate(90deg);
-  transform: rotate(0deg);
-}
-
-a.download {
-  color: #fff;
-  background: #f3c5c6;
-  border-radius: 50%;
-  font-weight: 600;
-  text-align: center;
-  line-height: 10rem;
+.download {
+  background-image: url(../inn/icon.png);
+  background-position: center;
+  background-size: contain;
+  background-clip: border-box;
   width: 10rem;
   height: 10rem;
 }
 
-a.download:hover {
-  color: #f3c5c6;
-  background: #fff;
-}
-
-a.download:before {
-  bottom: -1.25rem;
-  left: 2.5rem;
-  border: 2.5rem solid transparent;
-  border-left: 5rem solid #f3c5c6;
-}
-
-a.download:hover::before {
-  border-left: 5rem solid #fff;
+.download:hover {
+  filter: grayscale();
 }

@@ -51,7 +51,8 @@ fieldset {
 }
 
 a.link,
-select {
+select,
+#content u {
   padding: 0.25rem;
 }
 
@@ -66,8 +67,13 @@ a {
 }
 
 a.link {
-  display: inline-block;
   border: 0.123rem solid #f3c5c6;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+#content u {
+  text-decoration: none;
 }
 
 a.link:hover,
@@ -77,16 +83,21 @@ button:hover,
 }
 
 a.link:hover,
-#date:hover {
+#date:hover,
+#content u {
   color: #fff;
 }
 
-#live h2 {
+button,
+select,
+#live h2,
+#content b {
   color: #f3c5c6;
 }
 
 a.link:hover,
-#date:hover {
+#date:hover,
+#content u {
   background-color: #f3c5c6;
 }
 
@@ -110,7 +121,8 @@ select {
 
 h2,
 #note,
-#content a {
+#content a,
+#content b {
   font-size: 111%;
 }
 
@@ -136,7 +148,6 @@ button,
 select {
   appearance: none;
   background: transparent;
-  color: #f3c5c6;
   font-family: inherit;
 }
 
