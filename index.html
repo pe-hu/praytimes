@@ -5,14 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no">
-  <script src="date.js"></script>
   <script src="index.js"></script>
   <script type="text/javascript">
     let directory = "inn/img/";
 
     document.addEventListener('readystatechange', event => {
       if (event.target.readyState === 'interactive') {
-        dateJson(directory + "index.json")
         indexJSON(directory + "index.json")
       } else if (event.target.readyState === 'complete') {
         // 
@@ -44,7 +42,7 @@
 
 <body>
   <header>
-    <time id="date"></time>
+    <time id="date" class="pehu"></time>
     <button type="button"></button>
   </header>
   <main>

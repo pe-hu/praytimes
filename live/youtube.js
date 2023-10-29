@@ -1,11 +1,17 @@
 'use strict'
 
-async function indexJSON(requestURL) {
-  const request = new Request(requestURL);
-  const response = await fetch(request);
-  const jsonIndex = await response.text();
-  const index = JSON.parse(jsonIndex);
-  youtube(index);
+const tag = document.createElement('script');
+tag.src = "https://www.youtube.com/player_api";
+const firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+let player;
+function onYouTubePlayerAPIReady() {
+  player = new YT.Player('player', {
+    playerVars: {
+      'controls': 0
+    }
+  });
 }
 
 function shuffle(arrays) {
@@ -17,29 +23,51 @@ function shuffle(arrays) {
   return array;
 }
 
-function youtube(obj) {
-  const player = document.querySelector('#player');
-  const randomdraggable = document.querySelector('#randomdraggable');
-  const youtube = shuffle(obj.youtube)
-  for (let i = 0; i < youtube.length; i++) {
-    if (i === 0) {
-      const iframe = document.createElement('iframe');
-      iframe.setAttribute("src", 'https://www.youtube.com/embed/' + youtube[i].id + '?controls=0&disablekb=1&playsinline=1&modestbranding=1&rel=0');
-      iframe.setAttribute("allowfullscreen", "");
-      iframe.setAttribute("playsinline", "");
-      iframe.setAttribute("frameborder", "0");
-      iframe.id = "one"
-      player.appendChild(iframe);
-    } else {
+document.addEventListener('readystatechange', event => {
+  if (event.target.readyState === 'interactive') {
+    const main = document.querySelector('#player');
+    const randomdRaggable = document.querySelector('#randomdraggable');
+    const src = shuffle(Object.entries(playAll))
+    for (let i = 0; i < src.length; i++) {
+      const thisSrc = 'img/' + Object.values(src[i][1])[0] + '.jpeg'
       const li = document.createElement('li');
-      const iframe = document.createElement('iframe');
-      iframe.setAttribute("src", 'https://www.youtube.com/embed/' + youtube[i].id + '?controls=0&disablekb=1&playsinline=1&modestbranding=1&rel=0');
-      iframe.setAttribute("allowfullscreen", "");
-      iframe.setAttribute("playsinline", "");
-      iframe.setAttribute("frameborder", "0");
+      const img = document.createElement('img');
+      img.src = thisSrc;
+      img.dataset.id = Object.values(src[i][1])[1];
+      img.addEventListener('click', function () {
+        const title = document.querySelector('h1 b');
+        const readme = document.querySelector('#readme');
+        title.textContent = Object.values(src[i])[0];
+        readme.textContent = Object.values(src[i][1])[2];
+      })
 
-      li.appendChild(iframe);
-      randomdraggable.appendChild(li);
+      li.appendChild(img);
+      randomdRaggable.appendChild(li);
     }
+  } else if (event.target.readyState === 'complete') {
+    const video_ids = document.querySelectorAll('#randomdraggable li img');
+    video_ids.forEach(function (video_id) {
+      video_id.addEventListener('click', function (e) {
+        let videoId = video_id.dataset.id;
+        if (videoId) {
+          player.loadVideoById({ videoId: videoId });
+        }
+      })
+    });
+
+    player.loadVideoById({ videoId: 'AnqKtwk7mKU' });
+
+    const scrollElement = document.querySelector('#randomdraggable');
+    scrollElement.addEventListener('wheel', (e) => {
+      if (Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;
+      const maxScrollLeft = scrollElement.scrollWidth - scrollElement.clientWidth;
+      if (
+        (scrollElement.scrollLeft <= 0 && e.deltaY < 0) ||
+        (scrollElement.scrollLeft >= maxScrollLeft && e.deltaY > 0)
+      )
+        return;
+      e.preventDefault();
+      scrollElement.scrollLeft += e.deltaY;
+    });
   }
-}
+});

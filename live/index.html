@@ -6,53 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no">
   <script src="2020.js"></script>
-  <script>
-    function shuffle(arrays) {
-      const array = arrays.slice();
-      for (let i = array.length - 1; i >= 0; i--) {
-        const shuffleArr = Math.floor(Math.random() * (i + 1));
-        [array[i], array[shuffleArr]] = [array[shuffleArr], array[i]];
-      }
-      return array;
-    }
-
-    document.addEventListener('readystatechange', event => {
-      if (event.target.readyState === 'interactive') {
-        const main = document.querySelector('#player');
-        const randomdRaggable = document.querySelector('#randomdraggable');
-        const src = shuffle(Object.entries(play2020))
-        for (let i = 0; i < src.length; i++) {
-          const thisSrc = Object.values(src[i][1])[0] + '/image.jpeg'
-          const li = document.createElement('li');
-          const img = document.createElement('img');
-          img.src = thisSrc;
-          img.addEventListener('click', function () {
-            main.style.backgroundImage = 'url(' + thisSrc + ')';
-            const title = document.querySelector('h1 b');
-            const readme = document.querySelector('#readme');
-            title.textContent = Object.values(src[i])[0]
-            readme.textContent = Object.values(src[i][1])[1]
-          })
-
-          li.appendChild(img);
-          randomdRaggable.appendChild(li);
-        }
-      } else if (event.target.readyState === 'complete') {
-        const scrollElement = document.querySelector('#randomdraggable');
-        scrollElement.addEventListener('wheel', (e) => {
-          if (Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;
-          const maxScrollLeft = scrollElement.scrollWidth - scrollElement.clientWidth;
-          if (
-            (scrollElement.scrollLeft <= 0 && e.deltaY < 0) ||
-            (scrollElement.scrollLeft >= maxScrollLeft && e.deltaY > 0)
-          )
-            return;
-          e.preventDefault();
-          scrollElement.scrollLeft += e.deltaY;
-        });
-      }
-    });
-  </script>
+  <script src="youtube.js"></script>
   <link rel="icon" href="icon.png" type="image/png">
   <link rel="stylesheet" href="../css/index.css">
   <link rel="stylesheet" href="../css/randomdraggable.css">
