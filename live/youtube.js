@@ -36,10 +36,10 @@ document.addEventListener('readystatechange', event => {
       img.src = thisSrc;
       img.dataset.id = Object.values(src[i][1])[1];
       img.addEventListener('click', function () {
-        const title = document.querySelector('h1 b');
+        const title = document.querySelector('h2');
         const readme = document.querySelector('#readme');
-        title.textContent = Object.values(src[i])[0];
-        readme.textContent = Object.values(src[i][1])[2];
+        title.innerHTML = '<b>' + Object.values(src[i])[0] + '</b> の プレイタイムズ';
+        readme.textContent = Object.values(src[i][1])[2] + 'です。';
       })
       li.appendChild(img);
       randomdRaggable.appendChild(li);

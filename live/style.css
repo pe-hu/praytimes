@@ -5,10 +5,40 @@
     background-image: url(cover.jpeg);
 }
 
+body {
+    background: #f3c5c6;
+}
+
+b {
+    font-weight: 500;
+}
+
+h1 {
+    color: #fff;
+}
+
+article div p {
+    color: #f3c5c6;
+}
+
+article div {
+    background: #fff;
+    border-radius: 2rem;
+    filter: blur(0.25rem);
+    transition: 1s;
+    padding: 0.5rem 1.25rem;
+    margin-bottom: 10rem;
+}
+
+article div:hover {
+    filter: blur(0);
+}
+
 article {
     position: absolute;
     top: 0;
     left: 0;
+    overflow: auto;
     width: calc(100% - 70vh);
     height: 100%;
 }
