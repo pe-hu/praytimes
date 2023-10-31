@@ -29,15 +29,20 @@ function shuffle(arrays) {
 function randomdVideos(obj) {
     const randomdRaggable = document.querySelector('#randomdraggable');
 
-    const playAll = shuffle(obj.play)
+    const playAll = shuffle(obj.play);
     for (let i = 0; i < playAll.length; i++) {
         const li = document.createElement('li');
+        randomdRaggable.appendChild(li);
+        
         const video = document.createElement('video');
-        video.setAttribute('poster', `${playAll[i].poster}`)
+        video.setAttribute('poster', `${playAll[i].poster}`);
+        li.appendChild(video);
             
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            video.setAttribute('muted', 'true')
-            video.setAttribute('playsinline', '')
+            video.setAttribute('muted', 'true');
+            video.setAttribute('playsinline', '');
+            const audio = document.createElement('audio');
+            li.appendChild(audio);
         }
         
         const canvas = document.querySelector("#live");
@@ -47,9 +52,6 @@ function randomdVideos(obj) {
             canvasCtx.drawImage(video, 0, 0, canvas.width, canvas.height);
             requestAnimationFrame(canvasUpdate);
         };
-
-        li.appendChild(video);
-        randomdRaggable.appendChild(li);
 
         if (playAll[i].src) {
             let ii = 0
@@ -70,6 +72,26 @@ function randomdVideos(obj) {
                 video.load()
                 video.play()
             }, false);
+            
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                const sourceMP4 = document.createElement('source');
+                sourceMP4.setAttribute("type", "video/mp4")
+                sourceMP4.src = playAll[i].src[ii]
+                audio.appendChild(sourceMP4)
+                
+                audio.addEventListener('ended', () => {
+                    if (playAll[i].src.length === 0) {
+                        ii = 0
+                    } else if (ii < playAll[i].src.length - 1) {
+                        ii++
+                    } else {
+                        ii = 0
+                    }
+                    sourceMP4.src = playAll[i].src[ii]
+                    audio.load()
+                    audio.play()
+                }, false);
+            }
         }
 
         if (i === 0) {
@@ -83,7 +105,6 @@ function randomdVideos(obj) {
 }
 
 function playVideo() {
-
     let startTime;
     let playtime = 0;
     let timerId;
@@ -130,6 +151,13 @@ function playVideo() {
         videoAll.forEach((iii) => {
             iii.play()
         })
+            
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            const audioAll = document.querySelectorAll('audio');
+            audioAll.forEach((iiii) => {
+                iiii.play()
+            })
+        }
     }
 
     function stopTimer() {
@@ -140,6 +168,13 @@ function playVideo() {
         videoAll.forEach((iii) => {
             iii.pause()
         })
+            
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            const audioAll = document.querySelectorAll('audio');
+            audioAll.forEach((iiii) => {
+                iiii.pause()
+            })
+        }
     }
 }
 
