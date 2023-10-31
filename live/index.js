@@ -33,7 +33,7 @@ function randomdVideos(obj) {
         const li = document.createElement('li');
         const video = document.createElement('video');
         video.id = playAll[i].id;
-        video.playsinline = true;
+        video.setAttribute('playsinline', '')
         const canvas = document.querySelector("#live");
         let canvasCtx = canvas.getContext('2d');
 
