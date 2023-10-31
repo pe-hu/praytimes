@@ -77,7 +77,6 @@ function randomdVideos(obj) {
         }
 
         video.addEventListener('click', function () {
-            video.setAttribute('muted', 'false')
             canvasUpdate()
         })
     }
