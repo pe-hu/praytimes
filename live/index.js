@@ -65,7 +65,7 @@ function randomdVideos(obj) {
                     source.src = playAll[i].src[ii]
                     audio.src = playAll[i].src[ii]
                 } else if (ii < playAll[i].src.length - 1) {
-                    ii++0
+                    ii++
                     source.src = playAll[i].src[ii]
                     audio.src = playAll[i].src[ii]
                 } else if (ii === playAll[i].src.length) {
