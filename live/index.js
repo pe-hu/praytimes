@@ -129,7 +129,7 @@ function playVideo() {
             playtime = Date.now() - startTime + timeToadd;
             updateTimeText();
             countUp();
-        }, 10);
+        }, 60);
     }
 
     function startTimer() {
