@@ -91,7 +91,6 @@ function randomdVideos(obj) {
                     sourceVideo.src = playAll[i].src[ii]
                     audio.load()
                     audio.play()
-                    console.log(playAll[i].src[ii])
                 }, false);
             }
         }
@@ -158,7 +157,6 @@ function playVideo() {
             const audioAll = document.querySelectorAll('audio');
             audioAll.forEach((iiii) => {
                 iiii.play()
-                console.log(iiii.src)
             })
         }
     }
@@ -175,8 +173,7 @@ function playVideo() {
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             const audioAll = document.querySelectorAll('audio');
             audioAll.forEach((iiii) => {
-                iiii.pause()
-                console.log(iiii.src)
+                iiii.pause()S
             })
         }
     }
