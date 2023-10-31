@@ -1,0 +1,49 @@
+{
+  "title" : "2月2日のプレイタイムズ",
+  "datetime": "2020/02/02 10:30:00",
+  "description" : "We had a practice of プレイタイムズ.",
+  "author" : [
+    "Ayumi Akutagawa",
+    "Kaori Nakao",
+    "Kazuma Sasajima"
+  ],
+  "play": [
+    {
+      "id": "one",
+      "poster": "cover.jpeg",
+      "src": [
+        "001.mp4",
+        "002.mp4",
+        "003.mp4",
+        "004.mp4"
+      ]
+    },
+    {
+      "id": "two",
+      "poster": "cover.jpeg",
+      "src": [
+        "005.mp4",
+        "006.mp4",
+        "011.mp4"
+      ]
+    },
+    {
+      "id": "three",
+      "poster": "cover.jpeg",
+      "src": [
+        "007.mp4",
+        "012.mp4",
+        "013.mp4"
+      ]
+    },
+    {
+      "id": "four",
+      "poster": "cover.jpeg",
+      "src": [
+        "008.mp4",
+        "009.mp4",
+        "010.mp4"
+      ]
+    }
+  ]
+}
