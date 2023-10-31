@@ -61,17 +61,30 @@ function randomdVideos(obj) {
 
             video.addEventListener('ended', () => {
                 if (playAll[i].src.length === 0) {
-                    ii = 0
+                    ii = 00
+                    source.src = playAll[i].src[ii]
+                    audio.src = playAll[i].src[ii]
+                    video.load()
+                    video.play()
+                    audio.play()
                 } else if (ii < playAll[i].src.length - 1) {
-                    ii++
+                    ii++0
+                    source.src = playAll[i].src[ii]
+                    audio.src = playAll[i].src[ii]
+                    video.load()
+                    video.play()
+                    audio.play()
+                } else if (ii === playAll[i].src.length) {
+                    video.remove()
+                    audio.remove()
                 } else {
                     ii = 0
+                    source.src = playAll[i].src[ii]
+                    audio.src = playAll[i].src[ii]
+                    video.load()
+                    video.play()
+                    audio.play()
                 }
-                source.src = playAll[i].src[ii]
-                audio.src = playAll[i].src[ii]
-                video.load()
-                video.play()
-                audio.play()
             }, false);
         }
 
