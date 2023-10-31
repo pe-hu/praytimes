@@ -32,7 +32,7 @@ function randomdVideos(obj) {
     for (let i = 0; i < playAll.length; i++) {
         const li = document.createElement('li');
         const video = document.createElement('video');
-        video.id = playAll[i].id;
+        video.setAttribute('poster', `${playAll[i].poster}`)
         video.setAttribute('playsinline', '')
         const canvas = document.querySelector("#live");
         let canvasCtx = canvas.getContext('2d');
