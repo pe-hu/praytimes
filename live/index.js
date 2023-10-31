@@ -35,6 +35,11 @@ function randomdVideos(obj) {
         const video = document.createElement('video');
         video.setAttribute('poster', `${playAll[i].poster}`)
         video.setAttribute('playsinline', '')
+
+        var iOS = (navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false);
+        if (iOS) {
+            video.setAttribute('muted', 'true')
+        }
         const canvas = document.querySelector("#live");
         let canvasCtx = canvas.getContext('2d');
 
@@ -72,7 +77,7 @@ function randomdVideos(obj) {
         }
 
         video.addEventListener('click', function () {
-            video.play()
+            video.setAttribute('muted', 'false')
             canvasUpdate()
         })
     }
