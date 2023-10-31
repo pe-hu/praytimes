@@ -36,8 +36,8 @@ function randomdVideos(obj) {
         video.setAttribute('poster', `${playAll[i].poster}`)
             
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            video.setAttribute('muted', 'true')
             video.setAttribute('playsinline', '')
-            video.muted = true
         }
         
         const canvas = document.querySelector("#live");
