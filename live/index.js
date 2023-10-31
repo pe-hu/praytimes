@@ -36,10 +36,14 @@ function randomdVideos(obj) {
         
         const video = document.createElement('video');
         video.setAttribute('poster', `${playAll[i].poster}`);
+        
+        const audio = document.createElement('audio');
         li.appendChild(video);
+        li.appendChild(audio);
             
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            video.muted = true
+            video.muted = true;
+            video.setAttribute('muted', 'true');
             video.setAttribute('playsinline', '');
         }
         
