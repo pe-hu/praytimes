@@ -41,9 +41,6 @@ function randomdVideos(obj) {
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             video.setAttribute('muted', 'true');
             video.setAttribute('playsinline', '');
-            
-            const audio = document.createElement('audio');
-            li.appendChild(audio);
         }
         
         const canvas = document.querySelector("#live");
@@ -74,7 +71,10 @@ function randomdVideos(obj) {
                 video.play()
             }, false);
             
-            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {     
+                const audio = document.createElement('audio');
+                li.appendChild(audio);
+                
                 const sourceVideo = document.createElement('source');
                 sourceVideo.setAttribute("type", "audio/mp4")
                 sourceVideo.src = playAll[i].src[ii]
@@ -173,7 +173,7 @@ function playVideo() {
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             const audioAll = document.querySelectorAll('audio');
             audioAll.forEach((iiii) => {
-                iiii.pause()S
+                iiii.pause()
             })
         }
     }
