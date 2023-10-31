@@ -6,7 +6,10 @@ async function indexJSON(requestURL) {
     const jsonIndex = await response.text();
     const index = JSON.parse(jsonIndex);
     randomdVideos(index);
-    playVideo()
+    
+    window.addEventListener("load", (event) => {
+        playVideo()
+    });
 }
 
 async function fetchMD(url = '', query = '') {
