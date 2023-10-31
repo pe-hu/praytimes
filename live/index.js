@@ -38,7 +38,7 @@ function randomdVideos(obj) {
 
         var iOS = (navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false);
         if (iOS) {
-            video.setAttribute('muted', 'true')
+            video.muted = true;
         }
         const canvas = document.querySelector("#live");
         let canvasCtx = canvas.getContext('2d');
@@ -77,7 +77,7 @@ function randomdVideos(obj) {
         }
 
         video.addEventListener('click', function () {
-            video.setAttribute('muted', 'false')
+            video.muted = false;
             canvasUpdate()
         })
     }
