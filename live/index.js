@@ -64,16 +64,10 @@ function randomdVideos(obj) {
                     ii = 00
                     source.src = playAll[i].src[ii]
                     audio.src = playAll[i].src[ii]
-                    video.load()
-                    video.play()
-                    audio.play()
                 } else if (ii < playAll[i].src.length - 1) {
                     ii++0
                     source.src = playAll[i].src[ii]
                     audio.src = playAll[i].src[ii]
-                    video.load()
-                    video.play()
-                    audio.play()
                 } else if (ii === playAll[i].src.length) {
                     video.remove()
                     audio.remove()
@@ -81,10 +75,10 @@ function randomdVideos(obj) {
                     ii = 0
                     source.src = playAll[i].src[ii]
                     audio.src = playAll[i].src[ii]
-                    video.load()
-                    video.play()
-                    audio.play()
                 }
+                video.load()
+                video.play()
+                audio.play()
             }, false);
         }
 
