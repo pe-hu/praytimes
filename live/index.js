@@ -86,7 +86,6 @@ function playVideo() {
     
     const h2 = document.querySelector('h2');
     const timeCount = document.querySelector("h2 b");
-    const videoAll = document.querySelectorAll('video');
     
     h2.hidden = false
     h2.addEventListener('click', function () {
@@ -121,6 +120,8 @@ function playVideo() {
     function startTimer() {
         startTime = Date.now();
         countUp();
+        
+        const videoAll = document.querySelectorAll('video');
         videoAll.forEach((iii) => {
             iii.play()
         })
@@ -129,6 +130,8 @@ function playVideo() {
     function stopTimer() {
         clearInterval(timerId);
         timeToadd += Date.now() - startTime;
+        
+        const videoAll = document.querySelectorAll('video');
         videoAll.forEach((iii) => {
             iii.pause()
         })
