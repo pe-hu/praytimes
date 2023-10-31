@@ -36,13 +36,10 @@ function randomdVideos(obj) {
         
         const video = document.createElement('video');
         video.setAttribute('poster', `${playAll[i].poster}`);
+        video.muted = true;
+        video.setAttribute('muted', 'true');
+        video.setAttribute('playsinline', '');
         li.appendChild(video);
-            
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            video.muted = true;
-            video.setAttribute('muted', 'true');
-            video.setAttribute('playsinline', '');
-        }
         
         const canvas = document.querySelector("#live");
         let canvasCtx = canvas.getContext('2d');
@@ -59,6 +56,7 @@ function randomdVideos(obj) {
             source.src = playAll[i].src[ii]
             video.appendChild(source)
             const audio = new Audio(playAll[i].src[ii]);
+            audio.hidden = true;
             li.appendChild(audio);
 
             video.addEventListener('ended', () => {
