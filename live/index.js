@@ -76,7 +76,7 @@ function randomdVideos(obj) {
                 li.appendChild(audio);
                 
                 const sourceVideo = document.createElement('source');
-                sourceVideo.setAttribute("type", "video/mp4")
+                sourceVideo.setAttribute("type", "audio/mp4")
                 sourceVideo.src = playAll[i].src[ii]
                 audio.appendChild(sourceVideo)
                 
