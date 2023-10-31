@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <script src="../index.js"></script>
+    <script>
+        indexJSON('index.json')
+
+        window.addEventListener("DOMContentLoaded", function () {
+            windowScreen();
+            fetchMD('text/rie.md', '#rie');
+            fetchMD('text/aa.md', '#aa');
+            fetchMD('text/kn.md', '#kn');
+            fetchMD('text/ks.md', '#ks');
+        }, false);
+
+        window.onresize = tmResize;
+        function tmResize() {
+            if (typeof pageResize == "function") {
+                pageResize();
+            }
+        }
+
+        function windowScreen() {
+            const canvas = document.querySelector("#live");
+            canvas.width = window.innerHeight / 1.55;
+            canvas.height = window.innerHeight;
+        }
+
+        function pageResize() {
+            windowScreen();
+        }
+    </script>
+
+    <!--og:meta-->
+    <meta content="website" property="og:type">
+    <title>12月6日のプレイタイムズ</title>
+    <meta content="12月6日のプレイタイムズ" property="og:title">
+    <meta content="We had recorded a video of something falling or fall something at プレイタイムズ on 6th December." name="description">
+    <meta content="We had recorded a video of something falling or fall something at プレイタイムズ on 6th December." property="og:description">
+
+    <!--for Twitter-->
+    <meta content="summary_large_image" name="twitter:card">
+    <meta content="http://praytimes.pe.hu/" property="og:url">
+    <meta content="http://praytimes.pe.hu/" property="og:image">
+    <meta content="http://praytimes.pe.hu/" name="twitter:image:src">
+
+    <link rel="stylesheet" href="../0000/style.css">
+    <link rel="icon" href="../0000/icon.png" type="image/png">
+</head>
+
+<body>
+    <header>
+    </header>
+    <main>
+        <h1>
+            <b>12</b>月<b>6</b>日
+            <small>の</small><br />
+            <img src="../0000/logo_black.png" alt="プレイタイムズ">
+        </h1>
+        <h2 class="start" hidden>
+            <b>PLAY</b>
+            <br>
+            <button type="button"></button>
+        </h2>
+        <canvas id="live"></canvas>
+        <article hidden>
+            <section id="rie"></section>
+            <section id="aa"></section>
+            <section id="kn"></section>
+            <section id="ks"></section>
+        </article>
+        <ul id="randomdraggable"></ul>
+    </main>
+    <script src="../play.js"></script>
+</body>
+
+</html>

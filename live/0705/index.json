@@ -1,0 +1,43 @@
+{
+  "title" : "7月5日のプレイタイムズ",
+  "datetime": "2020/07/05 10:30:00",
+  "description" : "We had shared a video of the wind at プレイタイムズ on 5th July.",
+  "author" : [
+    "Ayumi Akutagawa",
+    "Kaori Nakao",
+    "Kazuma Sasajima"
+  ],
+  "play": [
+    {
+      "id": "one",
+      "src": [
+        "001.mp4"
+      ]
+    },
+    {
+      "id": "two",
+      "src": [
+        "002.mp4"
+      ]
+    },
+    {
+      "id": "three",
+      "src": [
+        "003.mp4"
+      ]
+    },
+    {
+      "id": "four",
+      "src": [
+        "004.mp4"
+      ]
+    },
+    {
+      "id": "five",
+      "src": [
+        "005.mp4"
+      ]
+    }
+  ],
+  "youtube" : "YcO45vs8_Tc"
+}

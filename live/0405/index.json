@@ -1,0 +1,31 @@
+{
+  "title": "4月5日のプレイタイムズ",
+  "datetime": "2020/04/05 10:30:00",
+  "description": "We had shared the video of the flowers at プレイタイムズ on 5th April.",
+  "author": [
+    "Ayumi Akutagawa",
+    "Kaori Nakao",
+    "Kazuma Sasajima",
+    "Shoji Funakawa"
+  ],
+  "play": [
+    {
+      "id": "one",
+      "src": [
+        "001.mp4",
+        "002.mp4",
+        "003.mp4",
+        "004.mp4"
+      ]
+    },
+    {
+      "id": "two",
+      "src": [
+        "005.mp4",
+        "006.mp4",
+        "007.mp4"
+      ]
+    }
+  ],
+  "youtube": "bVyJ3xpF9jI"
+}

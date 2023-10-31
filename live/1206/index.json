@@ -1,0 +1,56 @@
+{
+  "title" : "12月6日のプレイタイムズ",
+  "datetime": "2020/12/06 10:30:00",
+  "description" : "We had recorded a video of something falling or fall something at プレイタイムズ on 6th December.",
+  "author" : [
+    "Rie Kai",
+    "Ayumi Akutagawa",
+    "Kaori Nakao",
+    "Kazuma Sasajima"
+  ],
+  "play": [
+    {
+      "id": "one",
+      "src": [
+        "001.mp4"
+      ]
+    },
+    {
+      "id": "two",
+      "src": [
+        "002.mp4"
+      ]
+    },
+    {
+      "id": "three",
+      "src": [
+        "003.mp4"
+      ]
+    },
+    {
+      "id": "four",
+      "src": [
+        "004.mp4"
+      ]
+    },
+    {
+      "id": "five",
+      "src": [
+        "005.mp4"
+      ]
+    },
+    {
+      "id": "six",
+      "src": [
+        "006.mp4"
+      ]
+    },
+    {
+      "id": "seven",
+      "src": [
+        "007.mp4"
+      ]
+    }
+  ],
+  "youtube" : "Ur2Yxipmg5w"
+}

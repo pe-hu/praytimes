@@ -1,0 +1,231 @@
+html {
+    font-size: 16px;
+    height: -webkit-fill-available;
+}
+
+@media screen and (max-width: 750px) {
+    html {
+        font-size: 2.5vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    html {
+        font-size: 2.75vw;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "MS Mincho";
+    src: url("https://pe-hu.github.io/ver/font/MSMincho.ttc");
+}
+
+@font-face {
+    font-family: "SimSong";
+    src: url("https://pe-hu.github.io/ver/font/SimSun.ttc");
+}
+
+@font-face {
+    font-family: "ヒラギノ丸ゴ Pro W4";
+    src: url("HiraMaruPro-W4.otf");
+}
+
+body {
+    font-family: "ヒラギノ丸ゴ Pro W4", "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro", "HG丸ｺﾞｼｯｸM-PRO", "HGMaruGothicMPRO", sans-serif;
+}
+
+.pehu {
+    font-family: "MS Mincho", "SimSong", serif;
+}
+
+body,
+h1,
+h2 {
+    padding: 0;
+    margin: 0;
+}
+
+header a {
+    padding: 0.25rem;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+body,
+header a:hover {
+    background-color: #f3c5c6;
+}
+
+header a:hover {
+    color: #fff;
+}
+
+h1 img,
+h1 small {
+    position: relative;
+    filter: brightness(2);
+    mix-blend-mode: exclusion;
+}
+
+h1,
+h2,
+h1 b,
+h2 b {
+    font-weight: 500;
+}
+
+h1,
+h1 b {
+    font-size: 125%;
+}
+
+h1 {
+    margin-top: 2.5rem;
+}
+
+h1 b,
+h2 b {
+    display: inline-block;
+}
+
+h1 b {
+    color: #fff;
+    padding: 0.5rem;
+}
+
+h2 b {
+    color: #f3c5c6;
+    margin-bottom: 2.5rem;
+}
+
+header,
+h1 img,
+footer hr {
+    width: 100%;
+}
+
+h1 {
+    width: 75%;
+    max-width: 550px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+header,
+footer {
+    gap: 1rem;
+    padding: 0.5rem;
+    display: flex;
+    align-items: start;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+main {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100vh;
+    max-height: -webkit-fill-available;
+    overflow: hidden;
+}
+
+h1,
+h2 {
+    position: relative;
+    z-index: 1;
+}
+
+h2 {
+    text-align: center;
+}
+
+#live {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+#randomdraggable {
+    place-self: end;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    list-style: inside none;
+    padding: 1rem;
+    margin: 0;
+    overflow-x: auto;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+#randomdraggable li {
+    flex: auto;
+    height: 20vw;
+    max-height: 10rem;
+}
+
+#randomdraggable li video {
+    border: solid 0.2rem transparent;
+    border-radius: 0.25rem;
+    transition: 0.5s;
+    height: 100%;
+}
+
+#randomdraggable li video:active {
+    border: solid 0.2rem #f3c5c6;
+}
+
+#randomdraggable li video:hover {
+    border: solid 0.2rem #fff;
+}
+
+hr {
+    border: none;
+    clear: both;
+}
+
+button,
+select {
+    appearance: none;
+    background: transparent;
+    font-family: inherit;
+}
+
+button,
+select,
+fieldset {
+    border: none;
+    outline: none;
+}
+
+h2 button {
+    background-image: url(icon.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;
+    max-width: 20vw;
+    max-height: 20vw;
+}
