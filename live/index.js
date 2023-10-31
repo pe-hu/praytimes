@@ -52,7 +52,6 @@ function randomdVideos(obj) {
             source.setAttribute("type", "video/mp4")
             source.src = playAll[i].src[ii]
             video.appendChild(source)
-            video.play()
 
             video.addEventListener('ended', () => {
                 if (playAll[i].src.length === 0) {
