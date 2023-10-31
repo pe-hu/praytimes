@@ -100,52 +100,27 @@ function playVideo() {
     let timeToadd = 0;
     
     const h2 = document.querySelector('h2');
-    const timeCount = document.querySelector("h2 b");
+    const h2b = document.querySelector("h2 b");
     
     h2.hidden = false
     h2.addEventListener('click', function () {
         h2.className = h2.className === "start" ? "stop" : "start";
+        h2b.textContent = h2b.textContent === "PLAY" ? "PAUSE" : "PLAY";
         if (h2.className === "start") {
-            stopTimer()
+            stop()
         } else if (h2.className === "stop") {
-            startTimer()
+            start()
         }
     });
 
-    function updateTimeText() {
-        var m = Math.floor(playtime / 60000);
-        var s = Math.floor((playtime % 60000) / 1000);
-        var ms = playtime % 1000;
-
-        m = ("0" + m).slice(-2);
-        s = ("0" + s).slice(-2);
-        ms = ("00" + ms).slice(-3);
-
-        timeCount.textContent = m + ":" + s + ":" + ms;
-    }
-
-    function countUp() {
-        timerId = setTimeout(function () {
-            playtime = Date.now() - startTime + timeToadd;
-            updateTimeText();
-            countUp();
-        }, 60);
-    }
-
-    function startTimer() {
-        startTime = Date.now();
-        countUp();
-        
+    function start() {
         const all = document.querySelectorAll('video, audio');
         all.forEach((iii) => {
             iii.play()
         })
     }
 
-    function stopTimer() {
-        clearInterval(timerId);
-        timeToadd += Date.now() - startTime;
-        
+    function stop() {
         const all = document.querySelectorAll('video, audio');
         all.forEach((iii) => {
             iii.pause()
