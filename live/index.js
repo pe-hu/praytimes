@@ -70,29 +70,6 @@ function randomdVideos(obj) {
                 video.load()
                 video.play()
             }, false);
-            
-            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {     
-                const audio = document.createElement('audio');
-                li.appendChild(audio);
-                
-                const sourceVideo = document.createElement('source');
-                sourceVideo.setAttribute("type", "audio/mp4")
-                sourceVideo.src = playAll[i].src[ii]
-                audio.appendChild(sourceVideo)
-                
-                audio.addEventListener('ended', () => {
-                    if (playAll[i].src.length === 0) {
-                        ii = 0
-                    } else if (ii < playAll[i].src.length - 1) {
-                        ii++
-                    } else {
-                        ii = 0
-                    }
-                    sourceVideo.src = playAll[i].src[ii]
-                    audio.load()
-                    audio.play()
-                }, false);
-            }
         }
 
         if (i === 0) {
@@ -152,13 +129,6 @@ function playVideo() {
         videoAll.forEach((iii) => {
             iii.play()
         })
-            
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            const audioAll = document.querySelectorAll('audio');
-            audioAll.forEach((iiii) => {
-                iiii.play()
-            })
-        }
     }
 
     function stopTimer() {
@@ -169,13 +139,6 @@ function playVideo() {
         videoAll.forEach((iii) => {
             iii.pause()
         })
-            
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            const audioAll = document.querySelectorAll('audio');
-            audioAll.forEach((iiii) => {
-                iiii.pause()
-            })
-        }
     }
 }
 
