@@ -37,7 +37,7 @@ function randomdVideos(obj) {
             
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             video.setAttribute('playsinline', '')
-            video.muted = true;
+            video.muted = true
         }
         
         const canvas = document.querySelector("#live");
@@ -72,12 +72,12 @@ function randomdVideos(obj) {
             }, false);
         }
 
-        if (i == 0) {
+        if (i === 0) {
             canvasUpdate()
         }
 
         video.addEventListener('click', function () {
-            video.muted = false;
+            video.muted = false
             canvasUpdate()
         })
     }
