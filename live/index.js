@@ -61,12 +61,18 @@ function randomdVideos(obj) {
 
             video.addEventListener('ended', () => {
                 if (playAll[i].src.length === 0) {
+                    ii = 0
+                    source.src = playAll[i].src[ii]
+                    audio.src = playAll[i].src[ii]
                     video.remove()
                     audio.remove()
                 } else if (ii === playAll[i].src.length) {
+                    ii = 0
+                    source.src = playAll[i].src[ii]
+                    audio.src = playAll[i].src[ii]
                     video.remove()
                     audio.remove()
-                } else {
+                } else if (ii < playAll[i].src.length - 1) {
                     ii++
                     source.src = playAll[i].src[ii]
                     audio.src = playAll[i].src[ii]
