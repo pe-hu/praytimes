@@ -52,6 +52,7 @@ function randomdVideos(obj) {
             source.setAttribute("type", "video/mp4")
             source.src = playAll[i].src[ii]
             video.appendChild(source)
+            video.play()
 
             video.addEventListener('ended', () => {
                 if (playAll[i].src.length === 0) {
@@ -110,16 +111,16 @@ function playVideo() {
     function startTimer() {
         startTime = Date.now();
         countUp();
-        videoAll.forEach((video) => {
-            video.play()
+        videoAll.forEach((iii) => {
+            iii.play()
         })
     }
 
     function stopTimer() {
         clearInterval(timerId);
         timeToadd += Date.now() - startTime;
-        videoAll.forEach((video) => {
-            video.pause()
+        videoAll.forEach((iii) => {
+            iii.pause()
         })
     }
 
