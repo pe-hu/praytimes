@@ -88,9 +88,10 @@ function randomdVideos(obj) {
                     } else {
                         ii = 0
                     }
-                    sourceMP4.src = playAll[i].src[ii]
+                    sourceVideo.src = playAll[i].src[ii]
                     audio.load()
                     audio.play()
+                    console.log(playAll[i].src[ii])
                 }, false);
             }
         }
@@ -157,6 +158,7 @@ function playVideo() {
             const audioAll = document.querySelectorAll('audio');
             audioAll.forEach((iiii) => {
                 iiii.play()
+                console.log(iiii.src)
             })
         }
     }
@@ -174,6 +176,7 @@ function playVideo() {
             const audioAll = document.querySelectorAll('audio');
             audioAll.forEach((iiii) => {
                 iiii.pause()
+                console.log(iiii.src)
             })
         }
     }
