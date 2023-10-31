@@ -72,7 +72,8 @@ function randomdVideos(obj) {
         }
 
         video.addEventListener('click', function () {
-            canvasUpdate();
+            video.play()
+            canvasUpdate()
         })
     }
 }
