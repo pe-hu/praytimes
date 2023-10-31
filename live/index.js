@@ -41,8 +41,6 @@ function randomdVideos(obj) {
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             video.setAttribute('muted', 'true');
             video.setAttribute('playsinline', '');
-            const audio = document.createElement('audio');
-            li.appendChild(audio);
         }
         
         const canvas = document.querySelector("#live");
@@ -74,10 +72,13 @@ function randomdVideos(obj) {
             }, false);
             
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                const sourceMP4 = document.createElement('source');
-                sourceMP4.setAttribute("type", "video/mp4")
-                sourceMP4.src = playAll[i].src[ii]
-                audio.appendChild(sourceMP4)
+                const audio = document.createElement('audio');
+                li.appendChild(audio);
+                
+                const sourceVideo = document.createElement('source');
+                sourceVideo.setAttribute("type", "video/mp4")
+                sourceVideo.src = playAll[i].src[ii]
+                audio.appendChild(sourceVideo)
                 
                 audio.addEventListener('ended', () => {
                     if (playAll[i].src.length === 0) {
