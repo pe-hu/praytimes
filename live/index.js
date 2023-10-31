@@ -36,10 +36,7 @@ function randomdVideos(obj) {
         
         const video = document.createElement('video');
         video.setAttribute('poster', `${playAll[i].poster}`);
-        
-        const audio = document.createElement('audio');
         li.appendChild(video);
-        li.appendChild(audio);
             
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             video.muted = true;
@@ -61,6 +58,8 @@ function randomdVideos(obj) {
             source.setAttribute("type", "video/mp4")
             source.src = playAll[i].src[ii]
             video.appendChild(source)
+            const audio = new Audio(playAll[i].src[ii]);
+            li.appendChild(audio);
 
             video.addEventListener('ended', () => {
                 if (playAll[i].src.length === 0) {
@@ -71,8 +70,10 @@ function randomdVideos(obj) {
                     ii = 0
                 }
                 source.src = playAll[i].src[ii]
+                audio.src = playAll[i].src[ii]
                 video.load()
                 video.play()
+                audio.play()
             }, false);
         }
 
@@ -129,8 +130,8 @@ function playVideo() {
         startTime = Date.now();
         countUp();
         
-        const videoAll = document.querySelectorAll('video');
-        videoAll.forEach((iii) => {
+        const all = document.querySelectorAll('video, audio');
+        all.forEach((iii) => {
             iii.play()
         })
     }
@@ -139,8 +140,8 @@ function playVideo() {
         clearInterval(timerId);
         timeToadd += Date.now() - startTime;
         
-        const videoAll = document.querySelectorAll('video');
-        videoAll.forEach((iii) => {
+        const all = document.querySelectorAll('video, audio');
+        all.forEach((iii) => {
             iii.pause()
         })
     }
