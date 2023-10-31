@@ -83,6 +83,20 @@ function playVideo() {
     let playtime = 0;
     let timerId;
     let timeToadd = 0;
+    
+    const h2 = document.querySelector('h2');
+    const timeCount = document.querySelector("h2 b");
+    const videoAll = document.querySelectorAll('video');
+    
+    h2.hidden = false
+    h2.addEventListener('click', function () {
+        h2.className = h2.className === "start" ? "stop" : "start";
+        if (h2.className === "start") {
+            stopTimer()
+        } else if (h2.className === "stop") {
+            startTimer()
+        }
+    });
 
     function updateTimeText() {
         var m = Math.floor(playtime / 60000);
@@ -119,22 +133,6 @@ function playVideo() {
             iii.pause()
         })
     }
-    
-    window.addEventListener("load", (event) => {
-        const h2 = document.querySelector('h2');
-        const timeCount = document.querySelector("h2 b");
-        const videoAll = document.querySelectorAll('video');
-        
-        h2.hidden = false
-        h2.addEventListener('click', function () {
-            h2.className = h2.className === "start" ? "stop" : "start";
-            if (h2.className === "start") {
-                stopTimer()
-            } else if (h2.className === "stop") {
-                startTimer()
-            }
-        });
-    });
 }
 
 window.addEventListener("load", () => {
