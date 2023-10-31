@@ -34,12 +34,12 @@ function randomdVideos(obj) {
         const li = document.createElement('li');
         const video = document.createElement('video');
         video.setAttribute('poster', `${playAll[i].poster}`)
-        video.setAttribute('playsinline', '')
-
-        var iOS = (navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false);
-        if (iOS) {
+            
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            video.setAttribute('playsinline', '')
             video.muted = true;
         }
+        
         const canvas = document.querySelector("#live");
         let canvasCtx = canvas.getContext('2d');
 
