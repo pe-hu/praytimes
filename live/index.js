@@ -6,10 +6,7 @@ async function indexJSON(requestURL) {
     const jsonIndex = await response.text();
     const index = JSON.parse(jsonIndex);
     randomdVideos(index);
-    
-    window.addEventListener("load", (event) => {
-        playVideo()
-    });
+    playVideo()
 }
 
 async function fetchMD(url = '', query = '') {
@@ -81,9 +78,6 @@ function randomdVideos(obj) {
 }
 
 function playVideo() {
-    const h2 = document.querySelector('h2');
-    const timeCount = document.querySelector("h2 b");
-    const videoAll = document.querySelectorAll('video');
 
     let startTime;
     let playtime = 0;
@@ -125,15 +119,21 @@ function playVideo() {
             iii.pause()
         })
     }
-
-    h2.hidden = false
-    h2.addEventListener('click', function () {
-        h2.className = h2.className === "start" ? "stop" : "start";
-        if (h2.className === "start") {
-            stopTimer()
-        } else if (h2.className === "stop") {
-            startTimer()
-        }
+    
+    window.addEventListener("load", (event) => {
+        const h2 = document.querySelector('h2');
+        const timeCount = document.querySelector("h2 b");
+        const videoAll = document.querySelectorAll('video');
+        
+        h2.hidden = false
+        h2.addEventListener('click', function () {
+            h2.className = h2.className === "start" ? "stop" : "start";
+            if (h2.className === "start") {
+                stopTimer()
+            } else if (h2.className === "stop") {
+                startTimer()
+            }
+        });
     });
 }
 
