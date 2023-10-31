@@ -12,43 +12,26 @@
   "play": [
     {
       "id": "one",
+      "poster": "cover.jpeg",
       "src": [
-        "001.mp4"
-      ]
-    },
-    {
-      "id": "two",
-      "src": [
-        "002.mp4"
-      ]
-    },
-    {
-      "id": "three",
-      "src": [
-        "003.mp4"
-      ]
-    },
-    {
-      "id": "four",
-      "src": [
+        "001.mp4",
+        "003.mp4",
         "004.mp4"
       ]
     },
     {
-      "id": "five",
+      "id": "two",
+      "poster": "cover.jpeg",
       "src": [
-        "005.mp4"
-      ]
-    },
-    {
-      "id": "six",
-      "src": [
+        "002.mp4",
         "006.mp4"
       ]
     },
     {
-      "id": "seven",
+      "id": "three",
+      "poster": "cover.jpeg",
       "src": [
+        "005.mp4",
         "007.mp4"
       ]
     }
