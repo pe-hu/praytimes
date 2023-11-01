@@ -222,9 +222,13 @@ fieldset {
     outline: none;
 }
 
-header a,
+header a {
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+}
+
 header button,
-[name="twenty"]{
+[name="twenty"] {
     border-radius: 0.5rem;
     padding: 0.5rem;
 }
