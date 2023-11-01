@@ -261,7 +261,7 @@ h2 button {
 }
 
 article {
-    flex: 1 750px;
+    flex: 1 1 750px;
     padding: 1rem;
 
 }
