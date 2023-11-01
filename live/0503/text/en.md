@@ -1,3 +1,5 @@
+Tandoori chicken
+
 INGREDIENTS for 2 people）
 Chicken 200g
 ☆curry powder 1 tbsp
