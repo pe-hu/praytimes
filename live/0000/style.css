@@ -222,7 +222,8 @@ fieldset {
     outline: none;
 }
 
-header a {
+header a,
+header b {
     border-radius: 0.5rem;
     padding: 0.25rem;
 }
