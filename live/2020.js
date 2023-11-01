@@ -64,7 +64,7 @@ document.addEventListener('readystatechange', event => {
     const option = document.createElement('option');
     option.innerText = '2020年のプレイタイムズ';
     option.setAttribute("selected", "true");
-    option.setAttribute("value", "index.html");
+    option.setAttribute("disabled", "true");
     select.appendChild(option);
 
     const liveAll = Object.entries(playAll);
@@ -76,7 +76,7 @@ document.addEventListener('readystatechange', event => {
     });
 
     select.onchange = () => {
-      location.assign(live + select.value)
+      location.assign(live + this.value)
     }
   }
 });
