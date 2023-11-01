@@ -256,7 +256,8 @@ h2 button {
 }
 
 article {
-    display: grid;
+    display: flex;
+    flex: 1 500px;
     flex-wrap: wrap;
     gap: 1rem;
     padding: 1rem;
