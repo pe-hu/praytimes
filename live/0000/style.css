@@ -58,11 +58,13 @@ body {
     background-color: #f3c5c6;
 }
 
-h1 img,
-h1 small {
-    position: relative;
-    filter: brightness(2);
-    mix-blend-mode: exclusion;
+h1 {
+    pointer-events: none;
+    user-select: none;
+}
+
+h1 img {
+    filter: brightness(1.5) invert();
 }
 
 h1,
@@ -163,6 +165,7 @@ h2 {
     place-self: end;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     gap: 0.5rem;
     list-style: inside none;
     padding: 1rem;
@@ -174,6 +177,7 @@ h2 {
 }
 
 #randomdraggable li {
+    text-align: center;
     flex: auto;
     height: 20vw;
     max-height: 10rem;
@@ -183,6 +187,7 @@ h2 {
 #randomdraggable li video {
     border: solid 0.2rem transparent;
     border-radius: 0.25rem;
+    background: #000;
     transition: 0.5s;
     max-width: 7rem;
     height: 100%;
@@ -224,6 +229,13 @@ fieldset {
     padding: 0.5rem;
 }
 
+header button {
+    color: #fff;
+    border-radius: 0.5rem;
+    background: #f3c5c6;
+    padding: 0.5rem;
+}
+
 h2 button {
     background-image: url(icon.png);
     background-size: cover;
@@ -233,4 +245,18 @@ h2 button {
     height: 100px;
     max-width: 20vw;
     max-height: 20vw;
+}
+
+article {
+    display: grid;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+
+}
+
+article section {
+    background: #fff;
+    border-radius: 1rem;
+    padding: 1.52rem;
 }

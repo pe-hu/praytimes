@@ -51,7 +51,14 @@ function creatHeader () {
   const header = document.querySelector('header');
   const select = document.createElement('select');
   select.setAttribute('name', 'twenty')
+  const back = document.createElement('button');
+  back.setAttribute('type','button');
+  back.textContent = '全部見る'
+  back.addEventListener('click', function() {
+    location.assign('/live/')
+  },false)
   header.appendChild(select);
+  header.appendChild(back);
 }
 
 document.addEventListener('readystatechange', event => {
@@ -76,7 +83,7 @@ document.addEventListener('readystatechange', event => {
     });
 
     select.onchange = () => {
-      location.assign(live + this.value)
+      location.assign(live + select.value)
     }
   }
 });
