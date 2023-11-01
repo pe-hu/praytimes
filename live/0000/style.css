@@ -222,18 +222,22 @@ fieldset {
     outline: none;
 }
 
-[name="twenty"] {
-    background: #fff;
+header a,
+header button,
+[name="twenty"]{
     border-radius: 0.5rem;
-    color: #f3c5c6;
     padding: 0.5rem;
+}
+
+header a:hover,
+[name="twenty"] {
+    color: #f3c5c6;
+    background: #fff;
 }
 
 header button {
     color: #fff;
-    border-radius: 0.5rem;
     background: #f3c5c6;
-    padding: 0.5rem;
 }
 
 h2 button {
