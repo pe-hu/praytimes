@@ -118,12 +118,17 @@ header {
 }
 
 header,
-footer {
-    gap: 1rem;
-    padding: 0.5rem;
+footer,
+article {
     display: flex;
     align-items: start;
     flex-wrap: wrap;
+    gap: 1rem;
+}
+
+header,
+footer {
+    padding: 0.5rem;
     justify-content: space-between;
 }
 
@@ -256,10 +261,7 @@ h2 button {
 }
 
 article {
-    display: flex;
-    flex: 1 500px;
-    flex-wrap: wrap;
-    gap: 1rem;
+    flex: 1 750px;
     padding: 1rem;
 
 }
@@ -267,5 +269,5 @@ article {
 article section {
     background: #fff;
     border-radius: 1rem;
-    padding: 1.52rem;
+    padding: 1.5rem;
 }
