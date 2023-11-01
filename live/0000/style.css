@@ -177,12 +177,14 @@ h2 {
     flex: auto;
     height: 20vw;
     max-height: 10rem;
+    max-width: 7rem;
 }
 
 #randomdraggable li video {
     border: solid 0.2rem transparent;
     border-radius: 0.25rem;
     transition: 0.5s;
+    max-width: 7rem;
     height: 100%;
 }
 
