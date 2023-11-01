@@ -17,6 +17,14 @@ async function fetchMD(url = '', query = '') {
         });
 }
 
+async function fetchHTML(url = '', query = '') {
+    fetch(url)
+        .then(response => response.text())
+        .then(html => {
+            document.querySelector(query).innerHTML = html
+        });
+}
+
 function shuffle(arrays) {
     const array = arrays.slice();
     for (let i = array.length - 1; i >= 0; i--) {
@@ -35,7 +43,6 @@ function randomdVideos(obj) {
         randomdRaggable.appendChild(li);
         
         const video = document.createElement('video');
-        video.setAttribute('poster', `${playAll[i].poster}`);
         video.muted = true;
         video.setAttribute('muted', 'true');
         video.setAttribute('playsinline', '');

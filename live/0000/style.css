@@ -49,22 +49,13 @@ h2 {
     margin: 0;
 }
 
-header a {
-    padding: 0.25rem;
-}
-
 a {
     color: #000;
     text-decoration: none;
 }
 
-body,
-header a:hover {
+body {
     background-color: #f3c5c6;
-}
-
-header a:hover {
-    color: #fff;
 }
 
 h1 img,
@@ -212,7 +203,9 @@ button,
 select {
     appearance: none;
     background: transparent;
+    color: #000;
     font-family: inherit;
+    font-size: inherit;
 }
 
 button,
@@ -220,6 +213,13 @@ select,
 fieldset {
     border: none;
     outline: none;
+}
+
+[name="twenty"] {
+    background: #fff;
+    border-radius: 0.5rem;
+    color: #f3c5c6;
+    padding: 0.5rem;
 }
 
 h2 button {

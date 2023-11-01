@@ -14,8 +14,7 @@
         window.addEventListener("DOMContentLoaded", function () {
             creatHeader ();
             windowScreen();
-            fetchMD('text/ja.md', '#ja');
-            fetchMD('text/en.md', '#en');
+            fetchHTML('article.html', '#readme');
         }, false);
 
         window.onresize = tmResize;
@@ -38,16 +37,16 @@
 
     <!--og:meta-->
     <meta content="website" property="og:type">
-    <title>5月3日のプレイタイムズ</title>
-    <meta content="5月3日のプレイタイムズ" property="og:title">
-    <meta content="We had shared the video of food/cooking at プレイタイムズ on 5th July." name="description">
-    <meta content="We had shared the video of food/cooking at プレイタイムズ on 5th July." property="og:description">
+    <title>11月1日のプレイタイムズ</title>
+    <meta content="11月1日のプレイタイムズ" property="og:title">
+    <meta content="We had recorded a video of looking at the sky on プレイタイムズ on 1st November." name="description">
+    <meta content="We had recorded a video of looking at the sky on プレイタイムズ on 1st November." property="og:description">
 
     <!--for Twitter-->
     <meta content="summary_large_image" name="twitter:card">
-    <meta content="http://praytimes.pe.hu/live/0503/" property="og:url">
-    <meta content="http://praytimes.pe.hu/live/0503/" property="og:image">
-    <meta content="http://praytimes.pe.hu/live/0503/cover.jpeg" name="twitter:image:src">
+    <meta content="http://praytimes.pe.hu/live/1101/" property="og:url">
+    <meta content="http://praytimes.pe.hu/live/1101/" property="og:image">
+    <meta content="http://praytimes.pe.hu/live/1101/cover.jpeg" name="twitter:image:src">
 
     <link rel="stylesheet" href="../0000/style.css">
     <link rel="icon" href="../0000/icon.png" type="image/png">
@@ -57,7 +56,7 @@
     <header></header>
     <main>
         <h1>
-            <b>5</b>月<b>3</b>日
+            <b>11</b>月<b>1</b>日
             <small>の</small><br />
             <img src="../0000/logo_black.png" alt="プレイタイムズ">
         </h1>
@@ -70,8 +69,7 @@
         <ul id="randomdraggable"></ul>
     </main>
     <article hidden>
-        <section id="ja"></section>
-        <section id="en"></section>
+        <section id="readme"></section>
     </article>
 </body>
 

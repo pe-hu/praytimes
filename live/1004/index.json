@@ -1,13 +1,43 @@
 {
   "title" : "10月4日のプレイタイムズ",
   "datetime": "2020/10/04 10:30:00",
-  "description" : "We had recorded a video of the foot of walking at プレイタイムズ on 10th October.",
+  "description" : "We had recorded a video of the foot of walking at プレイタイムズ on 4th October.",
   "author" : [
     "wanna be youth",
     "2n2n",
     "Ayumi Akutagawa",
     "Kaori Nakao",
     "Kazuma Sasajima"
+  ],
+  "play": [
+    {
+      "id": "one",
+      "poster": "cover.jpeg",
+      "src": [
+        "001.mp4",
+        "008.mp4",
+        "009.mp4",
+        "010.mp4"
+      ]
+    },
+    {
+      "id": "two",
+      "poster": "cover.jpeg",
+      "src": [
+        "002.mp4",
+        "003.mp4",
+        "006.mp4",
+        "007.mp4"
+      ]
+    },
+    {
+      "id": "three",
+      "poster": "cover.jpeg",
+      "src": [
+        "004.mp4",
+        "005.mp4"
+      ]
+    }
   ],
   "youtube" : "LPlODq-ZKTE"
 }

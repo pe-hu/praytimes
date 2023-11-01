@@ -6,10 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
     <script src="../index.js"></script>
+    <script src="../2020.js"></script>
     <script>
-        indexJSON('index.json')
+        let live = "../";
+        indexJSON('index.json');
 
         window.addEventListener("DOMContentLoaded", function () {
+            creatHeader ();
             windowScreen();
             fetchMD('text/aa.md', '#aa');
             fetchMD('text/kn.md', '#kn');
@@ -43,17 +46,16 @@
 
     <!--for Twitter-->
     <meta content="summary_large_image" name="twitter:card">
-    <meta content="http://praytimes.pe.hu/" property="og:url">
-    <meta content="http://praytimes.pe.hu/" property="og:image">
-    <meta content="http://praytimes.pe.hu/" name="twitter:image:src">
+    <meta content="http://praytimes.pe.hu/live/0705/" property="og:url">
+    <meta content="http://praytimes.pe.hu/live/0705/" property="og:image">
+    <meta content="http://praytimes.pe.hu/live/0705/cover.jpeg" name="twitter:image:src">
 
     <link rel="stylesheet" href="../0000/style.css">
     <link rel="icon" href="../0000/icon.png" type="image/png">
 </head>
 
 <body>
-    <header>
-    </header>
+    <header></header>
     <main>
         <h1>
             <b>7</b>月<b>5</b>日
@@ -66,13 +68,13 @@
             <button type="button"></button>
         </h2>
         <canvas id="live"></canvas>
-        <article hidden>
-            <section id="aa"></section>
-            <section id="kn"></section>
-            <section id="ks"></section>
-        </article>
         <ul id="randomdraggable"></ul>
     </main>
+    <article hidden>
+        <section id="aa"></section>
+        <section id="kn"></section>
+        <section id="ks"></section>
+    </article>
 </body>
 
 </html>

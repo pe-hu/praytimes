@@ -6,8 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no">
   <script src="index.js"></script>
+  <script src="live/2020.js"></script>
   <script type="text/javascript">
     let directory = "inn/img/";
+    let live = "live/";
 
     document.addEventListener('readystatechange', event => {
       if (event.target.readyState === 'interactive') {
@@ -64,6 +66,7 @@
     <time id="date" class="pehu"></time>
     <button type="button"></button>
   </header>
+
   <main>
     <h1>
       <img src="inn/logo/logo_white.png" alt="プレイタイムズ">
@@ -71,6 +74,7 @@
     <h2 id="alt"></h2>
     <ul id="randomdraggable"></ul>
   </main>
+
   <article id="content">
     <h2>私たちはGoogleハングアウト上に、<b>プレイタイムズ</b> というビデオ通話を行うためのグループを作成しました。</h2>
     <section>
@@ -131,6 +135,7 @@
       <img src="inn/image.jpg" alt="楽観のテクニック">
     </aside>
   </article>
+
   <footer>
     <a class="pehu" href="https://pehu.creative-community.space/" target="_blank">
       ∧°┐ | creative, community space
@@ -142,7 +147,9 @@
     <button type="button" id="closeBtn">×</button>
     <fieldset>
       <legend>記録映像</legend>
-      <select id="twenty"></select>
+      <select name="twenty"></select>
+      <br>
+      <button id="liveBtn" type="button" onclick="location.assign('live/')">PLAY</button>
     </fieldset>
   </dialog>
 </body>

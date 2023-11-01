@@ -1,6 +1,5 @@
 {
   "title" : "3月8日のプレイタイムズ",
-  "datetime": "2020/03/08 10:30:00",
   "description" : "We had recorded a video installing プレイタイムズ at BnA Alter Museum.",
   "author" : [
     "Ayumi Akutagawa",
@@ -13,49 +12,49 @@
     {
       "id": "one",
       "src": [
-        "002.mp4"
+        "001.mp4"
       ]
     },
     {
       "id": "two",
       "src": [
-        "003.mp4"
+        "002.mp4"
       ]
     },
     {
       "id": "three",
       "src": [
-        "004.mp4"
+        "003.mp4"
       ]
     },
     {
       "id": "four",
       "src": [
-        "005.mp4"
+        "004.mp4"
       ]
     },
     {
       "id": "five",
       "src": [
-        "006.mp4"
+        "005.mp4"
       ]
     },
     {
       "id": "six",
       "src": [
-        "007.mp4"
+        "006.mp4"
       ]
     },
     {
       "id": "seven",
       "src": [
-        "008.mp4"
+        "007.mp4"
       ]
     },
     {
       "id": "eight",
       "src": [
-        "009.mp4"
+        "008.mp4"
       ]
     }
   ],

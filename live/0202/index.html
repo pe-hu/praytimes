@@ -6,20 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
     <script src="../index.js"></script>
+    <script src="../2020.js"></script>
     <script>
+        let live = "../";
         indexJSON('index.json')
 
-        async function fetchMD(url = '', query = '') {
-            fetch(url)
-                .then(response => response.text())
-                .then(md => {
-                    document.querySelector(query).innerText = md
-                });
-        }
-
         window.addEventListener("DOMContentLoaded", function () {
+            creatHeader ()
             windowScreen();
-            fetchMD('README.md', '#readme');
         }, false);
 
         window.onresize = tmResize;
@@ -32,7 +26,7 @@
         function windowScreen() {
             const canvas = document.querySelector("#live");
             canvas.width = window.innerWidth;
-            canvas.height = window.innerWidth / 1.75;
+            canvas.height = window.innerWidth / 1.55;
         }
 
         function pageResize() {
@@ -49,17 +43,16 @@
 
     <!--for Twitter-->
     <meta content="summary_large_image" name="twitter:card">
-    <meta content="http://praytimes.pe.hu/" property="og:url">
-    <meta content="http://praytimes.pe.hu/" property="og:image">
-    <meta content="http://praytimes.pe.hu/" name="twitter:image:src">
+    <meta content="http://praytimes.pe.hu/live/0202/" property="og:url">
+    <meta content="http://praytimes.pe.hu/live/0202/" property="og:image">
+    <meta content="http://praytimes.pe.hu/live/0202/cover.jpeg" name="twitter:image:src">
 
     <link rel="stylesheet" href="../0000/style.css">
     <link rel="icon" href="../0000/icon.png" type="image/png">
 </head>
 
 <body>
-    <header>
-    </header>
+    <header></header>
     <main>
         <h1>
             <b>2</b>月<b>2</b>日
@@ -77,7 +70,6 @@
         </article>
         <ul id="randomdraggable"></ul>
     </main>
-    <script src="../play.js"></script>
 </body>
 
 </html>

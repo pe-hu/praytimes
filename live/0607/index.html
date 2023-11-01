@@ -14,8 +14,7 @@
         window.addEventListener("DOMContentLoaded", function () {
             creatHeader ();
             windowScreen();
-            fetchMD('text/ja.md', '#ja');
-            fetchMD('text/en.md', '#en');
+            fetchMD('README.md', '#readme');
         }, false);
 
         window.onresize = tmResize;
@@ -27,7 +26,7 @@
 
         function windowScreen() {
             const canvas = document.querySelector("#live");
-            canvas.width = window.innerHeight / 1.75;
+            canvas.width = window.innerHeight / 1.5;
             canvas.height = window.innerHeight;
         }
 
@@ -38,26 +37,27 @@
 
     <!--og:meta-->
     <meta content="website" property="og:type">
-    <title>5月3日のプレイタイムズ</title>
-    <meta content="5月3日のプレイタイムズ" property="og:title">
-    <meta content="We had shared the video of food/cooking at プレイタイムズ on 5th July." name="description">
-    <meta content="We had shared the video of food/cooking at プレイタイムズ on 5th July." property="og:description">
+    <title>6月7日のプレイタイムズ</title>
+    <meta content="6月7日のプレイタイムズ" property="og:title">
+    <meta content="We had shared the video of the water at プレイタイムズ on 5th July." name="description">
+    <meta content="We had shared the video of the water at プレイタイムズ on 5th July." property="og:description">
 
     <!--for Twitter-->
     <meta content="summary_large_image" name="twitter:card">
-    <meta content="http://praytimes.pe.hu/live/0503/" property="og:url">
-    <meta content="http://praytimes.pe.hu/live/0503/" property="og:image">
-    <meta content="http://praytimes.pe.hu/live/0503/cover.jpeg" name="twitter:image:src">
+    <meta content="http://praytimes.pe.hu/live/0607/" property="og:url">
+    <meta content="http://praytimes.pe.hu/live/0607/" property="og:image">
+    <meta content="http://praytimes.pe.hu/live/0607/cover.jpeg" name="twitter:image:src">
 
     <link rel="stylesheet" href="../0000/style.css">
     <link rel="icon" href="../0000/icon.png" type="image/png">
 </head>
 
 <body>
-    <header></header>
+    <header>
+    </header>
     <main>
         <h1>
-            <b>5</b>月<b>3</b>日
+            <b>6</b>月<b>7</b>日
             <small>の</small><br />
             <img src="../0000/logo_black.png" alt="プレイタイムズ">
         </h1>
@@ -70,8 +70,7 @@
         <ul id="randomdraggable"></ul>
     </main>
     <article hidden>
-        <section id="ja"></section>
-        <section id="en"></section>
+        <section id="readme"></section>
     </article>
 </body>
 
