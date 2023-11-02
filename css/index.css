@@ -162,7 +162,7 @@ select,
 input[type="button"] {
   appearance: none;
   background: transparent;
-  color: #000;
+  color: inherit;
   font-family: inherit;
   font-size: inherit;
 }
