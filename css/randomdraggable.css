@@ -47,11 +47,14 @@ main {
     }
 }
 
+header {
+    padding: 0.5rem;
+}
+
 header,
 footer {
     width: 100%;
     gap: 1rem;
-    padding: 0.5rem;
     display: flex;
     align-items: start;
     flex-wrap: wrap;
