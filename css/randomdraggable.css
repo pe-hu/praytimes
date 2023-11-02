@@ -21,14 +21,6 @@ main {
     }
 }
 
-@page {
-  size: A4 portrait;
-}
-
-@media print {
-    height: 100vh;
-}
-
 header {
     position: fixed;
     z-index: 100;
@@ -39,6 +31,20 @@ main {
     top: 0;
     left: 0;
     right: 0;
+}
+
+@page {
+  size: A4 portrait;
+}
+
+@media print {
+    body {
+        height: 100vh;
+    }
+    
+    header {
+        position: absolute;
+    }
 }
 
 header,
