@@ -118,7 +118,6 @@ h2 button {
 
 article {
     display: flex;
-    flex: 2 500px;
     flex-wrap: wrap;
     align-items: start;
     justify-content: space-between;
@@ -129,5 +128,6 @@ article {
 article section {
     background: #fff;
     border-radius: 1rem;
+    flex: 2 500px;
     padding: 1.5rem;
 }
