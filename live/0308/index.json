@@ -1,5 +1,6 @@
 {
   "title" : "3月8日のプレイタイムズ",
+  "datetime": "2020/03/08 10:30:00",
   "description" : "We had recorded a video installing プレイタイムズ at BnA Alter Museum.",
   "author" : [
     "Ayumi Akutagawa",
@@ -38,5 +39,6 @@
       ]
     }
   ],
+  "audio" : "weare.m4a",
   "youtube" : "AnqKtwk7mKU"
 }

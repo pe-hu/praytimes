@@ -11,14 +11,12 @@
   "play": [
     {
       "id": "one",
-      "poster": "cover.jpeg",
       "src": [
         "001.mp4"
       ]
     },
     {
       "id": "two",
-      "poster": "cover.jpeg",
       "src": [
         "002.mp4",
         "003.mp4"
@@ -26,32 +24,29 @@
     },
     {
       "id": "three",
-      "poster": "cover.jpeg",
       "src": [
         "004.mp4"
       ]
     },
     {
       "id": "four",
-      "poster": "cover.jpeg",
       "src": [
         "005.mp4"
       ]
     },
     {
       "id": "five",
-      "poster": "cover.jpeg",
       "src": [
         "006.mp4"
       ]
     },
     {
       "id": "six",
-      "poster": "cover.jpeg",
       "src": [
         "007.mp4"
       ]
     }
   ],
+  "audio" : "falling.m4a",
   "youtube" : "Ur2Yxipmg5w"
 }

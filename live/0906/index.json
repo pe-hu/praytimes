@@ -12,7 +12,6 @@
   "play": [
     {
       "id": "one",
-      "poster": "cover.jpeg",
       "src": [
         "001.mp4",
         "003.mp4",
@@ -21,7 +20,6 @@
     },
     {
       "id": "two",
-      "poster": "cover.jpeg",
       "src": [
         "002.mp4",
         "006.mp4"
@@ -29,12 +27,12 @@
     },
     {
       "id": "three",
-      "poster": "cover.jpeg",
       "src": [
         "005.mp4",
         "007.mp4"
       ]
     }
   ],
+  "audio" : "skin.m4a",
   "youtube" : "4iRCoFB2qZw"
 }

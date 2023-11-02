@@ -35,19 +35,23 @@ function shuffle(arrays) {
 }
 
 function randomdVideos(obj) {
+    const main = document.querySelector('main');
     const randomdRaggable = document.querySelector('#randomdraggable');
 
     const playAll = shuffle(obj.play);
     for (let i = 0; i < playAll.length; i++) {
         const li = document.createElement('li');
         randomdRaggable.appendChild(li);
-        
+
         const video = document.createElement('video');
-        video.muted = true;
-        video.setAttribute('muted', 'true');
-        video.setAttribute('playsinline', '');
         li.appendChild(video);
-        
+
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            video.muted = true;
+            video.setAttribute('muted', 'true');
+            video.setAttribute('playsinline', '');
+        }
+
         const canvas = document.querySelector("#live");
         let canvasCtx = canvas.getContext('2d');
 
@@ -59,33 +63,24 @@ function randomdVideos(obj) {
         if (playAll[i].src) {
             let ii = 0
             const source = document.createElement('source');
-            source.setAttribute("type", "video/mp4")
+            source.setAttribute("type", "video/mp4");
             source.src = playAll[i].src[ii]
             video.appendChild(source)
-            const audio = new Audio(playAll[i].src[ii]);
-            audio.hidden = true;
-            li.appendChild(audio);
 
             video.addEventListener('ended', () => {
                 if (playAll[i].src.length === 0) {
                     ii = 0
                     source.src = playAll[i].src[ii]
-                    audio.src = playAll[i].src[ii]
                     video.pause()
-                    audio.pause()
                 } else if (ii === playAll[i].src.length) {
                     ii = 0
                     source.src = playAll[i].src[ii]
-                    audio.src = playAll[i].src[ii]
                     video.pause()
-                    audio.pause()
                 } else if (ii < playAll[i].src.length - 1) {
                     ii++
                     source.src = playAll[i].src[ii]
-                    audio.src = playAll[i].src[ii]
                     video.load()
                     video.play()
-                    audio.play()
                 }
             }, false);
         }
@@ -98,12 +93,18 @@ function randomdVideos(obj) {
             canvasUpdate()
         })
     }
+
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        const audio = new Audio(obj.audio);
+        audio.hidden = true;
+        main.appendChild(audio);
+    }
 }
 
 function playVideo() {
     const h2 = document.querySelector('h2');
     const h2b = document.querySelector("h2 b");
-    
+
     h2.hidden = false
     h2.addEventListener('click', function () {
         h2.className = h2.className === "start" ? "stop" : "start";
