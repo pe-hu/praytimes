@@ -25,12 +25,20 @@
 }
 
 @media screen and (max-width: 500px) {
-
   #content section,
   #content aside {
     width: 100%;
   }
+}
 
+@media print {
+  .noprint {
+    display: none;
+  }
+
+  #content {
+    height: 100vh;
+  }
 }
 
 .howto {
