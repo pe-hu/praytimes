@@ -1,57 +1,7 @@
-html {
-    font-size: 16px;
-    height: -webkit-fill-available;
-}
-
-@media screen and (max-width: 750px) {
-    html {
-        font-size: 2.5vw;
-    }
-}
-
-@media screen and (max-width: 500px) {
-    html {
-        font-size: 2.75vw;
-    }
-}
-
-* {
-    box-sizing: border-box;
-}
-
-@font-face {
-    font-family: "MS Mincho";
-    src: url("https://pe-hu.github.io/ver/font/MSMincho.ttc");
-}
-
-@font-face {
-    font-family: "SimSong";
-    src: url("https://pe-hu.github.io/ver/font/SimSun.ttc");
-}
-
-@font-face {
-    font-family: "ヒラギノ丸ゴ Pro W4";
-    src: url("HiraMaruPro-W4.otf");
-}
-
-body {
-    font-family: "ヒラギノ丸ゴ Pro W4", "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro", "HG丸ｺﾞｼｯｸM-PRO", "HGMaruGothicMPRO", sans-serif;
-}
-
-.pehu {
-    font-family: "MS Mincho", "SimSong", serif;
-}
-
-body,
 h1,
 h2 {
     padding: 0;
     margin: 0;
-}
-
-a {
-    color: #000;
-    text-decoration: none;
 }
 
 body {
@@ -61,26 +11,15 @@ body {
 h1 {
     pointer-events: none;
     user-select: none;
+    margin-top: 2.5rem;
 }
 
 h1 img {
     filter: brightness(1.5) invert();
 }
 
-h1,
-h2,
-h1 b,
-h2 b {
-    font-weight: 500;
-}
-
-h1,
-h1 b {
-    font-size: 125%;
-}
-
-h1 {
-    margin-top: 2.5rem;
+h2:hover {
+    filter: grayscale() opacity(0.5);
 }
 
 h1 b,
@@ -98,51 +37,9 @@ h2 b {
     margin-bottom: 2.5rem;
 }
 
-header,
-h1 img,
-footer hr {
-    width: 100%;
-}
-
-h1 {
-    width: 75%;
-    max-width: 550px;
-}
-
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-}
-
-header,
-footer,
-article {
-    display: flex;
-    align-items: start;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-header,
-footer {
-    padding: 0.5rem;
-    justify-content: space-between;
-}
-
 main {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    display: grid;
-    place-items: center;
-    width: 100%;
     height: 100vh;
     max-height: -webkit-fill-available;
-    overflow: hidden;
 }
 
 h1,
@@ -152,7 +49,9 @@ h2 {
 }
 
 h2 {
+    cursor: pointer;
     text-align: center;
+    transition: 0.5s;
 }
 
 #live {
@@ -166,26 +65,7 @@ h2 {
     z-index: 0;
 }
 
-#randomdraggable {
-    place-self: end;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 0.5rem;
-    list-style: inside none;
-    padding: 1rem;
-    margin: 0;
-    overflow-x: auto;
-    width: 100%;
-    position: relative;
-    z-index: 10;
-}
-
 #randomdraggable li {
-    text-align: center;
-    flex: auto;
-    height: 20vw;
-    max-height: 10rem;
     max-width: 7rem;
 }
 
@@ -198,41 +78,17 @@ h2 {
     height: 100%;
 }
 
-#randomdraggable li video:active {
-    border: solid 0.2rem #f3c5c6;
-}
-
 #randomdraggable li video:hover {
     border: solid 0.2rem #fff;
-}
-
-hr {
-    border: none;
-    clear: both;
-}
-
-button,
-select {
-    appearance: none;
-    background: transparent;
-    color: #000;
-    font-family: inherit;
-    font-size: inherit;
-}
-
-button,
-select,
-fieldset {
-    border: none;
-    outline: none;
 }
 
 header a {
     border-radius: 0.5rem;
     padding: 0.25rem;
+    transition: 0.5s;
 }
 
-header button,
+header input[type="button"],
 [name="twenty"] {
     border-radius: 0.5rem;
     padding: 0.5rem;
@@ -244,13 +100,13 @@ header a:hover,
     background: #fff;
 }
 
-header button {
+header input[type="button"] {
     color: #fff;
     background: #f3c5c6;
 }
 
 h2 button {
-    background-image: url(icon.png);
+    background-image: url(../../inn/icon.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -261,8 +117,12 @@ h2 button {
 }
 
 article {
+    display: flex;
     flex: 1 1 750px;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: space-between;
+    gap: 1rem;
     padding: 1rem;
 }
 

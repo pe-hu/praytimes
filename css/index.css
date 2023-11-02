@@ -108,16 +108,19 @@ a.link:hover,
 
 h1,
 h2,
+h1 b,
+h2 b,
 h3 {
   font-weight: 500;
 }
 
-h1,
 h3,
 #modal button {
   font-size: 150%;
 }
 
+h1,
+h1 b,
 #date,
 #modal,
 select {
@@ -138,6 +141,10 @@ hr {
   width: 100%;
 }
 
+h1 {
+  width: 75%;
+}
+
 h1,
 .logo {
   max-width: 550px;
@@ -149,15 +156,19 @@ h1,
 }
 
 button,
-select {
+select,
+input[type="button"] {
   appearance: none;
   background: transparent;
+  color: #000;
   font-family: inherit;
+  font-size: inherit;
 }
 
 button,
 select,
-fieldset {
+fieldset,
+input[type="button"] {
   border: none;
   outline: none;
 }

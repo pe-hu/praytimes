@@ -51,9 +51,9 @@ function creatHeader () {
   const header = document.querySelector('header');
   const select = document.createElement('select');
   select.setAttribute('name', 'twenty')
-  const back = document.createElement('button');
+  const back = document.createElement('input');
   back.setAttribute('type','button');
-  back.textContent = '全部見る'
+  back.value = '全部見る'
   back.addEventListener('click', function() {
     location.assign('/live/')
   },false)

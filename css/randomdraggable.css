@@ -4,8 +4,9 @@ main {
     background-repeat: no-repeat;
     display: grid;
     place-items: center;
+    position: relative;
     width: 100%;
-    overflow: auto;
+    overflow: hidden;
 }
 
 @media (orientation: landscape) {
@@ -47,6 +48,7 @@ footer {
     place-self: end;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     gap: 0.5rem;
     list-style: inside none;
     padding: 1rem;
@@ -58,19 +60,20 @@ footer {
 }
 
 #randomdraggable li {
+    text-align: center;
     flex: auto;
     height: 20vw;
     max-height: 10rem;
 }
 
 #randomdraggable li img {
-    border: 2.5px solid transparent;
+    border: solid 0.2rem transparent;
     border-radius: 0.5rem;
     transition: 0.5s;
 }
 
 #randomdraggable li img:hover {
-    border: 2.5px solid #fff;
+    border: solid 0.2rem #fff;
     cursor: pointer;
     filter: brightness(1.5);
 }

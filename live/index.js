@@ -101,11 +101,6 @@ function randomdVideos(obj) {
 }
 
 function playVideo() {
-    let startTime;
-    let playtime = 0;
-    let timerId;
-    let timeToadd = 0;
-    
     const h2 = document.querySelector('h2');
     const h2b = document.querySelector("h2 b");
     
