@@ -21,6 +21,14 @@ main {
     }
 }
 
+@page {
+  size: A4 landscape;
+}
+
+@media print {
+    height: 100vh;
+}
+
 header {
     position: fixed;
     z-index: 100;
