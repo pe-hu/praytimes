@@ -45,6 +45,10 @@ main {
     header {
         position: absolute;
     }
+
+    footer {
+        place-self: end center;
+    }
 }
 
 header {
