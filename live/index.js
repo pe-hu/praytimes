@@ -72,7 +72,7 @@ function randomdVideos(obj) {
                     ii = 0
                     source.src = playAll[i].src[ii]
                     video.pause()
-                } else if (ii === playAll[i].src.length) {
+                } else if (ii === playAll[i].src.length - 1) {
                     ii = 0
                     source.src = playAll[i].src[ii]
                     video.pause()
@@ -98,6 +98,20 @@ function randomdVideos(obj) {
         const audio = new Audio(obj.audio);
         audio.hidden = true;
         main.appendChild(audio);
+
+        audio.addEventListener('ended', () => {
+            const all = document.querySelectorAll('video');
+            all.forEach((iii) => {
+                iii.remove()
+            })
+
+            const h2 = document.querySelector('h2');
+            const h2b = document.querySelector("h2 b");
+            h2b.textContent = "Replay";
+            h2.addEventListener('click', function () {
+                location.reload()
+            });
+        }, false);
     }
 }
 
