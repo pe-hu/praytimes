@@ -107,6 +107,7 @@ function randomdVideos(obj) {
 
             const h2 = document.querySelector('h2');
             const h2b = document.querySelector("h2 b");
+            h2.className = "replay";
             h2b.textContent = "Replay";
             h2.addEventListener('click', function () {
                 location.reload()
@@ -119,7 +120,6 @@ function playVideo() {
     const h2 = document.querySelector('h2');
     const h2b = document.querySelector("h2 b");
 
-    h2.hidden = false
     h2.addEventListener('click', function () {
         h2.className = h2.className === "start" ? "stop" : "start";
         h2b.textContent = h2b.textContent === "PLAY" ? "PAUSE" : "PLAY";
@@ -146,6 +146,9 @@ function playVideo() {
 }
 
 window.addEventListener("load", () => {
+    const h2 = document.querySelector('h2');
+    h2.hidden = false
+    
     const live = document.querySelector('#live');
     live.style.backgroundImage = 'url(cover.jpeg)'
     const scrollElement = document.querySelector('#randomdraggable');
