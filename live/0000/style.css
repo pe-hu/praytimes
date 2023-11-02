@@ -118,7 +118,7 @@ h2 button {
 
 article {
     display: flex;
-    flex: 1 1 750px;
+    flex: 2 500px;
     flex-wrap: wrap;
     align-items: start;
     justify-content: space-between;
