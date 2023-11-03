@@ -5,6 +5,7 @@ async function indexJSON(requestURL) {
     const response = await fetch(request);
     const jsonIndex = await response.text();
     const index = JSON.parse(jsonIndex);
+    thisDate(index)
     randomdVideos(index);
     playVideo(index)
 }
@@ -34,12 +35,39 @@ function shuffle(arrays) {
     return array;
 }
 
+function thisDate(obj) {
+    const dataTime = document.querySelector('#time button');
+    dataTime.textContent = obj.datetime;
+    dataTime.addEventListener('click', function (event) {
+        let ago = new Date(obj.datetime);
+        let diff = new Date().getTime() - ago.getTime();
+        let progress = new Date(diff);
+        let now;
+        if (progress.getUTCFullYear() - 1970) {
+            now = progress.getUTCFullYear() - 1970 + ' years ago';
+        } else if (progress.getUTCMonth()) {
+            now = progress.getUTCMonth() + ' months ago';
+        } else if (progress.getUTCDate() - 1) {
+            now = progress.getUTCDate() - 1 + ' days ago';
+        } else if (progress.getUTCHours()) {
+            now = progress.getUTCHours() + ' hour ago';
+        } else if (progress.getUTCMinutes()) {
+            now = progress.getUTCMinutes() + ' minutes ago';
+        } else {
+            now = 'now';
+        }
+        event.target.textContent = event.target.textContent === obj.datetime ? now : obj.datetime;
+    });
+}
+
 function randomdVideos(obj) {
     const main = document.querySelector('main');
     const title = document.querySelector('h1 span');
+    const youtube = document.querySelector('#youtube');
     const randomdRaggable = document.querySelector('#randomdraggable');
 
-    title.innerHTML = obj.title
+    title.innerHTML = obj.title;
+    youtube.href = `https://youtu.be/${obj.youtube}`;
     const playAll = shuffle(obj.play);
     for (let i = 0; i < playAll.length; i++) {
         const li = document.createElement('li');

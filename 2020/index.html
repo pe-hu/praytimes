@@ -13,14 +13,13 @@
         if (hash) {
             let live = hash + '/'
             indexJSON(live + 'index.json')
+            fetchHTML(live + 'index.html', '#readme');
         } else {
             let live = ''
             indexJSON('index.json')
         }
 
         window.addEventListener("DOMContentLoaded", function () {
-            fetchHTML('buynow.html', '#buynow section');
-
             const select = document.querySelector('[name="twenty"]')
             select.onchange = () => {
                 location.assign('#' + select.value);
@@ -44,7 +43,7 @@
 
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/randomdraggable.css">
-    <link rel="stylesheet" href="0000/style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" href="../inn/icon.png" type="image/png">
 </head>
 
@@ -71,10 +70,21 @@
         <ul id="randomdraggable"></ul>
     </main>
 
-    <article id="buynow">
+    <article>
         <select name="twenty"></select>
-        <section></section>
+        <section>
+            私たちは、毎月第一日曜日の午前10時から30分、プレイタイムズに集まった生活を記録しました。<br>
+            We were recording the screen of プレイタイムズ on the first Sunday of the month.
+        </section>
     </article>
+    <article id="readme"></article>
+    <footer>
+        <span id="time">
+            Pray on
+            <button type="button"></button>
+        </span>
+        <a id="youtube" target="_blank">Watch the Full Video</a>
+    </footer>
 </body>
 
 </html>

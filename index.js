@@ -28,17 +28,17 @@ function thisDate(obj) {
     let progress = new Date(diff);
     let now;
     if (progress.getUTCFullYear() - 1970) {
-      now = progress.getUTCFullYear() - 1970 + '年前';
+      now = progress.getUTCFullYear() - 1970 + ' years ago';
     } else if (progress.getUTCMonth()) {
-      now = progress.getUTCMonth() + 'ヶ月前';
+      now = progress.getUTCMonth() + ' months ago';
     } else if (progress.getUTCDate() - 1) {
-      now = progress.getUTCDate() - 1 + '日前';
+      now = progress.getUTCDate() - 1 + ' days ago';
     } else if (progress.getUTCHours()) {
-      now = progress.getUTCHours() + '時間前';
+      now = progress.getUTCHours() + ' hour ago';
     } else if (progress.getUTCMinutes()) {
-      now = progress.getUTCMinutes() + '分前';
+      now = progress.getUTCMinutes() + ' minutes ago';
     } else {
-      now = 'たった今';
+      now = 'now';
     }
     event.target.textContent = event.target.textContent === obj.date ? now : obj.date;
   });
