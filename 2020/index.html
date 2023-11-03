@@ -9,21 +9,22 @@
     <script src="menu.js"></script>
     <script>
         const urlHash = location.hash;
-        let hash = urlHash.replace('#', '')
+        let hash = urlHash.replace('#', '');
         if (hash) {
-            let live = hash + '/'
-            indexJSON(live + 'index.json')
+            let live = hash + '/';
+            indexJSON(live + 'index.json');
             fetchHTML(live + 'index.html', '#readme');
         } else {
-            let live = ''
-            indexJSON('index.json')
+            let live = '';
+            indexJSON('index.json');
+            fetchHTML('download/index.html', '#readme');
         }
 
         window.addEventListener("DOMContentLoaded", function () {
-            const select = document.querySelector('[name="twenty"]')
+            const select = document.querySelector('[name="twenty"]');
             select.onchange = () => {
                 location.assign('#' + select.value);
-                location.reload()
+                location.reload();
             }
         }, false);
     </script>
