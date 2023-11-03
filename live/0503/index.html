@@ -1,80 +1,36 @@
-<!DOCTYPE html>
-<html lang="ja">
+ドリーチキンのレシピ
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="format-detection" content="telephone=no">
-    <script src="../index.js"></script>
-    <script src="../2020.js"></script>
-    <script>
-        let live = "../";
-        indexJSON('index.json');
+材料 2人前
+鶏肉 200g
+☆カレー粉 大さじ1
+☆ケチャップ 大さじ1
+☆ヨーグルト 大さじ1
+☆にんにくチューブ 大さじ2
 
-        window.addEventListener("DOMContentLoaded", function () {
-            creatHeader ();
-            windowScreen();
-            fetchMD('text/ja.md', '#ja');
-            fetchMD('text/en.md', '#en');
-        }, false);
+作り方
+① 鶏肉をひと口大より少し大きめに切る
+② 袋に☆を入れ、もみ混ぜる
+③ ☆を入れた袋に鶏肉を入れ、もみ混ぜる
+※ ☆は、鶏肉がベチャベチャになるぐらいがベスト
+上記の分量で足りないと思ったら、1：1：1：2で足す
 
-        window.onresize = tmResize;
-        function tmResize() {
-            if (typeof pageResize == "function") {
-                pageResize();
-            }
-        }
+④ 10分くらい浸け置いて、焼く
 
-        function windowScreen() {
-            const canvas = document.querySelector("#live");
-            canvas.width = window.innerHeight / 1.75;
-            canvas.height = window.innerHeight;
-        }
 
-        function pageResize() {
-            windowScreen();
-        }
-    </script>
+Tandoori chicken
 
-    <!--og:meta-->
-    <meta content="website" property="og:type">
-    <title>5月3日のプレイタイムズ</title>
-    <meta content="5月3日のプレイタイムズ" property="og:title">
-    <meta content="We had shared the video of food/cooking at プレイタイムズ on 5th July." name="description">
-    <meta content="We had shared the video of food/cooking at プレイタイムズ on 5th July." property="og:description">
+INGREDIENTS for 2 people）
+Chicken 200g
+☆curry powder 1 tbsp
+☆ketchup 1 tbsp
+☆yogurt 1 tbsp
+☆grated garlic 2 tbsp
 
-    <!--for Twitter-->
-    <meta content="summary_large_image" name="twitter:card">
-    <meta content="http://praytimes.pe.hu/live/0503/" property="og:url">
-    <meta content="http://praytimes.pe.hu/live/0503/" property="og:image">
-    <meta content="http://praytimes.pe.hu/live/0503/cover.jpeg" name="twitter:image:src">
+HOW TO COOK
+① cut chicken bigger than bite-size
+② put ☆ into a plastic bag and mix them
+③ put the chicken into ☆ the bag and crumple it
+※ chicken should be gooey with ☆, if it seems not enough,
+add ☆ in the ratio of 1:1:1:2
 
-    <link rel="stylesheet" href="../../css/index.css">
-    <link rel="stylesheet" href="../../css/randomdraggable.css">
-    <link rel="stylesheet" href="../0000/style.css">
-    <link rel="icon" href="../../inn/icon.png" type="image/png">
-</head>
-
-<body>
-    <header></header>
-    <main>
-        <h1>
-            <b>5</b>月<b>3</b>日
-            <small>の</small><br />
-            <img src="../../inn/logo/logo_black.png" alt="プレイタイムズ">
-        </h1>
-        <h2 class="start" hidden>
-            <b>PLAY</b>
-            <br>
-            <button type="button"></button>
-        </h2>
-        <canvas id="live"></canvas>
-        <ul id="randomdraggable"></ul>
-    </main>
-    <article>
-        <section id="ja"></section>
-        <section id="en"></section>
-    </article>
-</body>
-
-</html>
+④ after 10mins, fry it.

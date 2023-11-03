@@ -1,7 +1,10 @@
 {
-    "title": "2020年のプレイタイムズ",
+    "id" : "../2020/",
+    "title" : "<b>2020年</b>",
     "datetime": "2020/12/06 10:30:00",
     "description": "2020.3.8 - 2020.12.6",
+    "width" : "1.55",
+    "height" : "1",
     "author" : [
       "∧°┐ | creative, community space"
     ],

@@ -62,15 +62,17 @@ select,
   padding: 0.25rem;
 }
 
-legend {
+legend,
+#modal p {
   color: #000;
+  font-size: 90%;
   padding: 0.25rem 0;
   margin: 0.25rem;
 }
 
 #liveBtn {
   padding: 0.25rem;
-  margin: 1rem 0 0;
+  margin: 0.5rem 0 0;
 }
 
 a {
@@ -131,7 +133,7 @@ h1,
 h1 b,
 #date,
 #modal,
-select {
+#modal select {
   font-size: 125%;
 }
 
@@ -194,7 +196,9 @@ header button {
 }
 
 #closeBtn {
-  float: right;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 hr {

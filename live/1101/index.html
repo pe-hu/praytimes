@@ -1,89 +1,13 @@
-<!DOCTYPE html>
-<html lang="ja">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="format-detection" content="telephone=no">
-    <script src="../index.js"></script>
-    <script src="../2020.js"></script>
-    <script>
-        let live = "../";
-        indexJSON('index.json');
-
-        window.addEventListener("DOMContentLoaded", function () {
-            creatHeader();
-            windowScreen();
-        }, false);
-
-        window.onresize = tmResize;
-        function tmResize() {
-            if (typeof pageResize == "function") {
-                pageResize();
-            }
-        }
-
-        function windowScreen() {
-            const canvas = document.querySelector("#live");
-            canvas.width = window.innerHeight / 1.75;
-            canvas.height = window.innerHeight;
-        }
-
-        function pageResize() {
-            windowScreen();
-        }
-    </script>
-
-    <!--og:meta-->
-    <meta content="website" property="og:type">
-    <title>11月1日のプレイタイムズ</title>
-    <meta content="11月1日のプレイタイムズ" property="og:title">
-    <meta content="We had recorded a video of looking at the sky on プレイタイムズ on 1st November." name="description">
-    <meta content="We had recorded a video of looking at the sky on プレイタイムズ on 1st November." property="og:description">
-
-    <!--for Twitter-->
-    <meta content="summary_large_image" name="twitter:card">
-    <meta content="http://praytimes.pe.hu/live/1101/" property="og:url">
-    <meta content="http://praytimes.pe.hu/live/1101/" property="og:image">
-    <meta content="http://praytimes.pe.hu/live/1101/cover.jpeg" name="twitter:image:src">
-
-    <link rel="stylesheet" href="../../css/index.css">
-    <link rel="stylesheet" href="../../css/randomdraggable.css">
-    <link rel="stylesheet" href="../0000/style.css">
-    <link rel="icon" href="../../inn/icon.png" type="image/png">
-</head>
-
-<body>
-    <header></header>
-    <main>
-        <h1>
-            <b>11</b>月<b>1</b>日
-            <small>の</small><br />
-            <img src="../../inn/logo/logo_black.png" alt="プレイタイムズ">
-        </h1>
-        <h2 class="start" hidden>
-            <b>PLAY</b>
-            <br>
-            <button type="button"></button>
-        </h2>
-        <canvas id="live"></canvas>
-        <ul id="randomdraggable"></ul>
-    </main>
-    <article>
-        <section>
-            <small>Yuto Ohashi</small>
-            <h3>
-                Re:code proto-memory - p.s. I recall
-            </h3>
-            <iframe style="border: 0; width: 100%; height: 42px;"
-                src="https://bandcamp.com/EmbeddedPlayer/album=1504722230/size=small/bgcol=ffffff/linkcol=0687f5/transparent=true/"
-                seamless>
-                <a href="https://yuto-ohashi.bandcamp.com/album/re-code-proto-memory-p-s-i-recall">
-                    Re:code proto-memory - p.s. I recall by Yuto Ohashi
-                </a>
-            </iframe>
-        </section>
-    </article>
-</body>
-
-</html>
+<section>
+  <small>Yuto Ohashi</small>
+  <h3>
+    Re:code proto-memory - p.s. I recall
+  </h3>
+  <iframe style="border: 0; width: 100%; height: 42px;"
+    src="https://bandcamp.com/EmbeddedPlayer/album=1504722230/size=small/bgcol=ffffff/linkcol=0687f5/transparent=true/"
+    seamless>
+    <a href="https://yuto-ohashi.bandcamp.com/album/re-code-proto-memory-p-s-i-recall">
+      Re:code proto-memory - p.s. I recall by Yuto Ohashi
+    </a>
+  </iframe>
+</section>

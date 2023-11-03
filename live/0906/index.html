@@ -1,84 +1,27 @@
-<!DOCTYPE html>
-<html lang="ja">
+<section>
+    近所の散歩中に気になったものに近づいて撮ることにしました。
+    あまり構えず自然な感じで取り組もうとしましたが、「いま誰かがこの映像を見ている」と思うとどうしても気にしてしまう自分がいました。
+    そういう部分を再認識できたのは収穫でした。
+    ただ他の参加者の映像はあまり見れませんでした。ということは他の方も自分の映像を見てないのではないか。
+</section>
+<section>
+    近方ぼやぼや、なんのことやねん思いながら流れに身を委ねて捉えてみた。
+    カメラがぼやぼやに変わる瞬間に思ったんやけど、ぼやぼやの正体はミクロの世界にカメラが追いつかなくて、カメラがもう無理限界〜助けて〜てなってそれがぼやぼやに変わるんやないかなって。名づけると「カメラもう無理限界現象」。
+    そしてその現象がハダ、ツメ、モノ、カベ、ユカどこまでも繋がっていく。
+    身の周りのいろんなモノには肌理が存在してお互い接しながら世界が繋がってる。そんなことをあらためて感じたいい時間でした。プレイグッドタイムズ。
+</section>
+<section>
+    私は、プレイタイムズに誰かが入ってくるとやっぱり密かに興奮しました。プレイタイムズでは毎回、私は自分で撮影するのと、他の人の映像を見るのの両方で忙しいです。
+    特に誰かがミュートの時はアーカイブに残らないので、もう二度と見れないような気になり、その人の映像を見るのに必死になったりします。
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="format-detection" content="telephone=no">
-    <script src="../index.js"></script>
-    <script src="../2020.js"></script>
-    <script>
-        let live = "../";
-        indexJSON('index.json');
+    そして終わった後、私はちょっとドキドキしながら、ふぅ、、一体何だったんだ・・みたいな気分になります。
+</section>
+<section>
+    この言葉が今まで存在してた事があるのか、誰か声に出した事があるのか知らないのですが、なんかふざけた感じがして好きです。（検索してみたら私達のページが2番目に出てきたので現状メジャーな言葉ではない）
+    ペフの芥川さんが小学生の時「遠方凝視」遠くを見る授業があったとのことで、その逆をしてみようと今回のテーマ「近方ぼやぼや」が決まりました。
 
-        window.addEventListener("DOMContentLoaded", function () {
-            creatHeader ();
-            windowScreen();
-            fetchMD('text/chukuippa.md', '#chukuippa');
-            fetchMD('text/kakutaibuki.md', '#kakutaibuki');
-            fetchMD('text/aa.md', '#aa');
-            fetchMD('text/kn.md', '#kn');
-        }, false);
+    なんとなくおもしろいんだろうなって予想してたよりも、どこにカメラを近づけて撮ってもおもしろく、こんなに小さいものでも近寄ると巨大なものに触れた気になれるんだと再発見でした。
+    とにかく無意味で巨大なもの見たいと思ってたので、その気持ちはこれで少し晴らせそうです。
 
-        window.onresize = tmResize;
-        function tmResize() {
-            if (typeof pageResize == "function") {
-                pageResize();
-            }
-        }
-
-        function windowScreen() {
-            const canvas = document.querySelector("#live");
-            canvas.width = window.innerHeight / 1.55;
-            canvas.height = window.innerHeight;
-        }
-
-        function pageResize() {
-            windowScreen();
-        }
-    </script>
-
-    <!--og:meta-->
-    <meta content="website" property="og:type">
-    <title>9月6日のプレイタイムズ</title>
-    <meta content="9月6日のプレイタイムズ" property="og:title">
-    <meta content="We had shared a video of the skin at プレイタイムズ on 6th September." name="description">
-    <meta content="We had shared a video of the skin at プレイタイムズ on 6th September." property="og:description">
-
-    <!--for Twitter-->
-    <meta content="summary_large_image" name="twitter:card">
-    <meta content="http://praytimes.pe.hu/live/0906/" property="og:url">
-    <meta content="http://praytimes.pe.hu/live/0906/" property="og:image">
-    <meta content="http://praytimes.pe.hu/live/0906/cover.jpeg" name="twitter:image:src">
-
-    <link rel="stylesheet" href="../../css/index.css">
-    <link rel="stylesheet" href="../../css/randomdraggable.css">
-    <link rel="stylesheet" href="../0000/style.css">
-    <link rel="icon" href="../../inn/icon.png" type="image/png">
-</head>
-
-<body>
-    <header></header>
-    <main>
-        <h1>
-            <b>9</b>月<b>6</b>日
-            <small>の</small><br />
-            <img src="../../inn/logo/logo_black.png" alt="プレイタイムズ">
-        </h1>
-        <h2 class="start" hidden>
-            <b>PLAY</b>
-            <br>
-            <button type="button"></button>
-        </h2>
-        <canvas id="live"></canvas>
-        <ul id="randomdraggable"></ul>
-    </main>
-    <article>
-        <section id="chukuippa"></section>
-        <section id="kakutaibuki"></section>
-        <section id="aa"></section>
-        <section id="kn"></section>
-    </article>
-</body>
-
-</html>
+    プレイタイムズ中は自分の画面に夢中で周りは見てなかったのですが、完成動画を見ると色々な近方ぼやぼやがあり、偶然、画面にずっとカーソルが映りこんでの録画になっておりずっとおおきさの基準があるようで、様々な不確定で不安定なおおきさを見れる映像になっているような気がしています。
+</section>

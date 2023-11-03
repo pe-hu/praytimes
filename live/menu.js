@@ -47,33 +47,14 @@ const playAll = {
   ]
 }
 
-function creatHeader () {
-  const header = document.querySelector('header');
-  const select = document.createElement('select');
-  select.setAttribute('name', 'twenty')
-  const back = document.createElement('input');
-  back.setAttribute('type','button');
-  back.value = '全部見る'
-  back.addEventListener('click', function() {
-    location.assign('/live/')
-  },false)
-  header.appendChild(select);
-  header.appendChild(back);
-}
-
 document.addEventListener('readystatechange', event => {
   if (event.target.readyState === 'interactive') {
-    ///
-  }
-
-  else if (event.target.readyState === 'complete') {
     const select = document.querySelector('[name="twenty"]');
     const option = document.createElement('option');
     option.innerText = '2020年のプレイタイムズ';
     option.setAttribute("selected", "true");
     option.setAttribute("disabled", "true");
     select.appendChild(option);
-
     const liveAll = Object.entries(playAll);
     liveAll.forEach((src) => {
       const option = document.createElement('option');
@@ -81,9 +62,9 @@ document.addEventListener('readystatechange', event => {
       option.setAttribute("value", Object.values(src[1])[0]);
       select.appendChild(option);
     });
+  }
 
-    select.onchange = () => {
-      location.assign(live + select.value)
-    }
+  else if (event.target.readyState === 'complete') {
+    //
   }
 });

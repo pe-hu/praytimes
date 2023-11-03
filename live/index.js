@@ -6,7 +6,7 @@ async function indexJSON(requestURL) {
     const jsonIndex = await response.text();
     const index = JSON.parse(jsonIndex);
     randomdVideos(index);
-    playVideo()
+    playVideo(index)
 }
 
 async function fetchMD(url = '', query = '') {
@@ -36,8 +36,10 @@ function shuffle(arrays) {
 
 function randomdVideos(obj) {
     const main = document.querySelector('main');
+    const title = document.querySelector('h1 span');
     const randomdRaggable = document.querySelector('#randomdraggable');
 
+    title.innerHTML = obj.title
     const playAll = shuffle(obj.play);
     for (let i = 0; i < playAll.length; i++) {
         const li = document.createElement('li');
@@ -54,6 +56,7 @@ function randomdVideos(obj) {
 
         const canvas = document.querySelector("#live");
         let canvasCtx = canvas.getContext('2d');
+        canvas.style.backgroundImage = `url(${obj.id}cover.jpeg)`
 
         function canvasUpdate() {
             canvasCtx.drawImage(video, 0, 0, canvas.width, canvas.height);
@@ -64,21 +67,21 @@ function randomdVideos(obj) {
             let ii = 0
             const source = document.createElement('source');
             source.setAttribute("type", "video/mp4");
-            source.src = playAll[i].src[ii]
+            source.src = obj.id + playAll[i].src[ii]
             video.appendChild(source)
 
             video.addEventListener('ended', () => {
                 if (playAll[i].src.length === 0) {
                     ii = 0
-                    source.src = playAll[i].src[ii]
+                    source.src = obj.id + playAll[i].src[ii]
                     video.pause()
                 } else if (ii === playAll[i].src.length - 1) {
                     ii = 0
-                    source.src = playAll[i].src[ii]
+                    source.src = obj.id + playAll[i].src[ii]
                     video.pause()
                 } else if (ii < playAll[i].src.length - 1) {
                     ii++
-                    source.src = playAll[i].src[ii]
+                    source.src = obj.id + playAll[i].src[ii]
                     video.load()
                     video.play()
                 }
@@ -95,7 +98,7 @@ function randomdVideos(obj) {
     }
 
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        const audio = new Audio(obj.audio);
+        const audio = new Audio(obj.id + obj.audio);
         audio.hidden = true;
         main.appendChild(audio);
 
@@ -116,7 +119,7 @@ function randomdVideos(obj) {
     }
 }
 
-function playVideo() {
+function playVideo(obj) {
     const h2 = document.querySelector('h2');
     const h2b = document.querySelector("h2 b");
 
@@ -143,14 +146,30 @@ function playVideo() {
             iii.pause()
         })
     }
+
+    window.onresize = tmResize;
+    function tmResize() {
+        if (typeof pageResize == "function") {
+            pageResize();
+        }
+    }
+
+    function windowScreen() {
+        const canvas = document.querySelector("#live");
+        canvas.width = window.innerHeight / obj.width;
+        canvas.height = window.innerHeight / obj.height;
+    }
+
+    function pageResize() {
+        windowScreen();
+    }
+    windowScreen();
 }
 
 window.addEventListener("load", () => {
     const h2 = document.querySelector('h2');
     h2.hidden = false
-    
-    const live = document.querySelector('#live');
-    live.style.backgroundImage = 'url(cover.jpeg)'
+
     const scrollElement = document.querySelector('#randomdraggable');
     scrollElement.addEventListener('wheel', (e) => {
         if (Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;

@@ -6,15 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no">
   <script src="index.js"></script>
-  <script src="live/2020.js"></script>
+  <script src="2020/menu.js"></script>
   <script type="text/javascript">
     let directory = "inn/img/";
-    let live = "live/";
 
     document.addEventListener('readystatechange', event => {
       if (event.target.readyState === 'interactive') {
         indexJSON(directory + "index.json")
-      } else if (event.target.readyState === 'complete') {
+
         const dialogModal = document.querySelector('#modal'),
           openBtns = document.querySelectorAll('header button, #content button'),
           closeBtn = document.querySelector('#closeBtn');
@@ -36,6 +35,11 @@
         closeBtn.addEventListener('click', () => {
           dialogModal.close();
         });
+      } else if (event.target.readyState === 'complete') {
+        const select = document.querySelector('[name="twenty"]')
+        select.onchange = () => {
+          location.assign('/2020/#' + select.value);
+        }
       }
     });
   </script>
@@ -134,7 +138,7 @@
     <aside class="noprint">
       <img src="inn/image.jpg" alt="楽観のテクニック">
     </aside>
-    
+
     <footer>
       <a class="pehu" href="https://pehu.creative-community.space/" target="_blank">
         ∧°┐ | creative, community space
@@ -148,8 +152,8 @@
     <fieldset>
       <legend>記録映像</legend>
       <select name="twenty"></select>
-      <br>
-      <button id="liveBtn" type="button" onclick="location.assign('live/')">PLAY</button>
+      <p>私たちは、毎月第一日曜日の午前10時から30分、プレイタイムズに集まった生活を記録しました。</p>
+      <button id="liveBtn" type="button" onclick="location.assign('2020/')">PLAY</button>
     </fieldset>
   </dialog>
 </body>
