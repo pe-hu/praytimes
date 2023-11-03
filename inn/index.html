@@ -15,6 +15,7 @@
     const urlHash = location.hash;
     if (urlHash) {
       id = urlHash.replace('#', '')
+       fetchMD(id + '/README.md', '#readme');
     } else {
       id = "pieces"
     }
@@ -68,6 +69,7 @@
     <h2 id="note"></h2>
     <ul id="randomdraggable"></ul>
   </main>
+  <footer id="readme"></footer>
 </body>
 
 </html>
