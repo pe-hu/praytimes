@@ -158,7 +158,10 @@ h1,
   max-width: 550px;
 }
 
-#alt,
+#alt {
+  max-width: 75%;
+}
+
 #note {
   max-width: 90%;
 }
