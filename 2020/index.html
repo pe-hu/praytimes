@@ -10,14 +10,14 @@
     <script>
         const urlHash = location.hash;
         let hash = urlHash.replace('#', '');
-        if (hash) {
-            let live = hash + '/';
-            indexJSON(live + 'index.json');
-            fetchHTML(live + 'index.html', '#readme');
-        } else if (hash === 'all') {
+        if (hash === 'all') {
             let live = '';
             indexJSON('index.json');
             fetchHTML('download/index.html', '#readme');
+        } else if (hash) {
+            let live = hash + '/';
+            indexJSON(live + 'index.json');
+            fetchHTML(live + 'index.html', '#readme');
         } else {
             let live = '';
             indexJSON('index.json');
