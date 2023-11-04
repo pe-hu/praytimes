@@ -5,16 +5,16 @@ async function indexJSON(requestURL) {
     const response = await fetch(request);
     const jsonIndex = await response.text();
     const index = JSON.parse(jsonIndex);
-    thisDate(index)
+    thisDate(index);
     randomdVideos(index);
-    playVideo(index)
+    playVideo(index);
 }
 
 async function fetchMD(url = '', query = '') {
     fetch(url)
         .then(response => response.text())
         .then(md => {
-            document.querySelector(query).innerText = md
+            document.querySelector(query).innerText = md;
         });
 }
 
@@ -22,7 +22,7 @@ async function fetchHTML(url = '', query = '') {
     fetch(url)
         .then(response => response.text())
         .then(html => {
-            document.querySelector(query).innerHTML = html
+            document.querySelector(query).innerHTML = html;
         });
 }
 
@@ -81,12 +81,12 @@ function randomdVideos(obj) {
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             video.muted = true;
             video.setAttribute('muted', 'true');
-            video.setAttribute('playsinline', '');
+            video.setAttribute('playsinline', 'true');
         }
 
         const canvas = document.querySelector("#live");
+        canvas.style.backgroundImage = `url(${obj.id}cover.jpeg)`;
         let canvasCtx = canvas.getContext('2d');
-        canvas.style.backgroundImage = `url(${obj.id}cover.jpeg)`
 
         function canvasUpdate() {
             canvasCtx.drawImage(video, 0, 0, canvas.width, canvas.height);
@@ -94,36 +94,36 @@ function randomdVideos(obj) {
         };
 
         if (playAll[i].src) {
-            let ii = 0
+            let ii = 0;
             const source = document.createElement('source');
             source.setAttribute("type", "video/mp4");
-            source.src = obj.id + playAll[i].src[ii]
-            video.appendChild(source)
+            source.src = obj.id + playAll[i].src[ii];
+            video.appendChild(source);
 
             video.addEventListener('ended', () => {
                 if (playAll[i].src.length === 0) {
-                    ii = 0
-                    source.src = obj.id + playAll[i].src[ii]
-                    video.pause()
+                    ii = 0;
+                    source.src = obj.id + playAll[i].src[ii];
+                    video.pause();
                 } else if (ii === playAll[i].src.length - 1) {
-                    ii = 0
-                    source.src = obj.id + playAll[i].src[ii]
-                    video.pause()
+                    ii = 0;
+                    source.src = obj.id + playAll[i].src[ii];
+                    video.pause();
                 } else if (ii < playAll[i].src.length - 1) {
-                    ii++
-                    source.src = obj.id + playAll[i].src[ii]
-                    video.load()
-                    video.play()
+                    ii++;
+                    source.src = obj.id + playAll[i].src[ii];
+                    video.load();
+                    video.play();
                 }
             }, false);
         }
 
         if (i === 0) {
-            canvasUpdate()
+            canvasUpdate();
         }
 
         video.addEventListener('click', function () {
-            canvasUpdate()
+            canvasUpdate();
         })
     }
 
@@ -135,7 +135,7 @@ function randomdVideos(obj) {
         audio.addEventListener('ended', () => {
             const all = document.querySelectorAll('video');
             all.forEach((iii) => {
-                iii.remove()
+                iii.remove();
             })
 
             const h2 = document.querySelector('h2');
@@ -143,7 +143,7 @@ function randomdVideos(obj) {
             h2.className = "replay";
             h2b.textContent = "Replay";
             h2.addEventListener('click', function () {
-                location.reload()
+                location.reload();
             });
         }, false);
     }
@@ -157,23 +157,23 @@ function playVideo(obj) {
         h2.className = h2.className === "start" ? "stop" : "start";
         h2b.textContent = h2b.textContent === "PLAY" ? "PAUSE" : "PLAY";
         if (h2.className === "start") {
-            stop()
+            stop();
         } else if (h2.className === "stop") {
-            start()
+            start();
         }
     });
 
     function start() {
         const all = document.querySelectorAll('video, audio');
         all.forEach((iii) => {
-            iii.play()
+            iii.play();
         })
     }
 
     function stop() {
         const all = document.querySelectorAll('video, audio');
         all.forEach((iii) => {
-            iii.pause()
+            iii.pause();
         })
     }
 
@@ -198,7 +198,7 @@ function playVideo(obj) {
 
 window.addEventListener("load", () => {
     const h2 = document.querySelector('h2');
-    h2.hidden = false
+    h2.hidden = false;
 
     const scrollElement = document.querySelector('#randomdraggable');
     scrollElement.addEventListener('wheel', (e) => {
