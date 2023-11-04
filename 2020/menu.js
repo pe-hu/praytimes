@@ -63,7 +63,7 @@ document.addEventListener('readystatechange', event => {
       select.appendChild(option);
     });
     const all = document.createElement('option');
-    all.innerText = '全部見る';
+    all.innerText = '全部見る View All';
     all.value = 'all';
     select.appendChild(all);
   }
