@@ -63,10 +63,12 @@ function thisDate(obj) {
 function randomdVideos(obj) {
     const main = document.querySelector('main');
     const title = document.querySelector('h1 span');
+    const description = document.querySelector('#description');
     const youtube = document.querySelector('#youtube');
     const randomdRaggable = document.querySelector('#randomdraggable');
 
     title.innerHTML = obj.title;
+    description.innerHTML = obj.description;
     youtube.href = `https://youtu.be/${obj.youtube}`;
     const playAll = shuffle(obj.play);
     for (let i = 0; i < playAll.length; i++) {
