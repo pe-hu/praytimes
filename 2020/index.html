@@ -27,7 +27,7 @@
         window.addEventListener("DOMContentLoaded", function () {
             const select = document.querySelector('[name="twenty"]');
             select.onchange = () => {
-                location.assign('#' + select.value);
+                location.replace('#' + select.value);
                 location.reload();
             }
         }, false);
