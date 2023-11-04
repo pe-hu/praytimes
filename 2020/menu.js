@@ -65,6 +65,7 @@ document.addEventListener('readystatechange', event => {
     const all = document.createElement('option');
     all.innerText = '全部見る';
     all.value = 'all';
+    select.appendChild(all);
   }
 
   else if (event.target.readyState === 'complete') {
