@@ -44,10 +44,6 @@ const playAll = {
   '12月6日': [
     '1206',
     'Rie Kai・芥川亜由弥・中尾香織・ささじまかずま が、何かに落ちたり何かを落とした記録'
-  ],
-  '全部見る': [
-    'all',
-    ''
   ]
 }
 
@@ -66,6 +62,9 @@ document.addEventListener('readystatechange', event => {
       option.setAttribute("value", Object.values(src[1])[0]);
       select.appendChild(option);
     });
+    const all = document.createElement('option');
+    all.innerText = '全部見る';
+    all.value = 'all';
   }
 
   else if (event.target.readyState === 'complete') {
