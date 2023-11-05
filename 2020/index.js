@@ -75,8 +75,19 @@ function randomdVideos(obj) {
         const li = document.createElement('li');
         randomdRaggable.appendChild(li);
 
+        const input = document.createElement('input');
+        input.setAttribute('type', 'radio');
+        input.setAttribute('name', 'youtube');
+        input.id = playAll[i].id;
+        input.value = playAll[i].id;
+        li.appendChild(input);
+
+        const label = document.createElement('label');
+        label.setAttribute('for', playAll[i].id);
+        li.appendChild(label);
+
         const video = document.createElement('video');
-        li.appendChild(video);
+        label.appendChild(video);
 
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
             video.muted = true;

@@ -76,9 +76,24 @@ function randomdraggable(obj) {
     }
 
     const li = document.createElement('li');
+    randomdRaggable.appendChild(li);
+
+    const input = document.createElement('input');
+    input.setAttribute('type', 'radio');
+    input.setAttribute('name', 'youtube');
+    input.id = images[i].img;
+    input.value = images[i].img;
+    li.appendChild(input);
+
+    const label = document.createElement('label');
+    label.setAttribute('for', images[i].img);
+    li.appendChild(label);
+
     const img = document.createElement('img');
     img.src = directory + images[i].img;
-    img.addEventListener('click', function () {
+    label.appendChild(img);
+
+    input.addEventListener('change', function () {
       if (images[i].alt) {
         alt.innerHTML = images[i].alt
       }
@@ -96,9 +111,6 @@ function randomdraggable(obj) {
 
       main.style.backgroundImage = 'url(' + directory + images[i].img + ')'
     })
-
-    li.appendChild(img);
-    randomdRaggable.appendChild(li);
   }
 }
 

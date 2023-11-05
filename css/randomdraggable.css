@@ -9,6 +9,10 @@ main {
     overflow: hidden;
 }
 
+#randomdraggable input {
+    display: none;
+}
+
 @media (orientation: landscape) {
     main {
         min-height: 100vh;
@@ -83,17 +87,18 @@ footer {
 #randomdraggable li {
     text-align: center;
     flex: auto;
-    height: 20vw;
-    max-height: 10rem;
 }
 
-#randomdraggable li img {
+#randomdraggable li label {
+    display: block;
     border: solid 0.2rem transparent;
     border-radius: 0.5rem;
+    height: 20vw;
+    max-height: 10rem;
     transition: 0.5s;
 }
 
-#randomdraggable li img:hover {
+#randomdraggable li input:checked+label {
     border: solid 0.2rem #fff;
     cursor: pointer;
     filter: brightness(1.5);
@@ -101,5 +106,4 @@ footer {
 
 #randomdraggable li img {
     height: 100%;
-    width: auto;
 }

@@ -75,17 +75,14 @@ footer button {
     max-width: 7rem;
 }
 
-#randomdraggable li video {
-    border: solid 0.2rem transparent;
-    border-radius: 0.25rem;
+#randomdraggable li label {
     background: #000;
-    transition: 0.5s;
-    max-width: 7rem;
-    height: 100%;
 }
 
-#randomdraggable li video:hover {
-    border: solid 0.2rem #fff;
+#randomdraggable li video {
+    border-radius: 0.25rem;
+    max-width: 100%;
+    height: 100%;
 }
 
 header a {
