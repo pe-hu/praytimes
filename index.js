@@ -59,8 +59,7 @@ const server = http.createServer((req, res) => {
 
 // サーバーを起動
 const hostname = "195.179.236.11";
-const port = 8080;
 
 server.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
+    console.log(`Server running at http://${hostname}/`);
 });
