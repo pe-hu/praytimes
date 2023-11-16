@@ -1,15 +1,17 @@
 // HTTP モジュールの読み込み
 var http = require("http");
-const hostname = "127.0.0.1";
-const port = 8080;
 
 var fs = require("fs");
 var path = require("path");
 
-http.createServer(function (request, response) {
-    var filePath = "." + request.url;
+const server = http.createServer((req, res) => {
+    var filePath = "." + req.url;
     if (filePath == "./") {
-        filePath = "./index.html";
+        filePath = "./200.html";
+    } else if (filePath == "./inn/") {
+        filePath = "./inn/index.html";
+    } else if (filePath == "./2020/") {
+        filePath = "./2020/index.html";
     }
 
     var extname = String(path.extname(filePath)).toLowerCase();
@@ -37,22 +39,28 @@ http.createServer(function (request, response) {
         if (error) {
             if (error.code == "ENOENT") {
                 fs.readFile("./404.html", function (error, content) {
-                    response.writeHead(404, { "Content-Type": "text/html" });
-                    response.end(content, "utf-8");
+                    res.writeHead(404, { "Content-Type": "text/html" });
+                    res.end(content, "utf-8");
                 });
             } else {
-                response.writeHead(500);
-                response.end(
+                res.writeHead(500);
+                res.end(
                     "Sorry, check with the site admin for error: " +
                     error.code +
                     " ..\n",
                 );
             }
         } else {
-            response.writeHead(200, { "Content-Type": contentType });
-            response.end(content, "utf-8");
+            res.writeHead(200, { "Content-Type": contentType });
+            res.end(content, "utf-8");
         }
     });
-}).listen(port);
+})
 
-console.log(`Server running at http://${hostname}:${port}/`);
+// サーバーを起動
+const hostname = "127.0.0.1";
+const port = 8080;
+
+server.listen(port, hostname, () => {
+    console.log(`Server running at http://${hostname}:${port}/`);
+});
