@@ -1,130 +1,55 @@
-'use strict'
+// HTTP モジュールの読み込み
+var http = require("http");
+const hostname = "127.0.0.1";
+const port = 8000;
 
-async function indexJSON(requestURL) {
-  const request = new Request(requestURL);
-  const response = await fetch(request);
-  const jsonIndex = await response.text();
-  const index = JSON.parse(jsonIndex);
-  thisDate(index);
-  randomdraggable(index);
-}
+var fs = require("fs");
+var path = require("path");
 
-async function fetchMD(url = '', query = '') {
-    fetch(url)
-        .then(response => response.text())
-        .then(md => {
-            document.querySelector(query).innerText = md
-        });
-}
-
-function shuffle(arrays) {
-  const array = arrays.slice();
-  for (let i = array.length - 1; i >= 0; i--) {
-    const shuffleArr = Math.floor(Math.random() * (i + 1));
-    [array[i], array[shuffleArr]] = [array[shuffleArr], array[i]];
-  }
-  return array;
-}
-
-function thisDate(obj) {
-  const dataTime = document.querySelector('#date');
-  dataTime.textContent = obj.date;
-  dataTime.setAttribute("data-time", obj.datetime);
-  dataTime.addEventListener('click', function (event) {
-    let ago = new Date(obj.datetime);
-    let diff = new Date().getTime() - ago.getTime();
-    let progress = new Date(diff);
-    let now;
-    if (progress.getUTCFullYear() - 1970) {
-      now = progress.getUTCFullYear() - 1970 + ' years ago';
-    } else if (progress.getUTCMonth()) {
-      now = progress.getUTCMonth() + ' months ago';
-    } else if (progress.getUTCDate() - 1) {
-      now = progress.getUTCDate() - 1 + ' days ago';
-    } else if (progress.getUTCHours()) {
-      now = progress.getUTCHours() + ' hour ago';
-    } else if (progress.getUTCMinutes()) {
-      now = progress.getUTCMinutes() + ' minutes ago';
-    } else {
-      now = 'now';
-    }
-    event.target.textContent = event.target.textContent === obj.date ? now : obj.date;
-  });
-}
-
-function randomdraggable(obj) {
-  const main = document.querySelector('main');
-  const randomdRaggable = document.querySelector('#randomdraggable');
-  const alt = document.querySelector('#alt');
-  alt.innerHTML = obj.description;
-
-  if (obj.note) {
-    const note = document.querySelector('#note');
-    for (let i = 0; i < obj.note.length; i++) {
-      if (i === 0) {
-        note.innerHTML = obj.note[i] + "<br>"
-      } else {
-        note.innerHTML += obj.note[i] + "<br>"
-      }
-    }
-  }
-
-  const images = shuffle(obj.randomdraggable)
-  for (let i = 0; i < images.length; i++) {
-    if (i === 0) {
-      main.style.backgroundImage = 'url(' + directory + images[i].img + ')'
+http.createServer(function (request, response) {
+    var filePath = "." + request.url;
+    if (filePath == "./") {
+        filePath = "./index.html";
     }
 
-    const li = document.createElement('li');
-    randomdRaggable.appendChild(li);
+    var extname = String(path.extname(filePath)).toLowerCase();
+    var mimeTypes = {
+        ".html": "text/html",
+        ".js": "text/javascript",
+        ".css": "text/css",
+        ".json": "application/json",
+        ".png": "image/png",
+        ".jpg": "image/jpg",
+        ".gif": "image/gif",
+        ".svg": "image/svg+xml",
+        ".wav": "audio/wav",
+        ".mp4": "video/mp4",
+        ".woff": "application/font-woff",
+        ".ttf": "application/font-ttf",
+        ".eot": "application/vnd.ms-fontobject",
+        ".otf": "application/font-otf",
+        ".wasm": "application/wasm",
+    };
 
-    const input = document.createElement('input');
-    input.setAttribute('type', 'radio');
-    input.setAttribute('name', 'youtube');
-    input.id = images[i].img;
-    input.value = images[i].img;
-    li.appendChild(input);
+    var contentType = mimeTypes[extname] || "application/octet-stream";
 
-    const label = document.createElement('label');
-    label.setAttribute('for', images[i].img);
-    li.appendChild(label);
-
-    const img = document.createElement('img');
-    img.src = directory + images[i].img;
-    label.appendChild(img);
-
-    input.addEventListener('change', function () {
-      if (images[i].alt) {
-        alt.innerHTML = images[i].alt
-      }
-
-      if (images[i].note) {
-        const note = document.querySelector('#note');
-        for (let ii = 0; ii < images[i].note.length; ii++) {
-          if (ii === 0) {
-            note.innerHTML = images[i].note[ii] + "<br>"
-          } else {
-            note.innerHTML += images[i].note[ii] + "<br>"
-          }
+    fs.readFile(filePath, function (error, content) {
+        if (error) {
+            if (error.code == "ENOENT") {
+                res.end('File not found');
+            } else {
+                response.writeHead(500);
+                response.end(
+                    "Sorry, check with the site admin for error: " +
+                    error.code +
+                    " ..\n",
+                );
+            }
+        } else {
+            response.writeHead(200, { "Content-Type": contentType });
+            response.end(content, "utf-8");
         }
-      }
+    });
+}).listen(port);
 
-      main.style.backgroundImage = 'url(' + directory + images[i].img + ')'
-    })
-  }
-}
-
-window.onload = () => {
-  const scrollElement = document.querySelector('#randomdraggable');
-  scrollElement.addEventListener('wheel', (e) => {
-    if (Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;
-    const maxScrollLeft = scrollElement.scrollWidth - scrollElement.clientWidth;
-    if (
-      (scrollElement.scrollLeft <= 0 && e.deltaY < 0) ||
-      (scrollElement.scrollLeft >= maxScrollLeft && e.deltaY > 0)
-    )
-      return;
-    e.preventDefault();
-    scrollElement.scrollLeft += e.deltaY;
-  });
-};
+console.log(`Server running at http://${hostname}:${port}/`);

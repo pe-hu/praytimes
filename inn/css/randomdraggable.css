@@ -1,0 +1,109 @@
+main {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: grid;
+    place-items: center;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+#randomdraggable input {
+    display: none;
+}
+
+@media (orientation: landscape) {
+    main {
+        min-height: 100vh;
+    }
+}
+
+@media (orientation: portrait) {
+    main {
+        min-height: -webkit-fill-available;
+    }
+}
+
+header {
+    position: fixed;
+    z-index: 100;
+}
+
+header,
+main {
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+@page {
+  size: A4 portrait;
+}
+
+@media print {
+    body {
+        height: 100vh;
+    }
+    
+    header {
+        position: absolute;
+    }
+
+    footer {
+        place-self: end center;
+    }
+}
+
+header {
+    padding: 0.5rem;
+}
+
+header,
+footer {
+    width: 100%;
+    gap: 1rem;
+    display: flex;
+    align-items: start;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#randomdraggable {
+    place-self: end;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0.5rem;
+    list-style: inside none;
+    padding: 1rem;
+    margin: 0;
+    overflow-x: auto;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+#randomdraggable li {
+    text-align: center;
+    flex: auto;
+}
+
+#randomdraggable li label {
+    display: block;
+    border: solid 0.2rem transparent;
+    border-radius: 0.5rem;
+    height: 20vw;
+    max-height: 10rem;
+    transition: 0.5s;
+}
+
+#randomdraggable li input:checked+label {
+    border: solid 0.2rem #fff;
+    cursor: pointer;
+    filter: brightness(1.5);
+}
+
+#randomdraggable li img {
+    height: 100%;
+}
