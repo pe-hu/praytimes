@@ -38,14 +38,14 @@ main {
 }
 
 @page {
-  size: A4 portrait;
+    size: A4 portrait;
 }
 
 @media print {
     body {
         height: 100vh;
     }
-    
+
     header {
         position: absolute;
     }

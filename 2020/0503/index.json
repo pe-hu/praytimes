@@ -1,11 +1,11 @@
 {
-  "id" : "0503/",
-  "title" : "<b>5</b>月<b>3</b>日",
+  "id": "0503/",
+  "title": "<b>5</b>月<b>3</b>日",
   "datetime": "2020/05/03 10:30:00",
-  "description" : "タンドリーチキンのレシピ Tandoori chicken",
-  "width" : "1.75",
-  "height" : "1",
-  "author" : [
+  "description": "タンドリーチキンのレシピ Tandoori chicken",
+  "width": "1.75",
+  "height": "1",
+  "author": [
     "woopheadclrms",
     "2n2n",
     "Ayumi Akutagawa",
@@ -43,6 +43,6 @@
       ]
     }
   ],
-  "audio" : "tandoorichicken.m4a",
-  "youtube" : "YrDo1Zg2avg"
+  "audio": "tandoorichicken.m4a",
+  "youtube": "YrDo1Zg2avg"
 }

@@ -1,11 +1,11 @@
 {
-  "id" : "0607/",
-  "title" : "<b>6</b>月<b>7</b>日",
+  "id": "0607/",
+  "title": "<b>6</b>月<b>7</b>日",
   "datetime": "2020/06/07 10:30:00",
-  "description" : "We had shared the video of the water at プレイタイムズ on 5th July.",
-  "width" : "1.5",
-  "height" : "1",
-  "author" : [
+  "description": "We had shared the video of the water at プレイタイムズ on 5th July.",
+  "width": "1.5",
+  "height": "1",
+  "author": [
     "Ibuki Kakita",
     "Ayumi Akutagawa",
     "Kaori Nakao",
@@ -42,6 +42,6 @@
       ]
     }
   ],
-  "audio" : "water.m4a",
-  "youtube" : "LfpdOdqrqSI"
+  "audio": "water.m4a",
+  "youtube": "LfpdOdqrqSI"
 }

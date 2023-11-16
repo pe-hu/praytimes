@@ -115,6 +115,28 @@ function randomdraggable(obj) {
 }
 
 window.onload = () => {
+  const dialogModal = document.querySelector('#modal'),
+    openBtns = document.querySelectorAll('header button, #content button'),
+    closeBtn = document.querySelector('#closeBtn');
+
+  function openModal() {
+    if (typeof dialogModal.showModal === "function") {
+      dialogModal.showModal();
+    } else {
+      alert("The <dialog> API is not supported by this browser");
+    }
+  }
+
+  openBtns.forEach((openBtn) => {
+    openBtn.addEventListener('click', () => {
+      openModal();
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    dialogModal.close();
+  });
+
   const scrollElement = document.querySelector('#randomdraggable');
   scrollElement.addEventListener('wheel', (e) => {
     if (Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;
@@ -127,4 +149,9 @@ window.onload = () => {
     e.preventDefault();
     scrollElement.scrollLeft += e.deltaY;
   });
+
+  const select = document.querySelector('[name="twenty"]')
+  select.onchange = () => {
+    location.assign('/2020/#' + select.value);
+  }
 };

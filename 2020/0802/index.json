@@ -1,11 +1,11 @@
 {
-  "id" : "0802/",
-  "title" : "<b>8</b>月<b>2</b>日",
+  "id": "0802/",
+  "title": "<b>8</b>月<b>2</b>日",
   "datetime": "2020/08/02 10:30:00",
-  "description" : "We had shared a video of the insects at プレイタイムズ on 2nd August.",
-  "width" : "1.55",
-  "height" : "1",
-  "author" : [
+  "description": "We had shared a video of the insects at プレイタイムズ on 2nd August.",
+  "width": "1.55",
+  "height": "1",
+  "author": [
     "Ayumi Akutagawa",
     "Kaori Nakao",
     "Kazuma Sasajima",
@@ -51,6 +51,6 @@
       ]
     }
   ],
-  "audio" : "insects.m4a",
-  "youtube" : "MQsOJ9NNrho"
+  "audio": "insects.m4a",
+  "youtube": "MQsOJ9NNrho"
 }

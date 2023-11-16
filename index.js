@@ -1,7 +1,7 @@
 // HTTP モジュールの読み込み
 var http = require("http");
 const hostname = "127.0.0.1";
-const port = 8000;
+const port = 8080;
 
 var fs = require("fs");
 var path = require("path");
@@ -36,7 +36,10 @@ http.createServer(function (request, response) {
     fs.readFile(filePath, function (error, content) {
         if (error) {
             if (error.code == "ENOENT") {
-                res.end('File not found');
+                fs.readFile("./404.html", function (error, content) {
+                    response.writeHead(404, { "Content-Type": "text/html" });
+                    response.end(content, "utf-8");
+                });
             } else {
                 response.writeHead(500);
                 response.end(
