@@ -38,6 +38,5 @@ package.json の scripts.start に指定された内容を実行する
 ___
 
 ### [フレームワークなしの Node.js サーバ](https://developer.mozilla.org/ja/docs/Learn/Server-side/Node_server_without_framework)
-
-
+* [Ubuntu 18.04、20.04、および 22.04 に Node.js と NPM をインストールする3つの方法](https://www.hostinger.com/tutorials/how-to-install-node-ubuntu)
 * [Learning with VS Code on Chromebooks](https://code.visualstudio.com/blogs/2020/12/03/chromebook-get-started)
