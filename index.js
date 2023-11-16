@@ -58,7 +58,7 @@ const server = http.createServer((req, res) => {
 })
 
 // サーバーを起動
-const hostname = "127.0.0.1";
+const hostname = "195.179.236.11";
 const port = 8080;
 
 server.listen(port, hostname, () => {
