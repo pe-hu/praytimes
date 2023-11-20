@@ -1,5 +1,5 @@
 {
-    "id": "../2020/",
+    "id": "2020/",
     "title": "<b>2020年</b>",
     "datetime": "2024/01/07 10:30:00",
     "description": "私たちは、毎月第一日曜日の午前10時から30分、プレイタイムズに集まった生活を記録しました。<br><br>We were recording the screen of プレイタイムズ on the first Sunday of the month.",
@@ -12,7 +12,7 @@
         {
             "id": "one",
             "src": [
-                "download/0304001.mp4",
+                "2020/download/0304001.mp4",
                 "download/0304002.mp4",
                 "download/0304003.mp4",
                 "download/0305001.mp4",
