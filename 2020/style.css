@@ -9,8 +9,6 @@ body {
 }
 
 h1 {
-    pointer-events: none;
-    user-select: none;
     margin-top: 2.5rem;
 }
 
