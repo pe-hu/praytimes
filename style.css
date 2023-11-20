@@ -102,7 +102,7 @@ footer button:hover,
 }
 
 h2 button {
-    background-image: url(../inn/icon.png);
+    background-image: url(inn/icon.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

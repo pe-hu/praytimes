@@ -18,13 +18,13 @@
     <!--for Twitter-->
     <meta content="summary_large_image" name="twitter:card">
     <meta content="http://praytimes.pe.hu/" property="og:url">
-    <meta content="http://praytimes.pe.hu/inn/cover.jpeg" property="og:image">
-    <meta content="http://praytimes.pe.hu/inn/cover.jpeg" name="twitter:image:src">
+    <meta content="http://praytimes.pe.hu/2020/cover.jpeg" property="og:image">
+    <meta content="http://praytimes.pe.hu/2020/cover.jpeg" name="twitter:image:src">
 
+    <link rel="icon" href="inn/icon.png" type="image/png">
     <link rel="stylesheet" href="inn/css/index.css">
     <link rel="stylesheet" href="inn/css/randomdraggable.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="inn/icon.png" type="image/png">
     <script src="script.js"></script>
 </head>
 
@@ -37,11 +37,20 @@
     </header>
 
     <main>
-        <h1 class="start">
+        <h1 class="enter">
             <img src="inn/logo/logo_black.png" alt="プレイタイムズ">
         </h1>
         <canvas id="live"></canvas>
-        <ul id="randomdraggable"></ul>
+        <ul id="randomdraggable">
+            <li hidden>
+                <input type="radio" name="youtube" id="one" value="one">
+                <label for="one">
+                    <video>
+                        <source type="video/mp4" src="2020/download/0304001.mp4">
+                    </video>
+                </label>
+            </li>
+        </ul>
     </main>
 </body>
 
