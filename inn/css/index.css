@@ -27,12 +27,12 @@ html {
 
 @font-face {
   font-family: "MS Mincho";
-  src: url("https://pehu.creative-community.space/icon/font/MSMincho.ttc");
+  src: url("MSMincho.ttc");
 }
 
 @font-face {
   font-family: "SimSong";
-  src: url("https://pehu.creative-community.space/icon/font/SimSun.ttc");
+  src: url("SimSun.ttc");
 }
 
 @font-face {
