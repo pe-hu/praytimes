@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no" />
 
+    <script src="youtube.js"></script>
+
     <!--og:meta-->
     <meta content="website" property="og:type">
     <title>プレイタイムズ</title>
@@ -25,22 +27,11 @@
     <link rel="stylesheet" href="inn/css/index.css">
     <link rel="stylesheet" href="inn/css/randomdraggable.css">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </head>
 
 <body>
-    <header>
-        <a class="pehu" href="https://pehu.creative-community.space/" target="_blank">
-            ∧°┐ | creative, community space
-        </a>
-        <span>Presents</span>
-    </header>
-
     <main>
-        <h1 class="enter">
-            <img src="inn/logo/logo_black.png" alt="プレイタイムズ">
-        </h1>
-        <canvas id="live"></canvas>
+        <div id="player"></div>
         <ul id="randomdraggable"></ul>
     </main>
 </body>
