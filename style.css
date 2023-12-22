@@ -58,7 +58,7 @@ footer button {
     transition: 0.5s;
 }
 
-#live {
+#player {
     position: absolute;
     background-size: contain;
     background-position: center;
@@ -66,39 +66,13 @@ footer button {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
     z-index: 0;
-}
-
-#randomdraggable li {
-    max-width: 7rem;
 }
 
 #randomdraggable li label {
     background: #000;
-}
-
-#randomdraggable li video {
-    max-width: 100%;
-}
-
-header a {
-    border-radius: 0.5rem;
-    color: #fff;
-    padding: 0.25rem;
-    transition: 0.5s;
-}
-
-[name="twenty"] {
-    border-radius: 0.5rem;
-    padding: 0.5rem;
-    font-size: 125%;
-}
-
-header a:hover,
-footer button:hover,
-[name="twenty"] {
-    color: #f3c5c6;
-    background: #fff;
 }
 
 h2 button {
