@@ -66,12 +66,15 @@ function onGoogleLoad() {
                 img.src = 'https://img.youtube.com/vi/' + thisID + '/default.jpg';
                 label.appendChild(img);
 
+                if (i = 0) {
+                    player.loadVideoById({ videoId: thisID });
+                }
+
                 input.addEventListener('click', () => {
                     videoId = input.value;
                     player.loadVideoById({ videoId: videoId });
                 });
             }
-            player.loadVideoById({ videoId: videoId });
         });
     });
 }
