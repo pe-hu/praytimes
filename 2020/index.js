@@ -125,6 +125,7 @@ function randomdVideos(obj) {
                     source.src = obj.id + playAll[i].src[ii];
                     video.load();
                     video.play();
+                    canvasUpdate();
                 }
             }, false);
         }
