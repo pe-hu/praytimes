@@ -40,8 +40,13 @@ html {
   src: url("HiraMaruPro-W4.otf");
 }
 
+@font-face {
+  font-family: "ProductSans";
+  src: url("ProductSans-Regular.ttf");
+}
+
 body {
-  font-family: "ヒラギノ丸ゴ Pro W4", "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro", "HG丸ｺﾞｼｯｸM-PRO", "HGMaruGothicMPRO", sans-serif;
+  font-family: "ProductSans", "ヒラギノ丸ゴ Pro W4", "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro", "HG丸ｺﾞｼｯｸM-PRO", "HGMaruGothicMPRO", sans-serif;
 }
 
 body,

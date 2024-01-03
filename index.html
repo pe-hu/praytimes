@@ -2,179 +2,171 @@
 <html lang="ja">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="format-detection" content="telephone=no" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <script src="index.js"></script>
+  <script src="2020/menu.js"></script>
 
-    <script src="youtube.js"></script>
-    <script src="https://apis.google.com/js/client.js?onload=onGoogleLoad"></script>
+  <script type="text/javascript">
+    let directory;
+    let id;
 
-    <!--og:meta-->
-    <meta content="website" property="og:type">
-    <title>プレイタイムズ</title>
-    <meta content="プレイタイムズ" property="og:title">
-    <meta content="プレイタイムズとは、異なる場所や同じ場所で営まれる生活を集め、鑑賞することを目的とした、私たちにとっての祈り／遊びの場です。" name="description">
-    <meta
-        content="This is a place of pray / play for us to gather and appreciate life in different places or in the same place."
-        property="og:description">
-
-    <!--for Twitter-->
-    <meta content="summary_large_image" name="twitter:card">
-    <meta content="https://praytimes.pe.hu/" property="og:url">
-    <meta content="https://praytimes.pe.hu/2020/cover.jpeg" property="og:image">
-    <meta content="https://praytimes.pe.hu/2020/cover.jpeg" name="twitter:image:src">
-
-    <link rel="icon" href="inn/icon.png" type="image/png">
-    <link rel="stylesheet" href="inn/css/index.css">
-    <link rel="stylesheet" href="inn/css/randomdraggable.css">
-
-    <style>
-        h1,
-        h2 {
-            padding: 0;
-            margin: 0;
+    // URLにアンカーがある場合
+    const urlHash = location.hash;
+    if (urlHash) {
+      id = urlHash.replace('#', '')
+      fetchMD('inn/' + id + '/README.md', '#content');
+    } else {
+      document.addEventListener('readystatechange', event => {
+        if (event.target.readyState === 'interactive') {
+          const title = document.querySelector('h1')
+          title.hidden = false
+        } else if (event.target.readyState === 'complete') {
+          //
         }
+      });
+      id = "img"
+    }
 
-        body {
-            background-color: #f3c5c6;
-        }
+    directory = 'inn/' + id + "/";
+    indexJSON('inn/' + id + "/index.json")
+  </script>
 
-        h1 {
-            margin-top: 2.5rem;
-        }
+  <!--og:meta-->
+  <meta content="website" property="og:type">
+  <title>楽観のテクニック The Technique of Optimism</title>
+  <meta content="楽観のテクニック The Technique of Optimism" property="og:title">
+  <meta
+    content="2020.06.27 - 2021.01.30 | BnA Alter Museum SCG (Stair Case Gallery) にて開催された特別企画展に、現代美術作品「プレイタイムズ」を発表しました。"
+    name="description">
+  <meta
+    content="2020.06.27 - 2021.01.30 | BnA Alter Museum SCG (Stair Case Gallery) にて開催された特別企画展に、現代美術作品「プレイタイムズ」を発表しました。"
+    property="og:description">
 
-        h1 img {
-            filter: brightness(1.5) invert();
-        }
+  <!--for Twitter-->
+  <meta content="summary_large_image" name="twitter:card">
+  <meta content="http://praytimes.pe.hu/inn/" property="og:url">
+  <meta content="http://praytimes.pe.hu/inn/card.png" property="og:image">
+  <meta content="http://praytimes.pe.hu/inn/card.png" name="twitter:image:src">
 
-        h1 b,
-        h2 b {
-            display: inline-block;
-        }
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/content.css">
+  <link rel="stylesheet" href="css/randomdraggable.css">
+  <style>
+    #alt {
+      color: #f3c5c6;
+      display: grid;
+      place-items: center;
+      height: 25vh;
+    }
 
-        h1 b {
-            color: #fff;
-            padding: 0.5rem;
-        }
-
-        h2 b {
-            color: #f3c5c6;
-            margin-bottom: 2.5rem;
-        }
-
-        main {
-            height: 100vh;
-            max-height: -webkit-fill-available;
-        }
-
-        h1,
-        h2 {
-            position: relative;
-            z-index: 1;
-        }
-
-        h2 {
-            cursor: pointer;
-            text-align: center;
-        }
-
-        h2 {
-            border-radius: 0.5rem;
-            transition: 0.5s;
-        }
-
-        #player {
-            position: absolute;
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-        }
-
-        article {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: start;
-            justify-content: space-between;
-            gap: 1rem;
-            margin: 1rem;
-        }
-
-        article section {
-            background: #fff;
-            border-radius: 1rem;
-            flex: 2 500px;
-            padding: 1.5rem;
-        }
-
-        article section div {
-            background: #f3c5c6;
-            color: #fff;
-            border-radius: 2rem;
-            padding: 1.5rem;
-            margin: 0 2rem 0.5rem 0;
-            float: left;
-        }
-
-        @media (orientation: portrait) {
-            article section div {
-                width: 100%;
-                margin: 0 0 1.5rem;
-            }
-        }
-
-        article section strong {
-            color: #f3c5c6;
-            font-size: 150%;
-            text-decoration: underline;
-        }
-
-        article section div u {
-            color: #f3c5c6;
-            background: #fff;
-            border-radius: 0.25rem;
-            font-size: 90%;
-            text-decoration: none;
-            padding: 0.25rem;
-        }
-    </style>
+    #note {
+      color: #fff;
+    }
+  </style>
 </head>
 
 <body>
-    <main>
-        <h1 class="enter">
-            <img src="inn/logo/logo_black.png" alt="プレイタイムズ">
-        </h1>
-        <h2>
-            <button type="button"></button>
-        </h2>
-        <div id="player"></div>
-        <ul id="randomdraggable"></ul>
-    </main>
-    <script>
-        window.addEventListener("load", () => {
-            const h2 = document.querySelector('h2');
-            h2.hidden = true;
+  <header>
+    <time id="date"></time>
+    <button type="button"></button>
+  </header>
+  <main>
+    <h1 hidden>
+      <img src="inn/logo/logo_white.png" alt="プレイタイムズ">
+    </h1>
+    <h2 id="alt"></h2>
+    <h3 id="note"></h3>
+    <ul id="randomdraggable"></ul>
+  </main>
 
-            const scrollElement = document.querySelector('#randomdraggable');
-            scrollElement.addEventListener('wheel', (e) => {
-                if (Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;
-                const maxScrollLeft = scrollElement.scrollWidth - scrollElement.clientWidth;
-                if (
-                    (scrollElement.scrollLeft <= 0 && e.deltaY < 0) ||
-                    (scrollElement.scrollLeft >= maxScrollLeft && e.deltaY > 0)
-                )
-                    return;
-                e.preventDefault();
-                scrollElement.scrollLeft += e.deltaY;
-            });
-        });
-    </script>
+  <article id="content">
+    <h2>私たちはGoogleハングアウト上に、<b>プレイタイムズ</b> というビデオ通話を行うためのグループを作成しました。</h2>
+    <section>
+      <img class="logo" src="inn/logo/logo_pink.png" alt="プレイタイムズ">
+      <h3>とは、異なる場所や同じ場所で営まれる生活を集め、鑑賞することを目的とした、私たちにとっての祈り／遊びの場です。</h3>
+      <h3>is a place of pray / play for us to gather and appreciate life in different places or in the same place.
+      </h3>
+      <br />
+      <p>We have created a group for video chat on google hangouts named “<b>プレイタイムズ</b>”.</p>
+    </section>
+    <aside class="howto">
+      <h2>参加方法 How to Join</h2>
+      <ol>
+        <li>
+          スマートフォンにGoogleハングアウトのアプリをダウンロード<br>
+          Let's get Google hangouts App on your Android or iPhone.
+        </li>
+        <p>
+          <a class="link" href="https://play.google.com/store/apps/details?id=com.google.android.talk">Google
+            Play</a>
+          <a class="link"
+            href="https://apps.apple.com/jp/app/%E3%83%8F%E3%83%B3%E3%82%B0%E3%82%A2%E3%82%A6%E3%83%88/id643496868">
+            App Store
+          </a>
+        </p>
+        <li>
+          プレイタイムズへの招待リンクへアクセス<br>
+          Let's access a link of "プレイタイムズ".
+        </li>
+        <p><a class="link" href="live/">come on join us!</a></p>
+      </ol>
+      <button class="download" type="button"></button>
+    </aside>
+    <hr />
+    <section class="noprint">
+      <p>
+        <u>2020.06.27 - 2021.01.30</u>
+      </p>
+      <h3>
+        <a href="https://bnaaltermuseum.com/exhibition/the-technique-of-optimism/" target="_blank">
+          楽観のテクニック The Technique of Optimism
+        </a>
+      </h3>
+      <p>w/ <b>Masanao Hirayama, yang02, Hana Sawada, Shoma Kimura</b></p>
+      <p>BnA Alter Museum SCG (Stair Case Gallery) にて開催された特別企画展に、現代美術作品「プレイタイムズ」を発表しました。</p>
+      <br>
+      <p>
+        <u>記録写真</u>
+      </p>
+      <p>
+        <a class="link" href="/#sign">サイン</a>
+      </p>
+      <p>
+        <a class="link" href="/#symbol">ていのうきもちわるい</a>
+      </p>
+      <p>
+        <a class="link" href="/#pieces">私たちの身の回りにあったもの</a>
+      </p>
+      <p>
+        <a class="link" href="/#peace">あなたの気分に合う場所へ印をつける</a>
+      </p>
+    </section>
+    <aside class="noprint">
+      <a href="https://bnaaltermuseum.com/exhibition/the-technique-of-optimism/" target="_blank">
+        <img src="inn/image.jpg" alt="楽観のテクニック The Technique of Optimism">
+      </a>
+    </aside>
+
+    <footer>
+      <a class="pehu" href="https://pehu.creative-community.space/" target="_blank">
+        ∧°┐ | creative, community space
+      </a>
+      <span>Presents</span>
+    </footer>
+  </article>
+
+  <dialog id="modal">
+    <button type="button" id="closeBtn">×</button>
+    <fieldset>
+      <legend>記録映像</legend>
+      <select name="twenty"></select>
+      <p>私たちは、毎月第一日曜日の午前10時から30分、プレイタイムズに集まった生活を記録しました。</p>
+      <button id="liveBtn" type="button" onclick="location.assign('/2020/')">PLAY</button>
+    </fieldset>
+  </dialog>
 </body>
 
 </html>
