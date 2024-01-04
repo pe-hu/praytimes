@@ -27,6 +27,7 @@
         }
       })
       id = "img";
+      fetchMD(id + '/README.md', '#content')
     }
 
     directory = id + "/";
@@ -82,7 +83,7 @@
     <ul id="randomdraggable"></ul>
   </main>
 
-  <article id="content">
+  <article>
     <section>
       <p>
         <u>2020.06.27 - 2021.01.30</u>
@@ -94,25 +95,8 @@
       </h3>
       <p>w/ <b>Masanao Hirayama, yang02, Hana Sawada, Shoma Kimura</b></p>
       <p>BnA Alter Museum SCG (Stair Case Gallery) にて開催された特別企画展に、現代美術作品「プレイタイムズ」を発表しました。</p>
-      <br>
-      <p>
-        <u>記録写真</u>
-      </p>
-      <p>
-        <a class="link" href="../inn/#symbol">ていのうきもちわるい</a>
-      </p>
-      <p>
-        <a class="link" href="../inn/#pieces">私たちの身の回りにあったもの</a>
-      </p>
-      <p>
-        <a class="link" href="../inn/#peace">あなたの気分に合う場所へ印をつける</a>
-      </p>
     </section>
-    <aside>
-      <a href="https://bnaaltermuseum.com/exhibition/the-technique-of-optimism/" target="_blank">
-        <img src="image.jpg" alt="楽観のテクニック The Technique of Optimism">
-      </a>
-    </aside>
+    <aside id="content"></aside>
 
     <footer>
       <a class="pehu" href="https://pehu.creative-community.space/" target="_blank">
