@@ -196,8 +196,8 @@ header button {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  width: 55px;
-  height: 55px;
+  width: 3.5rem;
+  height: 3.5rem;
 }
 
 #closeBtn {
