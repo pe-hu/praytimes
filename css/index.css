@@ -3,15 +3,27 @@ html {
   height: -webkit-fill-available;
 }
 
+#modal {
+  width: 400px;
+}
+
 @media screen and (max-width: 750px) {
   html {
     font-size: 2.5vw;
+  }
+  
+  #modal {
+    width: 65vw;
   }
 }
 
 @media screen and (max-width: 500px) {
   html {
     font-size: 3vw;
+  }
+  
+  #modal {
+    width: 75vw;
   }
 }
 
@@ -175,11 +187,6 @@ h1,
 
 #note {
   max-width: 90%;
-}
-
-#modal {
-  width: 75%;
-  max-width: 400px;
 }
 
 button,
