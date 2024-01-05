@@ -18,6 +18,9 @@
       id = urlHash.replace('#', '')
       fetchMD(id + '/README.md', '#content')
     } else {
+      id = "img";
+      fetchMD(id + '/README.md', '#content')
+
       document.addEventListener('readystatechange', event => {
         if (event.target.readyState === 'interactive') {
           const title = document.querySelector('h1')
@@ -26,8 +29,6 @@
           //
         }
       })
-      id = "img";
-      fetchMD(id + '/README.md', '#content')
     }
 
     directory = id + "/";

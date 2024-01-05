@@ -9,37 +9,24 @@
   <script src="2020/menu.js"></script>
 
   <script type="text/javascript">
-    let directory;
-    let id;
+    let id = "img";
+    let directory = 'inn/' + id + "/";
 
-    // URLにアンカーがある場合
-    const urlHash = location.hash;
-    if (urlHash) {
-      id = urlHash.replace('#', '')
-      fetchMD('inn/' + id + '/README.md', '#content');
-    } else {
-      document.addEventListener('readystatechange', event => {
-        if (event.target.readyState === 'interactive') {
-          const title = document.querySelector('h1')
-          title.hidden = false
-        } else if (event.target.readyState === 'complete') {
-          //
-        }
-      });
-      id = "img"
-    }
-
-    directory = 'inn/' + id + "/";
-    indexJSON('inn/' + id + "/index.json")
+    document.addEventListener('readystatechange', event => {
+      if (event.target.readyState === 'interactive') {
+        const title = document.querySelector('h1')
+        title.hidden = false
+      } else if (event.target.readyState === 'complete') {
+        indexJSON('inn/' + id + "/index.json")
+      }
+    });
   </script>
 
   <!--og:meta-->
   <meta content="website" property="og:type">
   <title>プレイタイムズ | praytimes.pe.hu</title>
   <meta content="プレイタイムズ | praytimes.pe.hu" property="og:title">
-  <meta
-    content="プレイタイムズ とは、異なる場所や同じ場所で営まれる生活を集め、鑑賞することを目的とした、私たちにとっての祈り／遊びの場です。"
-    name="description">
+  <meta content="プレイタイムズ とは、異なる場所や同じ場所で営まれる生活を集め、鑑賞することを目的とした、私たちにとっての祈り／遊びの場です。" name="description">
   <meta
     content="this is a place of pray / play for us to gather and appreciate life in different places or in the same place."
     property="og:description">
@@ -159,8 +146,8 @@
     <fieldset>
       <legend>記録映像</legend>
       <select name="twenty"></select>
-      <p>これは、BnA Alter Museum にて開催された特別企画展「楽観のテクニック」の会期中に記録した プレイタイムズ・ライブ を再編集した映像作品です。</p>
-      <button id="liveBtn" type="button" onclick="location.assign('/2020/')">PLAY</button>
+      <p>これは、「楽観のテクニック」の会期中に記録した プレイタイムズ・ライブを再編集した映像作品です。</p>
+      <button id="liveBtn" type="button" onclick="location.assign('2020/')">PLAY</button>
     </fieldset>
   </dialog>
 </body>
