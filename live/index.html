@@ -4,15 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="format-detection" content="telephone=no" />
-
-    <script src="https://apis.google.com/js/client.js?onload=onGoogleLoad"></script>
-    <script src="youtube.js"></script>
+    <meta name="format-detection" content="telephone=no">
+    <script src="../live/index.js"></script>
+    <script>
+        const urlHash = location.hash;
+        let hash = urlHash.replace('#', '')
+        let live;
+        if (hash) {
+            live = hash + '/';
+        } else {
+            live = '';
+        }
+        indexJSON(hash + 'index.json')
+        fetchMD(hash + 'README.md', '#readme')
+    </script>
 
     <!--og:meta-->
     <meta content="website" property="og:type">
-    <title>プレイタイムズ</title>
-    <meta content="プレイタイムズ" property="og:title">
+    <title>プレイタイムズ | praytimes.pe.hu</title>
+    <meta content="プレイタイムズ | praytimes.pe.hu" property="og:title">
     <meta content="プレイタイムズとは、異なる場所や同じ場所で営まれる生活を集め、鑑賞することを目的とした、私たちにとっての祈り／遊びの場です。" name="description">
     <meta
         content="This is a place of pray / play for us to gather and appreciate life in different places or in the same place."
@@ -26,58 +36,50 @@
 
     <link rel="icon" href="../icon.png" type="image/png">
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/live.css">
     <link rel="stylesheet" href="../css/randomdraggable.css">
 
     <style>
-        body {
-            background-color: #f3c5c6;
+        h1 {
+            pointer-events: none;
+            user-select: none;
         }
 
-        main {
-            position: relative;
-            height: 100vh;
-            max-height: -webkit-fill-available;
-        }
-
-        #player {
-            position: absolute;
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100%;
-            height: 100%;
-            z-index: 0;
+        hr {
+            border: none;
+            padding: 0.125rem;
+            margin: 0;
         }
     </style>
 </head>
 
 <body>
     <main>
-        <div id="player"></div>
+        <h1>
+            <span></span>
+            <small>の</small><br />
+            <img src="../logo/logo_black.png" alt="プレイタイムズ">
+        </h1>
+        <h2 class="start" hidden>
+            <b>PLAY</b>
+            <br>
+            <button type="button"></button>
+        </h2>
+        <canvas id="live"></canvas>
         <ul id="randomdraggable"></ul>
     </main>
-    <script>
-        window.addEventListener("load", () => {
-            const h2 = document.querySelector('h2');
-            h2.hidden = true;
-
-            const scrollElement = document.querySelector('#randomdraggable');
-            scrollElement.addEventListener('wheel', (e) => {
-                if (Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;
-                const maxScrollLeft = scrollElement.scrollWidth - scrollElement.clientWidth;
-                if (
-                    (scrollElement.scrollLeft <= 0 && e.deltaY < 0) ||
-                    (scrollElement.scrollLeft >= maxScrollLeft && e.deltaY > 0)
-                )
-                    return;
-                e.preventDefault();
-                scrollElement.scrollLeft += e.deltaY;
-            });
-        });
-    </script>
+    <hr>
+    <article>
+        <section id="description"></section>
+        <section id="readme"></section>
+    </article>
+    <footer>
+        <a id="youtube" target="_blank">Watch the Full Video</a>
+        <span id="time">
+            Pray on
+            <button type="button"></button>
+        </span>
+    </footer>
 </body>
 
 </html>

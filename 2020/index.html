@@ -9,26 +9,23 @@
     <script src="menu.js"></script>
     <script>
         const urlHash = location.hash;
-        let hash = urlHash.replace('#', '');
+        let hash = urlHash.replace('#', '')
+        let live;
         if (hash === 'all') {
-            let live = '';
-            indexJSON('index.json');
-            fetchHTML('download/index.html', '#readme');
+            live = 'download/';
         } else if (hash) {
-            let live = hash + '/';
-            indexJSON(live + 'index.json');
-            fetchHTML(live + 'index.html', '#readme');
+            live = hash + '/';
         } else {
-            let live = '';
-            indexJSON('index.json');
-            fetchHTML('download/index.html', '#readme');
+            live = 'download/';
         }
+        indexJSON(live + 'index.json')
+        fetchHTML(live + 'index.html', '#readme')
 
         window.addEventListener("DOMContentLoaded", function () {
-            const select = document.querySelector('[name="twenty"]');
+            const select = document.querySelector('[name="twenty"]')
             select.onchange = () => {
-                location.replace('#' + select.value);
-                location.reload();
+                location.replace('#' + select.value)
+                location.reload()
             }
         }, false);
     </script>
@@ -93,11 +90,11 @@
     </article>
     <article id="readme"></article>
     <footer>
+        <a id="youtube" target="_blank">Watch the Full Video</a>
         <span id="time">
             Pray on
             <button type="button"></button>
         </span>
-        <a id="youtube" target="_blank">Watch the Full Video</a>
     </footer>
 </body>
 

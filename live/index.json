@@ -1,0 +1,36 @@
+{
+    "id": "",
+    "title": "<b>楽観のテクニック</b>",
+    "datetime": "2020/06/27 17:00:00",
+    "description": "BnA Alter Museum SCG (Stair Case Gallery) にて開催された特別企画展に、現代美術作品「プレイタイムズ」を発表しました。",
+    "width": "0.575",
+    "height": "1",
+    "author": [
+        "∧°┐ | creative, community space"
+    ],
+    "play": [
+        {
+            "id": "one",
+            "src": [
+                "video/000.mp4",
+                "video/002.mp4",
+                "video/004.mp4"
+            ]
+        },
+        {
+            "id": "two",
+            "src": [
+                "video/001.mp4",
+                "video/003.mp4",
+                "video/006.mp4"
+            ]
+        },
+        {
+            "id": "three",
+            "src": [
+                "video/005.mp4"
+            ]
+        }
+    ],
+    "audio": ""
+}

@@ -69,10 +69,6 @@ footer button {
     z-index: 0;
 }
 
-#randomdraggable li {
-    max-width: 7rem;
-}
-
 #randomdraggable li label {
     background: #000;
 }

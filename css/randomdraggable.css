@@ -70,6 +70,10 @@ footer {
     justify-content: space-between;
 }
 
+footer {
+    flex-flow: row-reverse;
+}
+
 #randomdraggable {
     place-self: end;
     display: flex;
@@ -88,15 +92,16 @@ footer {
 #randomdraggable li {
     text-align: center;
     flex: auto;
+    height: 20vw;
+    max-height: 10rem;
 }
 
 #randomdraggable li label {
     display: block;
     border: solid 0.2rem transparent;
     border-radius: 0.5rem;
-    height: 20vw;
-    max-height: 10rem;
     transition: 0.5s;
+    height: 100%;
 }
 
 #randomdraggable li input:checked+label {

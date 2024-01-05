@@ -5,7 +5,6 @@ async function indexJSON(requestURL) {
     const response = await fetch(request);
     const jsonIndex = await response.text();
     const index = JSON.parse(jsonIndex);
-    thisDate(index);
     randomdVideos(index);
     playVideo(index);
 }
@@ -35,7 +34,12 @@ function shuffle(arrays) {
     return array;
 }
 
-function thisDate(obj) {
+function randomdVideos(obj) {
+    const title = document.querySelector('h1 span');
+    const description = document.querySelector('#description');
+    title.innerHTML = obj.title;
+    description.innerHTML = obj.description;
+
     const dataTime = document.querySelector('#time button');
     dataTime.textContent = obj.datetime;
     dataTime.addEventListener('click', function (event) {
@@ -58,21 +62,13 @@ function thisDate(obj) {
         }
         event.target.textContent = event.target.textContent === obj.datetime ? now : obj.datetime;
     });
-}
 
-function randomdVideos(obj) {
-    const main = document.querySelector('main');
-    const title = document.querySelector('h1 span');
-    const description = document.querySelector('#description');
-    const youtube = document.querySelector('#youtube');
     const randomdRaggable = document.querySelector('#randomdraggable');
-
-    title.innerHTML = obj.title;
-    description.innerHTML = obj.description;
-    youtube.href = `https://youtu.be/${obj.youtube}`;
     const playAll = shuffle(obj.play);
     for (let i = 0; i < playAll.length; i++) {
         const li = document.createElement('li');
+        li.style.width = `calc(20vw / ${obj.width})`;
+        li.style.maxWidth = `calc(10rem / ${obj.width})`;
         randomdRaggable.appendChild(li);
 
         const input = document.createElement('input');
@@ -113,13 +109,15 @@ function randomdVideos(obj) {
 
             video.addEventListener('ended', () => {
                 if (playAll[i].src.length === 0) {
-                    ii = 0;
-                    source.src = obj.id + playAll[i].src[ii];
                     video.pause();
+                    ii = 0;
+                    source.src = obj.id + playAll[i].src[0];
+                    video.load();
                 } else if (ii === playAll[i].src.length - 1) {
-                    ii = 0;
-                    source.src = obj.id + playAll[i].src[ii];
                     video.pause();
+                    ii = 0;
+                    source.src = obj.id + playAll[i].src[0];
+                    video.load();
                 } else if (ii < playAll[i].src.length - 1) {
                     ii++;
                     source.src = obj.id + playAll[i].src[ii];
@@ -139,10 +137,19 @@ function randomdVideos(obj) {
         })
     }
 
+    if (obj.youtube) {
+        const youtube = document.querySelector('#youtube');
+        youtube.href = `https://youtu.be/${obj.youtube}`;
+    } else {
+        const youtube = document.querySelector('#youtube');
+        youtube.remove()
+
+    }
+
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         const audio = new Audio(obj.id + obj.audio);
         audio.hidden = true;
-        main.appendChild(audio);
+        document.querySelector('main').appendChild(audio);
 
         audio.addEventListener('ended', () => {
             const all = document.querySelectorAll('video');
