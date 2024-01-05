@@ -70,10 +70,6 @@ footer {
     justify-content: space-between;
 }
 
-footer {
-    flex-flow: row-reverse;
-}
-
 #randomdraggable {
     place-self: end;
     display: flex;

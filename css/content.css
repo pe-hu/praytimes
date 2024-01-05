@@ -24,6 +24,10 @@
   width: calc(40% - 1rem);
 }
 
+#content h2 {
+  margin: 0 0 2rem;
+}
+
 @media screen and (max-width: 500px) {
 
   #content section,

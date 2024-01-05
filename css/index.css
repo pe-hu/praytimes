@@ -133,8 +133,7 @@ h3 {
   font-weight: 500;
 }
 
-h3,
-#modal button {
+h3 {
   font-size: 150%;
 }
 
@@ -142,6 +141,7 @@ h1,
 h1 b,
 #date,
 #modal,
+#modal button,
 #modal select {
   font-size: 125%;
 }
