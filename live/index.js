@@ -95,7 +95,7 @@ function randomdVideos(obj) {
         }
 
         const canvas = document.querySelector("#live");
-        canvas.style.backgroundImage = `url(${obj.id}cover.jpeg)`;
+        canvas.style.backgroundImage = `url(${obj.id}${obj.cover})`;
         let canvasCtx = canvas.getContext('2d');
 
         function canvasUpdate() {

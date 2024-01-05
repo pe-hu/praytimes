@@ -13,10 +13,10 @@
         if (hash) {
             live = hash + '/';
         } else {
-            live = '';
+            live = 'www/';
         }
-        indexJSON(hash + 'index.json')
-        fetchMD(hash + 'README.md', '#readme')
+        indexJSON(live + 'index.json')
+        fetchMD(live + 'README.md', '#readme')
     </script>
 
     <!--og:meta-->
@@ -31,8 +31,8 @@
     <!--for Twitter-->
     <meta content="summary_large_image" name="twitter:card">
     <meta content="https://praytimes.pe.hu/live/" property="og:url">
-    <meta content="https://praytimes.pe.hu/live/card.png" property="og:image">
-    <meta content="https://praytimes.pe.hu/live/card.png" name="twitter:image:src">
+    <meta content="https://praytimes.pe.hu/live/cover.jpeg" property="og:image">
+    <meta content="https://praytimes.pe.hu/live/cover.jpeg" name="twitter:image:src">
 
     <link rel="icon" href="../icon.png" type="image/png">
     <link rel="stylesheet" href="../css/index.css">

@@ -11,24 +11,25 @@
         {
             "id": "one",
             "src": [
-                "video/000.mp4",
-                "video/002.mp4",
-                "video/004.mp4"
+                "www/000.mp4",
+                "www/002.mp4",
+                "www/004.mp4"
             ]
         },
         {
             "id": "two",
             "src": [
-                "video/001.mp4",
-                "video/003.mp4",
-                "video/006.mp4"
+                "www/001.mp4",
+                "www/003.mp4",
+                "www/006.mp4"
             ]
         },
         {
             "id": "three",
             "src": [
-                "video/005.mp4"
+                "www/005.mp4"
             ]
         }
-    ]
+    ],
+    "cover": "cover.jpeg"
 }
