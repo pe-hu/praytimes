@@ -35,10 +35,8 @@ function shuffle(arrays) {
 }
 
 function randomdVideos(obj) {
-    if (obj.title) {
-        const title = document.querySelector('h1 span');
-        title.innerHTML = obj.title;
-    }
+    const title = document.querySelector('h1 span');
+    title.innerHTML = obj.title;
 
     const description = document.querySelector('#description');
     description.innerHTML = obj.description;
@@ -86,6 +84,7 @@ function randomdVideos(obj) {
         li.appendChild(label);
 
         const video = document.createElement('video');
+        video.poster = obj.directory + playAll[i].cover;
         label.appendChild(video);
 
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
@@ -107,23 +106,23 @@ function randomdVideos(obj) {
             let ii = 0;
             const source = document.createElement('source');
             source.setAttribute("type", "video/mp4");
-            source.src = obj.id + playAll[i].src[ii];
+            source.src = obj.directory + playAll[i].src[ii];
             video.appendChild(source);
 
             video.addEventListener('ended', () => {
                 if (playAll[i].src.length === 0) {
                     video.pause();
                     ii = 0;
-                    source.src = obj.id + playAll[i].src[0];
+                    source.src = obj.directory + playAll[i].src[0];
                     video.load();
                 } else if (ii === playAll[i].src.length - 1) {
                     video.pause();
                     ii = 0;
-                    source.src = obj.id + playAll[i].src[0];
+                    source.src = obj.directory + playAll[i].src[0];
                     video.load();
                 } else if (ii < playAll[i].src.length - 1) {
                     ii++;
-                    source.src = obj.id + playAll[i].src[ii];
+                    source.src = obj.directory + playAll[i].src[ii];
                     video.load();
                     video.play();
                     canvasUpdate();
@@ -148,9 +147,10 @@ function randomdVideos(obj) {
         youtube.remove()
 
     }
+
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         if (obj.audio) {
-            const audio = new Audio(obj.id + obj.audio);
+            const audio = new Audio(obj.directory + obj.audio);
             audio.hidden = true;
             document.querySelector('main').appendChild(audio);
 

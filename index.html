@@ -16,7 +16,6 @@
       if (event.target.readyState === 'interactive') {
         const title = document.querySelector('h1')
         title.hidden = false
-      } else if (event.target.readyState === 'complete') {
         indexJSON('inn/' + id + "/index.json")
       }
     });
@@ -33,11 +32,11 @@
 
   <!--for Twitter-->
   <meta content="summary_large_image" name="twitter:card">
-  <meta content="http://praytimes.pe.hu/inn/" property="og:url">
-  <meta content="http://praytimes.pe.hu/inn/card.png" property="og:image">
-  <meta content="http://praytimes.pe.hu/inn/card.png" name="twitter:image:src">
+  <meta content="http://praytimes.pe.hu/" property="og:url">
+  <meta content="http://praytimes.pe.hu/logo/card.png" property="og:image">
+  <meta content="http://praytimes.pe.hu/logo/card.png" name="twitter:image:src">
 
-  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="icon" href="logo/icon.png" type="image/png">
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/content.css">
   <link rel="stylesheet" href="css/randomdraggable.css">

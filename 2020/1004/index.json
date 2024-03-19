@@ -1,7 +1,8 @@
 {
   "id": "1004/",
+  "cover": "cover.jpeg",
   "title": "<b>10</b>月<b>4</b>日",
-  "datetime": "2020/10/04 10:30:00",
+  "datetime": "2020/10/04 10:00:00",
   "description": "We had recorded a video of the foot of walking at プレイタイムズ on 4th October.",
   "width": "1.7",
   "height": "1",
@@ -12,39 +13,43 @@
     "Kaori Nakao",
     "Kazuma Sasajima"
   ],
+  "directory": "https://ia600207.us.archive.org/5/items/praytimes_202403/",
   "play": [
     {
       "id": "one",
+      "cover": "praytimes_202403.thumbs/2020/1004/001_000001.jpg",
       "src": [
-        "001.mp4",
-        "008.mp4",
-        "009.mp4",
-        "010.mp4"
+        "2020/1004/001.mp4",
+        "2020/1004/008.mp4",
+        "2020/1004/009.mp4",
+        "2020/1004/010.mp4"
       ]
     },
     {
       "id": "two",
+      "cover": "praytimes_202403.thumbs/2020/1004/002_000001.jpg",
       "src": [
-        "002.mp4",
-        "003.mp4",
-        "006.mp4"
+        "2020/1004/002.mp4",
+        "2020/1004/003.mp4",
+        "2020/1004/006.mp4"
       ]
     },
     {
       "id": "three",
+      "cover": "praytimes_202403.thumbs/2020/1004/004_000001.jpg",
       "src": [
-        "004.mp4",
-        "007.mp4"
+        "2020/1004/004.mp4",
+        "2020/1004/007.mp4"
       ]
     },
     {
       "id": "four",
+      "cover": "praytimes_202403.thumbs/2020/1004/005_000001.jpg",
       "src": [
-        "005.mp4"
+        "2020/1004/005.mp4"
       ]
     }
   ],
-  "audio": "walking.m4a",
-  "cover": "cover.jpeg",
+  "audio": "2020/1004/walking.m4a",
   "youtube": "LPlODq-ZKTE"
 }

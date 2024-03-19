@@ -1,7 +1,8 @@
 {
   "id": "1101/",
+  "cover": "cover.jpeg",
   "title": "<b>11</b>月<b>1</b>日",
-  "datetime": "2020/11/01 10:30:00",
+  "datetime": "2020/11/01 10:00:00",
   "description": "We had recorded a video of the sky on プレイタイムズ on 1st November.",
   "width": "1.7",
   "height": "1",
@@ -12,41 +13,46 @@
     "Kaori Nakao",
     "Kazuma Sasajima"
   ],
+  "directory": "https://ia600207.us.archive.org/5/items/praytimes_202403/",
   "play": [
     {
       "id": "one",
+      "cover": "praytimes_202403.thumbs/2020/1101/001_000001.jpg",
       "src": [
-        "001.mp4",
-        "005.mp4"
+        "2020/1101/001.mp4",
+        "2020/1101/005.mp4"
       ]
     },
     {
       "id": "two",
+      "cover": "praytimes_202403.thumbs/2020/1101/002_000001.jpg",
       "src": [
-        "002.mp4"
+        "2020/1101/002.mp4"
       ]
     },
     {
       "id": "three",
+      "cover": "praytimes_202403.thumbs/2020/1101/003_000001.jpg",
       "src": [
-        "003.mp4"
+        "2020/1101/003.mp4"
       ]
     },
     {
       "id": "four",
+      "cover": "praytimes_202403.thumbs/2020/1101/004_000001.jpg",
       "src": [
-        "004.mp4",
-        "006.mp4"
+        "2020/1101/004.mp4",
+        "2020/1101/006.ia.mp4"
       ]
     },
     {
       "id": "five",
+      "cover": "praytimes_202403.thumbs/2020/1101/007_000001.jpg",
       "src": [
-        "007.mp4"
+        "2020/1101/007.mp4"
       ]
     }
   ],
-  "audio": "sky.m4a",
-  "cover": "cover.jpeg",
+  "audio": "2020/1101/sky.m4a",
   "youtube": "7UI5u-suxig"
 }

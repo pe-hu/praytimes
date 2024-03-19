@@ -1,7 +1,8 @@
 {
   "id": "1206/",
+  "cover": "cover.jpeg",
   "title": "<b>12</b>月<b>6</b>日",
-  "datetime": "2020/12/06 10:30:00",
+  "datetime": "2020/12/06 10:00:00",
   "description": "We had recorded a video of something falling or fall something at プレイタイムズ on 6th December.",
   "width": "1.52",
   "height": "1",
@@ -11,46 +12,52 @@
     "Kaori Nakao",
     "Kazuma Sasajima"
   ],
+  "directory": "https://ia600207.us.archive.org/5/items/praytimes_202403/",
   "play": [
     {
       "id": "one",
+      "cover": "praytimes_202403.thumbs/2020/1206/001_000001.jpg",
       "src": [
-        "001.mp4"
+        "2020/1206/001.ia.mp4"
       ]
     },
     {
       "id": "two",
+      "cover": "praytimes_202403.thumbs/2020/1206/002_000001.jpg",
       "src": [
-        "002.mp4",
-        "003.mp4"
+        "2020/1206/002.ia.mp4",
+        "2020/1206/003.ia.mp4"
       ]
     },
     {
       "id": "three",
+      "cover": "praytimes_202403.thumbs/2020/1206/004_000001.jpg",
       "src": [
-        "004.mp4"
+        "2020/1206/004.ia.mp4"
       ]
     },
     {
       "id": "four",
+      "cover": "praytimes_202403.thumbs/2020/1206/005_000001.jpg",
       "src": [
-        "005.mp4"
+        "2020/1206/005.ia.mp4"
       ]
     },
     {
       "id": "five",
+      "cover": "praytimes_202403.thumbs/2020/1206/006_000001.jpg",
       "src": [
-        "006.mp4"
+        "2020/1206/006.ia.mp4"
       ]
     },
     {
       "id": "six",
+      "cover": "praytimes_202403.thumbs/2020/1206/007_000001.jpg",
       "src": [
-        "007.mp4"
+        "2020/1206/007.ia.mp4"
       ]
     }
   ],
-  "audio": "falling.m4a",
-  "cover": "cover.jpeg",
+  "audio": "2020/1206/falling.m4a",
   "youtube": "Ur2Yxipmg5w"
 }

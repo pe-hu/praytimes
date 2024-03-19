@@ -1,7 +1,8 @@
 {
   "id": "0906/",
+  "cover": "cover.jpeg",
   "title": "<b>9</b>月<b>6</b>日",
-  "datetime": "2020/09/06 10:30:00",
+  "datetime": "2020/09/06 10:00:00",
   "description": "We had shared a video of the skin at プレイタイムズ on 6th September.",
   "width": "1.525",
   "height": "1",
@@ -12,31 +13,34 @@
     "Kaori Nakao",
     "Kazuma Sasajima"
   ],
+  "directory": "https://ia600207.us.archive.org/5/items/praytimes_202403/",
   "play": [
     {
       "id": "one",
+      "cover": "praytimes_202403.thumbs/2020/0906/001_000001.jpg",
       "src": [
-        "001.mp4",
-        "003.mp4",
-        "004.mp4"
+        "2020/0906/001.ia.mp4",
+        "2020/0906/003.ia.mp4",
+        "2020/0906/004.ia.mp4"
       ]
     },
     {
       "id": "two",
+      "cover": "praytimes_202403.thumbs/2020/0906/002_000001.jpg",
       "src": [
-        "002.mp4",
-        "006.mp4"
+        "2020/0906/002.ia.mp4",
+        "2020/0906/006.ia.mp4"
       ]
     },
     {
       "id": "three",
+      "cover": "praytimes_202403.thumbs/2020/0906/005_000001.jpg",
       "src": [
-        "005.mp4",
-        "007.mp4"
+        "2020/0906/005.ia.mp4",
+        "2020/0906/007.ia.mp4"
       ]
     }
   ],
-  "audio": "skin.m4a",
-  "cover": "cover.jpeg",
+  "audio": "2020/0906/skin.m4a",
   "youtube": "4iRCoFB2qZw"
 }

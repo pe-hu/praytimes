@@ -1,7 +1,8 @@
 {
   "id": "0802/",
+  "cover": "cover.jpeg",
   "title": "<b>8</b>月<b>2</b>日",
-  "datetime": "2020/08/02 10:30:00",
+  "datetime": "2020/08/02 10:00:00",
   "description": "We had shared a video of the insects at プレイタイムズ on 2nd August.",
   "width": "1.55",
   "height": "1",
@@ -11,47 +12,53 @@
     "Kazuma Sasajima",
     "Shoji Funakawa"
   ],
+  "directory": "https://ia600207.us.archive.org/5/items/praytimes_202403/",
   "play": [
     {
       "id": "one",
+      "cover": "praytimes_202403.thumbs/2020/0802/001_000001.jpg",
       "src": [
-        "001.mp4",
-        "003.mp4"
+        "2020/0802/001.ia.mp4",
+        "2020/0802/003.ia.mp4"
       ]
     },
     {
       "id": "two",
+      "cover": "praytimes_202403.thumbs/2020/0802/002_000001.jpg",
       "src": [
-        "002.mp4"
+        "2020/0802/002.ia.mp4"
       ]
     },
     {
       "id": "three",
+      "cover": "praytimes_202403.thumbs/2020/0802/004_000001.jpg",
       "src": [
-        "004.mp4"
+        "2020/0802/004.ia.mp4"
       ]
     },
     {
       "id": "four",
+      "cover": "praytimes_202403.thumbs/2020/0802/005_000001.jpg",
       "src": [
-        "005.mp4"
+        "2020/0802/005.ia.mp4"
       ]
     },
     {
       "id": "five",
+      "cover": "praytimes_202403.thumbs/2020/0802/006_000001.jpg",
       "src": [
-        "006.mp4",
-        "008.mp4"
+        "2020/0802/006.ia.mp4",
+        "2020/0802/008.ia.mp4"
       ]
     },
     {
       "id": "six",
+      "cover": "praytimes_202403.thumbs/2020/0802/007_000001.jpg",
       "src": [
-        "007.mp4"
+        "2020/0802/007.mp4"
       ]
     }
   ],
-  "audio": "insects.m4a",
-  "cover": "cover.jpeg",
+  "audio": "2020/0802/insects.m4a",
   "youtube": "MQsOJ9NNrho"
 }

@@ -12,11 +12,11 @@
         let hash = urlHash.replace('#', '')
         let live;
         if (hash === 'all') {
-            live = 'download/';
+            live = '0107/';
         } else if (hash) {
             live = hash + '/';
         } else {
-            live = 'download/';
+            live = '0107/';
         }
         indexJSON(live + 'index.json')
         fetchHTML(live + 'index.html', '#readme')
@@ -24,7 +24,7 @@
         window.addEventListener("DOMContentLoaded", function () {
             const select = document.querySelector('[name="twenty"]')
             select.onchange = () => {
-                location.replace('#' + select.value)
+                location.assign('#' + select.value)
                 location.reload()
             }
         }, false);
@@ -43,7 +43,7 @@
     <meta content="http://praytimes.pe.hu/2020/card.png" property="og:image">
     <meta content="http://praytimes.pe.hu/2020/card.png" name="twitter:image:src">
 
-    <link rel="icon" href="../icon.png" type="image/png">
+    <link rel="icon" href="../logo/icon.png" type="image/png">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/live.css">
     <link rel="stylesheet" href="../css/randomdraggable.css">
