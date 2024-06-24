@@ -1,0 +1,39 @@
+{
+  "id": "0405/",
+  "cover": "cover.jpeg",
+  "title": "<b>4</b>月<b>5</b>日",
+  "datetime": "2020/04/05 10:00:00",
+  "description": "We had shared the video of the flowers at プレイタイムズ on 5th April.",
+  "width": "1.4",
+  "height": "1",
+  "author": [
+    "Ayumi Akutagawa",
+    "Kaori Nakao",
+    "Kazuma Sasajima",
+    "Shoji Funakawa"
+  ],
+  "directory": "0405",
+  "play": [
+    {
+      "id": "one",
+      "cover": "/cover.jpeg",
+      "src": [
+        "/001.mp4",
+        "/002.mp4",
+        "/003.mp4",
+        "/004.mp4"
+      ]
+    },
+    {
+      "id": "two",
+      "cover": "/cover.jpeg",
+      "src": [
+        "/005.mp4",
+        "/006.mp4",
+        "/007.mp4"
+      ]
+    }
+  ],
+  "audio": "/flowers.m4a",
+  "youtube": "bVyJ3xpF9jI"
+}
