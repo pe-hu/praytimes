@@ -9,31 +9,31 @@
     "author": [
         "∧°┐ | creative, community space"
     ],
-    "directory": "https://ia600207.us.archive.org/5/items/praytimes_202403/",
+    "directory": "",
     "play": [
         {
             "id": "one",
-            "cover": "praytimes_202403.thumbs/002_000001.jpg",
+            "cover": "cover.jpeg",
             "src": [
                 "002.mp4",
-                "004.ia.mp4",
+                "004.mp4",
                 "007.mp4"
             ]
         },
         {
             "id": "two",
-            "cover": "praytimes_202403.thumbs/001_000001.jpg",
+            "cover": "cover.jpeg",
             "src": [
                 "001.mp4",
-                "003.ia.mp4",
+                "003.mp4",
                 "006.mp4"
             ]
         },
         {
             "id": "three",
-            "cover": "praytimes_202403.thumbs/005_000001.jpg",
+            "cover": "cover.jpeg",
             "src": [
-                "005.ia.mp4"
+                "005.mp4"
             ]
         }
     ],
