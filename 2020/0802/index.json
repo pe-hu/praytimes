@@ -1,0 +1,64 @@
+{
+  "id": "0802/",
+  "cover": "cover.jpeg",
+  "title": "<b>8</b>月<b>2</b>日",
+  "datetime": "2020/08/02 10:00:00",
+  "description": "We had shared a video of the insects at プレイタイムズ on 2nd August.",
+  "width": "1.55",
+  "height": "1",
+  "author": [
+    "Ayumi Akutagawa",
+    "Kaori Nakao",
+    "Kazuma Sasajima",
+    "Shoji Funakawa"
+  ],
+  "directory": "0802",
+  "play": [
+    {
+      "id": "one",
+      "cover": "/cover.jpeg",
+      "src": [
+        "/001.mp4",
+        "/003.mp4"
+      ]
+    },
+    {
+      "id": "two",
+      "cover": "/cover.jpeg",
+      "src": [
+        "/002.mp4"
+      ]
+    },
+    {
+      "id": "three",
+      "cover": "/cover.jpeg",
+      "src": [
+        "/004.mp4"
+      ]
+    },
+    {
+      "id": "four",
+      "cover": "/cover.jpeg",
+      "src": [
+        "/005.mp4"
+      ]
+    },
+    {
+      "id": "five",
+      "cover": "/cover.jpeg",
+      "src": [
+        "/006.mp4",
+        "/008.mp4"
+      ]
+    },
+    {
+      "id": "six",
+      "cover": "/cover.jpeg",
+      "src": [
+        "/007.mp4"
+      ]
+    }
+  ],
+  "audio": "/insects.m4a",
+  "youtube": "MQsOJ9NNrho"
+}

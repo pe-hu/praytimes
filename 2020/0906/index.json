@@ -1,0 +1,46 @@
+{
+  "id": "0906/",
+  "cover": "cover.jpeg",
+  "title": "<b>9</b>月<b>6</b>日",
+  "datetime": "2020/09/06 10:00:00",
+  "description": "We had shared a video of the skin at プレイタイムズ on 6th September.",
+  "width": "1.525",
+  "height": "1",
+  "author": [
+    "宙空一派",
+    "Ibuki Kakita",
+    "Ayumi Akutagawa",
+    "Kaori Nakao",
+    "Kazuma Sasajima"
+  ],
+  "directory": "0906",
+  "play": [
+    {
+      "id": "one",
+      "cover": "/cover.jpeg",
+      "src": [
+        "/001.mp4",
+        "/003.mp4",
+        "/004.mp4"
+      ]
+    },
+    {
+      "id": "two",
+      "cover": "/cover.jpeg",
+      "src": [
+        "/002.mp4",
+        "/006.mp4"
+      ]
+    },
+    {
+      "id": "three",
+      "cover": "/cover.jpeg",
+      "src": [
+        "/005.mp4",
+        "/007.mp4"
+      ]
+    }
+  ],
+  "audio": "/skin.m4a",
+  "youtube": "4iRCoFB2qZw"
+}
