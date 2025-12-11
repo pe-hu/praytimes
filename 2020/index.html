@@ -5,30 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
-    <script src="../live/index.js"></script>
-    <script src="menu.js"></script>
-    <script>
-        const urlHash = location.hash;
-        let hash = urlHash.replace('#', '')
-        let live;
-        if (hash === 'all') {
-            live = '0107/';
-        } else if (hash) {
-            live = hash + '/';
-        } else {
-            live = '0107/';
-        }
-        indexJSON(live + 'index.json')
-        fetchHTML(live + 'index.html', '#readme')
-
-        window.addEventListener("DOMContentLoaded", function () {
-            const select = document.querySelector('[name="twenty"]')
-            select.onchange = () => {
-                location.assign('#' + select.value)
-                location.reload()
-            }
-        }, false);
-    </script>
 
     <!--og:meta-->
     <meta content="website" property="og:type">
@@ -40,39 +16,49 @@
     <!--for Twitter-->
     <meta content="summary_large_image" name="twitter:card">
     <meta content="http://praytimes.pe.hu/2020/" property="og:url">
-    <meta content="http://praytimes.pe.hu/2020/card.png" property="og:image">
-    <meta content="http://praytimes.pe.hu/2020/card.png" name="twitter:image:src">
+    <meta content="http://praytimes.pe.hu/2020/download/card.png" property="og:image">
+    <meta content="http://praytimes.pe.hu/2020/download/card.png" name="twitter:image:src">
 
     <link rel="icon" href="../logo/icon.png" type="image/png">
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/live.css">
-    <link rel="stylesheet" href="../css/randomdraggable.css">
-    <style>
-        h1 {
-            pointer-events: none;
-            user-select: none;
-        }
 
-        hr {
-            border: none;
-            padding: 0.125rem;
-            margin: 0;
-        }
-    </style>
+    <script src="../script.js"></script>
+    <script src="./index.js"></script>
+    <script src="./menu.js"></script>
+    <script>
+        let params = new URLSearchParams(location.search);
+        if (location.search && params.get("date")) {
+            indexJSON("./archive/" + params.get("date") + ".json");
+        } else {
+            indexJSON("./download/index.json");
+        };
+
+        window.addEventListener("load", () => {
+            document.querySelector("header input.pehu").addEventListener("click", () => {
+                openModal();
+            }, false);
+        }, false);
+    </script>
+
+    <link rel="stylesheet" href="../stylesheet.css">
+    <link rel="stylesheet" href="../inn/main.css">
+    <link rel="stylesheet" href="./index.css">
 </head>
 
 <body>
+    <dialog id="modal">
+        <button type="button" id="closeBtn">×</button>
+        <menu></menu>
+    </dialog>
+
     <header>
-        <a class="pehu" href="https://pehu.creative-community.space/" target="_blank">
-            ∧°┐ | creative, community space
-        </a>
+        <input class="pehu" type="button" value="∧°┐ | creative, community space">
         <span>Presents</span>
     </header>
 
     <main>
         <h1>
-            <span></span>
-            <small>の</small><br />
+            <span><b>2020年</b></span>
+            <small>の</small>
             <img src="../logo/logo_black.png" alt="プレイタイムズ">
         </h1>
         <h2 class="start" hidden>
@@ -81,7 +67,7 @@
             <button type="button"></button>
         </h2>
         <canvas id="live"></canvas>
-        <ul id="randomdraggable"></ul>
+        <nav id="randomdraggable"></nav>
     </main>
     <hr>
     <article>

@@ -1,0 +1,57 @@
+{
+  "datetime": "2020/02/02 10:00:00",
+  "cover": "https://archive.org/download/praytimes_2020/0202/cover.jpeg",
+  "title": "<b>2</b>月<b>2</b>日",
+  "description": [
+    "We had a practice of プレイタイムズ on 2nd February."
+  ],
+  "width": "1",
+  "height": "1.55",
+  "author": [
+    "Ayumi Akutagawa",
+    "Kaori Nakao",
+    "Kazuma Sasajima"
+  ],
+  "directory": "https://archive.org/download/praytimes_2020/",
+  "play": [
+    {
+      "id": "one",
+      "cover": "praytimes_2020.thumbs/0202/001_000001.jpg",
+      "src": [
+        "0202/001.ia.mp4",
+        "0202/002.ia.mp4",
+        "0202/003.mp4",
+        "0202/004.ia.mp4"
+      ]
+    },
+    {
+      "id": "two",
+      "cover": "praytimes_2020.thumbs/0202/005_000001.jpg",
+      "src": [
+        "0202/005.ia.mp4",
+        "0202/006.ia.mp4",
+        "0202/011.ia.mp4"
+      ]
+    },
+    {
+      "id": "three",
+      "cover": "praytimes_2020.thumbs/0202/007_000001.jpg",
+      "src": [
+        "0202/007.ia.mp4",
+        "0202/012.ia.mp4",
+        "0202/013.ia.mp4"
+      ]
+    },
+    {
+      "id": "four",
+      "cover": "praytimes_2020.thumbs/0202/008_000001.jpg",
+      "src": [
+        "0202/008.ia.mp4",
+        "0202/009.ia.mp4",
+        "0202/010.mp4"
+      ]
+    }
+  ],
+  "audio": "0202/000.m4a",
+  "youtube": "O0NiHVEJTyM"
+}

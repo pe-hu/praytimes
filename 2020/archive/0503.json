@@ -1,0 +1,68 @@
+{
+  "datetime": "2020/05/03 10:00:00",
+  "cover": "https://archive.org/download/praytimes_2020/0503/cover.jpeg",
+  "title": "<b>5</b>月<b>3</b>日",
+  "description": [
+    "We had recorded a video that prepare a meal at プレイタイムズ on 3rd May."
+  ],
+  "note": [
+    [
+      "<strong>タンドリーチキンのレシピ</strong>",
+      "材料 2人前",
+      "鶏肉 200g<br> ☆カレー粉 大さじ1<br> ☆ケチャップ 大さじ1<br> ☆ヨーグルト 大さじ1<br> ☆にんにくチューブ 大さじ2",
+      "<div> <u>作り方</u><br> <br> ① 鶏肉をひと口大より少し大きめに切る<br> ② 袋に☆を入れ、もみ混ぜる<br> ③ ☆を入れた袋に鶏肉を入れ、もみ混ぜる<br> ※ ☆は、鶏肉がベチャベチャになるぐらいがベスト<br> 上記の分量で足りないと思ったら、1：1：1：2で足す<br> <br> ④ 10分くらい浸け置いて、焼く </div>"
+    ],
+    [
+      "<strong>Tandoori chicken</strong>",
+      "INGREDIENTS for 2 people",
+      "Chicken 200g<br> ☆curry powder 1 tbsp<br> ☆ketchup 1 tbsp<br> ☆yogurt 1 tbsp<br> ☆grated garlic 2 tbsp",
+      "<div> <u>HOW TO COOK</u><br> <br> ① cut chicken bigger than bite-size<br> ② put ☆ into a plastic bag and mix them<br> ③ put the chicken into ☆ the bag and crumple it<br> ※ chicken should be gooey with ☆, if it seems not enough, add ☆ in the ratio of 1:1:1:2<br> <br> ④ after 10mins, fry it. </div>"
+    ]
+  ],
+  "width": "1.6",
+  "height": "1",
+  "author": [
+    "woopheadclrms",
+    "2n2n",
+    "Ayumi Akutagawa",
+    "Kaori Nakao",
+    "Kazuma Sasajima"
+  ],
+  "directory": "https://archive.org/download/praytimes_2020/",
+  "play": [
+    {
+      "id": "one",
+      "cover": "praytimes_2020.thumbs/0503/001_000137.jpg",
+      "src": [
+        "0503/001.mp4",
+        "0503/002.mp4"
+      ]
+    },
+    {
+      "id": "two",
+      "cover": "praytimes_2020.thumbs/0503/008_000094.jpg",
+      "src": [
+        "0503/003.mp4",
+        "0503/008.mp4"
+      ]
+    },
+    {
+      "id": "three",
+      "cover": "praytimes_2020.thumbs/0503/005_000001.jpg",
+      "src": [
+        "0503/004.mp4",
+        "0503/005.mp4"
+      ]
+    },
+    {
+      "id": "four",
+      "cover": "praytimes_2020.thumbs/0503/007_000001.jpg",
+      "src": [
+        "0503/006.mp4",
+        "0503/007.mp4"
+      ]
+    }
+  ],
+  "audio": "0503/tandoorichicken.m4a",
+  "youtube": "YrDo1Zg2avg"
+}

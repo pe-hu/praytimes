@@ -5,35 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no">
-  <script src="index.js"></script>
-  <script src="../2020/menu.js"></script>
-
-  <script type="text/javascript">
-    let directory;
-    let id;
-
-    // URLにアンカーがある場合
-    const urlHash = location.hash;
-    if (urlHash) {
-      id = urlHash.replace('#', '')
-      fetchMD(id + '/README.md', '#content')
-    } else {
-      id = "img";
-      fetchMD(id + '/README.md', '#content')
-
-      document.addEventListener('readystatechange', event => {
-        if (event.target.readyState === 'interactive') {
-          const title = document.querySelector('h1')
-          title.hidden = false
-        } else if (event.target.readyState === 'complete') {
-          //
-        }
-      })
-    }
-
-    directory = id + "/";
-    indexJSON(id + "/index.json")
-  </script>
 
   <!--og:meta-->
   <meta content="website" property="og:type">
@@ -47,55 +18,111 @@
     property="og:description">
 
   <!--for Twitter-->
+  <link rel="icon" href="../logo/icon.png" type="image/png">
   <meta content="summary_large_image" name="twitter:card">
   <meta content="http://praytimes.pe.hu/inn/" property="og:url">
   <meta content="http://praytimes.pe.hu/logo/card.png" property="og:image">
   <meta content="http://praytimes.pe.hu/logo/card.png" name="twitter:image:src">
 
-  <link rel="icon" href="../logo/icon.png" type="image/png">
-  <link rel="stylesheet" href="../css/index.css">
-  <link rel="stylesheet" href="../css/content.css">
-  <link rel="stylesheet" href="../css/randomdraggable.css">
+  <script src="../script.js"></script>
+  <script src="./index.js"></script>
+  <script src="../2020/menu.js"></script>
+
+  <script type="text/javascript">
+    let params = new URLSearchParams(location.search), thisJSON;
+    if (location.search && params.get("id")) {
+      indexJSON(params.get("id") + "/index.json");
+      fetchMD(params.get("id") + "/README.md", "#readme");
+    } else {
+      document.addEventListener("readystatechange", event => {
+        if (event.target.readyState === "interactive") {
+          document.querySelector("h1").hidden = false;
+          indexJSON("./index.json");
+        };
+      }, false);
+    };
+
+    window.addEventListener("load", () => {
+      const openBtn = document.querySelector("header button");
+      openBtn.addEventListener("click", () => {
+        openModal();
+      }, false);
+    }, false);
+  </script>
+
+  <link rel="stylesheet" href="../stylesheet.css">
+  <link rel="stylesheet" href="../content.css">
+  <link rel="stylesheet" href="../inn/main.css">
+
   <style>
     #alt {
-      color: #f3c5c6;
-      display: grid;
-      place-items: center;
       margin-top: 7.5rem;
     }
 
     #note {
       color: #fff;
       place-self: end center;
+      max-width: 800px;
     }
   </style>
 </head>
 
 <body>
+  <dialog id="modal">
+    <button type="button" id="closeBtn">×</button>
+    <menu></menu>
+  </dialog>
+
   <header>
     <time id="date"></time>
     <button type="button"></button>
   </header>
+
   <main>
     <h1 hidden>
       <img src="../logo/logo_white.png" alt="プレイタイムズ">
     </h1>
     <h2 id="alt"></h2>
     <h3 id="note"></h3>
-    <ul id="randomdraggable"></ul>
+    <nav id="randomdraggable"></nav>
   </main>
 
-  <article id="content" class="noprint"></article>
+  <article id="content" class="noprint">
+    <section id="readme">
+      <u>2020.06.27 - 2021.01.30</u>
+      <h3>
+        <a href="https://bnaaltermuseum.com/exhibition/the-technique-of-optimism/" target="_blank">
+          楽観のテクニック The Technique of Optimism
+        </a>
+      </h3>
+      <p>w/ <b>Masanao Hirayama, yang02, Hana Sawada, Shoma Kimura</b></p>
+      <p>BnA Alter Museum SCG (Stair Case Gallery) にて開催された特別企画展で、現代美術作品「プレイタイムズ」を発表しました。</p>
+      <p>We will presented our first contemporary art works at the exhibition called The Technique of Optimism.</p>
+      <br>
+      <a href="https://bnaaltermuseum.com/exhibition/the-technique-of-optimism/" target="_blank">
+        <img src="./image.jpg" alt="楽観のテクニック The Technique of Optimism">
+      </a>
+    </section>
+    <aside>
+      <u>記録写真</u>
+      <p>
+        <a class="link" href="./">プレイタイムズ</a><br>
+        <a class="link" href="./?id=symbol">ていのうきもちわるい</a><br>
+        <a class="link" href="./?id=pieces">私たちの身の回りにあったもの</a><br>
+        <a class="link" href="./?id=peace">あなたの気分に合う場所へ印をつける</a>
+      </p>
+      <hr>
+      <u>記録映像</u>
+      <p><select name="twenty"></select></p>
+      <p>
+        これは、ペフによる初めての現代美術作品「プレイタイムズ」の記録映像作品です。
+      </p>
+    </aside>
+  </article>
 
-  <dialog id="modal">
-    <button type="button" id="closeBtn">×</button>
-    <fieldset>
-      <legend>記録映像</legend>
-      <select name="twenty"></select>
-      <p>これは、ペフによる初めての現代美術作品「プレイタイムズ」の記録映像作品です。</p>
-      <button id="liveBtn" type="button" onclick="location.assign('../2020/')">Watch the Video</button>
-    </fieldset>
-  </dialog>
+  <footer>
+    <button onclick="history.back()">🔙</button>
+  </footer>
 </body>
 
 </html>

@@ -1,0 +1,61 @@
+{
+  "cover": "https://archive.org/download/praytimes_2020/0607/cover.jpeg",
+  "title": "<b>6</b>月<b>7</b>日",
+  "datetime": "2020/06/07 10:00:00",
+  "description": [
+    "We had recorded a video of the water at プレイタイムズ on 7th June."
+  ],
+  "width": "1.55",
+  "height": "1",
+  "author": [
+    "Ibuki Kakita",
+    "Ayumi Akutagawa",
+    "Kaori Nakao",
+    "Kazuma Sasajima"
+  ],
+  "directory": "https://archive.org/download/praytimes_2020/",
+  "note": [
+    [
+      "俺にとってプレイタイムズは、ぼーっとするための場所。毎月1度の記録の時間には、ぼーっとするための具体的な行為をお題として選んでいる。<br>記録の時間以外にも、ぼーっととしたいときに窓を眺めるようにプレイタイムズを訪れる。ここにいながら今いる場所ではないどこかへ行ける感覚が心地いい。",
+      "この日のテーマは、水を写す。バケツにジップロックに入れたスマホを落としたり、窓を勢いよく洗ったりする様子を撮影した。<br>水の近くにずっとスマホをおいていたせいか、プレイタイムズのあとまる一日スマホの電源が入らなくなった。でもまあいい。",
+      "コミュニケーションツールが担う「伝える」という目的に対する（笑）って感じ。それがプレイタイムズらしさだと思う。"
+    ]
+  ],
+  "play": [
+    {
+      "id": "one",
+      "cover": "praytimes_2020.thumbs/0607/002_000128.jpg",
+      "src": [
+        "0607/001.mp4",
+        "0607/002.mp4"
+      ]
+    },
+    {
+      "id": "two",
+      "cover": "praytimes_2020.thumbs/0607/003_000001.jpg",
+      "src": [
+        "0607/003.mp4",
+        "0607/004.mp4"
+      ]
+    },
+    {
+      "id": "three",
+      "cover": "praytimes_2020.thumbs/0607/005_000127.jpg",
+      "src": [
+        "0607/005.mp4",
+        "0607/006.mp4"
+      ]
+    },
+    {
+      "id": "four",
+      "cover": "praytimes_2020.thumbs/0607/007_000094.jpg",
+      "src": [
+        "0607/007.mp4",
+        "0607/008.mp4",
+        "0607/009.mp4"
+      ]
+    }
+  ],
+  "audio": "0607/water.m4a",
+  "youtube": "LfpdOdqrqSI"
+}

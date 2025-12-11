@@ -6,7 +6,8 @@
     "We were exhibit the pieces that symbolize our mood and ourselves.",
     "私たちの身の回りにあった、今の気持ちを表すもの・自分を象徴するものを展示しました。"
   ],
-  "randomdraggable": [
+  "directory": "https://archive.org/download/praytimes_2020/inn/pieces/",
+  "imgAll": [
     {
       "img": "000.JPG",
       "alt": "私たちの身の回りにあったもの",
@@ -92,7 +93,7 @@
       ]
     },
     {
-      "img": "010.JPG",
+      "img": "010.jpg",
       "alt": "タトゥーシール",
       "note": [
         "TKは総合一位"

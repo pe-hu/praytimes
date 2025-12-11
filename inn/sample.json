@@ -1,0 +1,14 @@
+{
+  "date": "題名",
+  "datetime": "YYYY/MM/DD HH:MM:SS",
+  "description": "このページについて",
+  "note": null,
+  "directory": "/inn/img/",
+  "imgAll": [
+    {
+      "img": "000.JPG",
+      "alt": "予備（代替）",
+      "note": null
+    }
+  ]
+}

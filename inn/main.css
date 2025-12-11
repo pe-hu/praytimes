@@ -1,0 +1,153 @@
+#randomdraggable input {
+    display: none;
+}
+
+@media (orientation: landscape) {
+    main {
+        min-height: 100vh;
+    }
+}
+
+@media (orientation: portrait) {
+    main {
+        min-height: 100svh;
+    }
+}
+
+@page {
+    size: A4 portrait;
+}
+
+@media print {
+    main {
+        height: 100vh;
+    }
+}
+
+#randomdraggable label video {
+    max-width: 100%;
+}
+
+main,
+#randomdraggable {
+    width: 100%;
+}
+
+#randomdraggable {
+    height: 20vw;
+    max-height: 10rem;
+}
+
+#randomdraggable label,
+#randomdraggable label img,
+#randomdraggable label video {
+    height: 100%;
+}
+
+main,
+h1,
+h2,
+#randomdraggable {
+    position: relative;
+}
+
+h1,
+h2 {
+    z-index: 1;
+}
+
+main h2.start b,
+#alt {
+    color: #f3c5c6;
+}
+
+#randomdraggable label {
+    background: #000;
+}
+
+main h2,
+button {
+    transition: 0.5s;
+}
+
+main h2:not(#alt):hover,
+#randomdraggable input+label:hover,
+#randomdraggable input:checked+label {
+    cursor: pointer;
+}
+
+
+main h2:not(#alt):hover {
+    filter: grayscale() opacity(0.5);
+}
+
+#randomdraggable input+label:hover,
+#randomdraggable input:checked+label {
+    filter: brightness(1.5);
+}
+
+main h2:not(#alt),
+#randomdraggable label {
+    text-align: center;
+}
+
+main {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+main h2 button {
+    display: block;
+    background-image: url(../logo/icon.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;
+    max-width: 20vw;
+    max-height: 20vw;
+    margin-top: 2.5rem;
+}
+
+main canvas#live {
+    position: absolute;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+#randomdraggable {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    place-self: end;
+    gap: 0.5rem;
+    list-style: inside none;
+    padding: 1rem;
+    margin: 0;
+    overflow-x: auto;
+    z-index: 10;
+}
+
+#randomdraggable label {
+    border: solid 0.2rem transparent;
+    border-radius: 0.5rem;
+    transition: 0.5s;
+}
+
+#randomdraggable input:checked+label {
+    border: solid 0.2rem #fff;
+}
+
+#randomdraggable label img,
+#randomdraggable label video {
+    border-radius: 0.25rem;
+}

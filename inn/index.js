@@ -1,4 +1,4 @@
-'use strict'
+"use strict"
 
 async function indexJSON(requestURL) {
   const request = new Request(requestURL);
@@ -6,152 +6,136 @@ async function indexJSON(requestURL) {
   const jsonIndex = await response.text();
   const index = JSON.parse(jsonIndex);
   thisDate(index);
-  randomdraggable(index);
-}
+  imgAll(index);
+};
 
-async function fetchMD(url = '', query = '') {
+async function fetchMD(url = "", query = "") {
   fetch(url)
     .then(response => response.text())
     .then(md => {
-      document.querySelector(query).innerText = md
+      document.querySelector(query).innerText = md;
     });
-}
+};
 
 function shuffle(arrays) {
   const array = arrays.slice();
   for (let i = array.length - 1; i >= 0; i--) {
     const shuffleArr = Math.floor(Math.random() * (i + 1));
     [array[i], array[shuffleArr]] = [array[shuffleArr], array[i]];
-  }
+  };
   return array;
-}
+};
 
 function thisDate(obj) {
-  const dataTime = document.querySelector('#date');
+  const dataTime = document.querySelector("#date");
   dataTime.textContent = obj.date;
   dataTime.setAttribute("data-time", obj.datetime);
-  dataTime.addEventListener('click', function (event) {
+  dataTime.addEventListener("click", function (event) {
     let ago = new Date(obj.datetime);
     let diff = new Date().getTime() - ago.getTime();
     let progress = new Date(diff);
     let now;
     if (progress.getUTCFullYear() - 1970) {
-      now = progress.getUTCFullYear() - 1970 + ' years ago';
+      now = progress.getUTCFullYear() - 1970 + " years ago";
     } else if (progress.getUTCMonth()) {
-      now = progress.getUTCMonth() + ' months ago';
+      now = progress.getUTCMonth() + " months ago";
     } else if (progress.getUTCDate() - 1) {
-      now = progress.getUTCDate() - 1 + ' days ago';
+      now = progress.getUTCDate() - 1 + " days ago";
     } else if (progress.getUTCHours()) {
-      now = progress.getUTCHours() + ' hour ago';
+      now = progress.getUTCHours() + " hour ago";
     } else if (progress.getUTCMinutes()) {
-      now = progress.getUTCMinutes() + ' minutes ago';
+      now = progress.getUTCMinutes() + " minutes ago";
     } else {
-      now = 'now';
-    }
+      now = "now";
+    };
     event.target.textContent = event.target.textContent === obj.date ? now : obj.date;
-  });
-}
+  }, false);
+};
 
-function randomdraggable(obj) {
-  const main = document.querySelector('main');
-  const randomdRaggable = document.querySelector('#randomdraggable');
-  const alt = document.querySelector('#alt');
-  alt.innerHTML = obj.description;
+function imgAll(obj) {
+  const main = document.querySelector("main");
+  const imgAll = document.querySelector("#randomdraggable");
+  const alt = document.querySelector("#alt");
+  const note = document.querySelector("#note");
+
+  if (obj.description) {
+    alt.innerHTML = obj.description;
+    alt.hidden = false;
+  } else {
+    alt.hidden = true;
+  };
 
   if (obj.note) {
-    const note = document.querySelector('#note');
     for (let i = 0; i < obj.note.length; i++) {
       if (i === 0) {
-        note.innerHTML = obj.note[i] + "<br>"
+        note.innerHTML = obj.note[i];
       } else {
-        note.innerHTML += obj.note[i] + "<br>"
-      }
-    }
-  }
+        note.innerHTML += "<br>" + obj.note[i];
+      };
+    };
+    note.hidden = false;
+  } else {
+    note.hidden = true;
+  };
 
-  const images = shuffle(obj.randomdraggable)
+  const images = shuffle(obj.imgAll)
   for (let i = 0; i < images.length; i++) {
     if (i === 0) {
-      main.style.backgroundImage = 'url(' + directory + images[i].img + ')'
-    }
+      main.style.backgroundImage = "url(" + obj.directory + images[i].img + ")";
+    };
 
-    const li = document.createElement('li');
-    randomdRaggable.appendChild(li);
-
-    const input = document.createElement('input');
-    input.setAttribute('type', 'radio');
-    input.setAttribute('name', 'youtube');
+    const input = document.createElement("input");
+    input.setAttribute("type", "radio");
+    input.setAttribute("name", "youtube");
     input.id = images[i].img;
     input.value = images[i].img;
-    li.appendChild(input);
-
-    const label = document.createElement('label');
-    label.setAttribute('for', images[i].img);
-    li.appendChild(label);
-
-    const img = document.createElement('img');
-    img.src = directory + images[i].img;
+    imgAll.appendChild(input);
+    const label = document.createElement("label");
+    label.setAttribute("for", images[i].img);
+    imgAll.appendChild(label);
+    const img = document.createElement("img");
+    img.src = obj.directory + images[i].img;
+    if (images[i].alt) {
+      img.alt = images[i].alt.replaceAll("<br>", "\n");
+    };
     label.appendChild(img);
 
-    input.addEventListener('change', function () {
+    input.addEventListener("change", function () {
       if (images[i].alt) {
-        alt.innerHTML = images[i].alt
-      }
+        alt.innerHTML = images[i].alt;
+        alt.hidden = false;
+      } else {
+        alt.hidden = true;
+      };
 
       if (images[i].note) {
-        const note = document.querySelector('#note');
         for (let ii = 0; ii < images[i].note.length; ii++) {
           if (ii === 0) {
-            note.innerHTML = images[i].note[ii] + "<br>"
+            note.innerHTML = images[i].note[ii] + "<br>";
           } else {
-            note.innerHTML += images[i].note[ii] + "<br>"
-          }
-        }
-      }
+            note.innerHTML += images[i].note[ii] + "<br>";
+          };
+        };
+        note.hidden = false;
+      } else {
+        note.hidden = true;
+      };
 
-      main.style.backgroundImage = 'url(' + directory + images[i].img + ')'
-    })
-  }
-}
+      main.style.backgroundImage = "url(" + obj.directory + images[i].img + ")";
+    });
+  };
+};
 
 window.onload = () => {
-  const dialogModal = document.querySelector('#modal'),
-    openBtns = document.querySelectorAll('header button, #content button'),
-    closeBtn = document.querySelector('#closeBtn');
-
-  function openModal() {
-    if (typeof dialogModal.showModal === "function") {
-      dialogModal.showModal();
-    } else {
-      alert("The <dialog> API is not supported by this browser");
-    }
-  }
-
-  openBtns.forEach((openBtn) => {
-    openBtn.addEventListener('click', () => {
-      openModal();
-    });
-  });
-
-  closeBtn.addEventListener('click', () => {
-    dialogModal.close();
-  });
-
-  const scrollElement = document.querySelector('#randomdraggable');
-  scrollElement.addEventListener('wheel', (e) => {
+  const scrollElement = document.querySelector("#randomdraggable");
+  scrollElement.addEventListener("wheel", (e) => {
     if (Math.abs(e.deltaY) < Math.abs(e.deltaX)) return;
     const maxScrollLeft = scrollElement.scrollWidth - scrollElement.clientWidth;
     if (
       (scrollElement.scrollLeft <= 0 && e.deltaY < 0) ||
       (scrollElement.scrollLeft >= maxScrollLeft && e.deltaY > 0)
-    )
-      return;
+    ) return;
     e.preventDefault();
     scrollElement.scrollLeft += e.deltaY;
   });
-
-  const select = document.querySelector('[name="twenty"]')
-  select.onchange = () => {
-    location.assign('/2020/#' + select.value);
-  }
 };

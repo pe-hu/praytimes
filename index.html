@@ -2,154 +2,150 @@
 <html lang="ja">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="format-detection" content="telephone=no">
-  <script src="inn/index.js"></script>
-  <script src="2020/menu.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
 
-  <script type="text/javascript">
-    let id = "img";
-    let directory = 'inn/' + id + "/";
+    <!--og:meta-->
+    <meta content="website" property="og:type">
+    <title>プレイタイムズ | praytimes.pe.hu</title>
+    <meta content="プレイタイムズ | praytimes.pe.hu" property="og:title">
+    <meta content="プレイタイムズ とは、異なる場所や同じ場所で営まれる生活を集め、鑑賞することを目的とした、私たちにとっての祈り／遊びの場です。" name="description">
+    <meta
+        content="this is a place of pray / play for us to gather and appreciate life in different places or in the same place."
+        property="og:description">
 
-    document.addEventListener('readystatechange', event => {
-      if (event.target.readyState === 'interactive') {
-        const title = document.querySelector('h1')
-        title.hidden = false
-        indexJSON('inn/' + id + "/index.json")
-      }
-    });
-  </script>
+    <!--for Twitter-->
+    <meta content="summary_large_image" name="twitter:card">
+    <meta content="http://praytimes.pe.hu/" property="og:url">
+    <meta content="http://praytimes.pe.hu/logo/card.png" property="og:image">
+    <meta content="http://praytimes.pe.hu/logo/card.png" name="twitter:image:src">
 
-  <!--og:meta-->
-  <meta content="website" property="og:type">
-  <title>プレイタイムズ | praytimes.pe.hu</title>
-  <meta content="プレイタイムズ | praytimes.pe.hu" property="og:title">
-  <meta content="プレイタイムズ とは、異なる場所や同じ場所で営まれる生活を集め、鑑賞することを目的とした、私たちにとっての祈り／遊びの場です。" name="description">
-  <meta
-    content="this is a place of pray / play for us to gather and appreciate life in different places or in the same place."
-    property="og:description">
+    <script src="./script.js"></script>
+    <script src="./live/newDate.js"></script>
+    <script src="./live/webRTC.js"></script>
 
-  <!--for Twitter-->
-  <meta content="summary_large_image" name="twitter:card">
-  <meta content="http://praytimes.pe.hu/" property="og:url">
-  <meta content="http://praytimes.pe.hu/logo/card.png" property="og:image">
-  <meta content="http://praytimes.pe.hu/logo/card.png" name="twitter:image:src">
+    <script type="text/javascript">
+        document.addEventListener("readystatechange", event => {
+            if (event.target.readyState === "interactive") {
+                const h1 = document.querySelector("h1");
+                const h2 = document.querySelector("h2");
+                const h2b = document.querySelector("h2 b");
+                h2.addEventListener("click", function () {
+                    if (h2.className === "start") {
+                        startStreamedVideo();
+                    } else if (h2.className === "stop") {
+                        h1.hidden = false;
+                        h2.className = "start";
+                        h2b.textContent = "PLAY";
+                        stopStreamedVideo("#randomdraggable label[for='userMedia'] video");
+                    };
+                }, false);
 
-  <link rel="icon" href="logo/icon.png" type="image/png">
-  <link rel="stylesheet" href="css/index.css">
-  <link rel="stylesheet" href="css/content.css">
-  <link rel="stylesheet" href="css/randomdraggable.css">
-  <style>
-    #alt {
-      color: #f3c5c6;
-      display: grid;
-    }
+                const userAgent = document.querySelector("#userAgent");
+                userAgent.innerText = window.navigator.userAgent;
+                windowScreen();
+            } else if (document.readyState === "complete") {
+                // メニューを開く
+                const openBtns = document.querySelectorAll("header #date, #content button");
+                openBtns.forEach((openBtn) => {
+                    openBtn.addEventListener("click", () => {
+                        openModal();
+                    }, false);
+                }, false);
 
-    #note {
-      color: #fff;
-    }
-  </style>
+                setInterval('showClock()', 1000);
+            };
+        }, false);
+    </script>
+
+    <link rel="icon" href="./logo/icon.png" type="image/png">
+    <link rel="stylesheet" href="./stylesheet.css">
+    <link rel="stylesheet" href="./content.css">
+    <link rel="stylesheet" href="./inn/main.css">
+
+    <style>
+        h1 {
+            mix-blend-mode: difference;
+        }
+    </style>
 </head>
 
 <body>
-  <header>
-    <time id="date"></time>
-    <button type="button"></button>
-  </header>
-  <main>
-    <h1 hidden>
-      <img src="logo/logo_white.png" alt="プレイタイムズ">
-    </h1>
-    <h2 id="alt"></h2>
-    <h3 id="note"></h3>
-    <ul id="randomdraggable"></ul>
-  </main>
+    <dialog id="modal">
+        <button type="button" id="closeBtn">×</button>
+        <menu></menu>
+    </dialog>
 
-  <article id="content">
-    <h2>私たちはGoogleハングアウト上に、<b>プレイタイムズ</b> というビデオ通話を行うためのグループを作成しました。</h2>
-    <section>
-      <img class="logo" src="logo/logo_pink.png" alt="プレイタイムズ">
-      <h3>とは、異なる場所や同じ場所で営まれる生活を集め、鑑賞することを目的とした、私たちにとっての祈り／遊びの場です。</h3>
-      <h3>is a place of pray / play for us to gather and appreciate life in different places or in the same place.
-      </h3>
-      <br />
-      <p>We have created a group for video chat on google hangouts named “<b>プレイタイムズ</b>”.</p>
-    </section>
-    <aside class="howto">
-      <h2>参加方法 How to Join</h2>
-      <ol>
-        <li>
-          スマートフォンにGoogleハングアウトのアプリをダウンロード<br>
-          Let's get Google hangouts App on your Android or iPhone.
-        </li>
-        <p>
-          <a class="link" href="https://play.google.com/store/apps/details?id=com.google.android.talk">
-            Google Play
-          </a>
-          <a class="link"
-            href="https://apps.apple.com/jp/app/%E3%83%8F%E3%83%B3%E3%82%B0%E3%82%A2%E3%82%A6%E3%83%88/id643496868">
-            App Store
-          </a>
-        </p>
-        <li>
-          プレイタイムズへの招待リンクへアクセス<br>
-          Let's access a link of "プレイタイムズ".
-        </li>
-        <p><a class="link" href="2020/">come on join us!</a></p>
-      </ol>
-      <button class="download" type="button"></button>
-    </aside>
-    <hr />
-    <section class="noprint">
-      <p>
-        <u>2020.06.27 - 2021.01.30</u>
-      </p>
-      <h3>
-        <a href="https://bnaaltermuseum.com/exhibition/the-technique-of-optimism/" target="_blank">
-          楽観のテクニック The Technique of Optimism
-        </a>
-      </h3>
-      <p>w/ <b>Masanao Hirayama, yang02, Hana Sawada, Shoma Kimura</b></p>
-      <p>BnA Alter Museum SCG (Stair Case Gallery) にて開催された特別企画展で、現代美術作品「プレイタイムズ」を発表しました。</p>
-      <br>
-      <p>
-        <u>記録写真</u>
-      </p>
-      <p>
-        <a class="link" href="inn/#symbol">ていのうきもちわるい</a>
-      </p>
-      <p>
-        <a class="link" href="inn/#pieces">私たちの身の回りにあったもの</a>
-      </p>
-      <p>
-        <a class="link" href="inn/#peace">あなたの気分に合う場所へ印をつける</a>
-      </p>
-    </section>
-    <aside class="noprint">
-      <a href="https://bnaaltermuseum.com/exhibition/the-technique-of-optimism/" target="_blank">
-        <img src="inn/image.jpg" alt="楽観のテクニック The Technique of Optimism">
-      </a>
-    </aside>
-    <hr />
+    <header>
+        <time id="date"></time>
+    </header>
+
+    <main>
+        <h1>
+            <img src="./logo/logo_white.png" alt="プレイタイムズ">
+        </h1>
+        <h2 class="start">
+            <b>PLAY</b>
+            <br>
+            <button type="button"></button>
+        </h2>
+        <canvas id="live"></canvas>
+        <nav id="randomdraggable"></nav>
+    </main>
+
+    <article id="content">
+        <h2 id="videoDevices">
+            <button type="button">端末のカメラやマイクの入力ストリーム</button>
+        </h2>
+        <section>
+            <img class="logo" src="./logo/logo_pink.png" alt="プレイタイムズ">
+            <h3>とは、異なる場所や同じ場所で営まれる生活を集め、鑑賞することを目的とした、私たちにとっての祈り／遊びの場です。</h3>
+            <h3>
+                this is a place of pray / play for us to gather and
+                appreciate life in different places or in the same place.
+            </h3>
+            <hr>
+            <p>
+                <u>User-Agent</u><br>
+                <b id="userAgent">デバイス（PC/Mobile）・OS（Windows/Mac/iOS/Android）、ブラウザ（Chrome/Safariなど）の種類やバージョンなどの情報</b>
+            </p>
+        </section>
+        <aside id="code">
+            <code></code>
+        </aside>
+        <aside class="howto" hidden>
+            <h2>参加方法 How to Join</h2>
+            <ol>
+                <li>
+                    スマートフォンにGoogleハングアウトのアプリをダウンロード<br>
+                    Let"s get Google hangouts App on your Android or iPhone.
+                </li>
+                <p>
+                    <a class="link" href="https://play.google.com/store/apps/details?id=com.google.android.talk">
+                        Google Play
+                    </a>
+                    <a class="link"
+                        href="https://apps.apple.com/jp/app/%E3%83%8F%E3%83%B3%E3%82%B0%E3%82%A2%E3%82%A6%E3%83%88/id643496868">
+                        App Store
+                    </a>
+                </p>
+                <li>
+                    プレイタイムズへの招待リンクへアクセス<br>
+                    Let"s access a link of "プレイタイムズ".
+                </li>
+                <p><a class="link" href="./2020/">come on join us!</a></p>
+            </ol>
+            <button class="download" type="button"></button>
+        </aside>
+    </article>
 
     <footer>
-      <a class="pehu" href="https://pehu.creative-community.space/" target="_blank">
-        ∧°┐ | creative, community space
-      </a>
-      <span>Presents</span>
+        <a class="pehu" href="https://vg.pe.hu/jp/" target="_blank">
+            ∧°┐ | creative, community space
+        </a>
+        <span>Presents</span>
     </footer>
-  </article>
-
-  <dialog id="modal">
-    <button type="button" id="closeBtn">×</button>
-    <fieldset>
-      <legend>記録映像</legend>
-      <select name="twenty"></select>
-      <p>これは、ペフによる初めての現代美術作品「プレイタイムズ」の記録映像作品です。</p>
-      <button id="liveBtn" type="button" onclick="location.assign('2020/')">Watch the Video</button>
-    </fieldset>
-  </dialog>
 </body>
 
 </html>

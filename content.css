@@ -1,0 +1,82 @@
+#content {
+  gap: 1rem;
+  display: flex;
+  padding: 1rem;
+  align-items: start;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#userAgent,
+.download {
+  display: block;
+}
+
+#content ol {
+  padding: 0 1.5rem;
+  list-style: decimal;
+}
+
+#content section {
+  width: calc(60% - 1rem);
+}
+
+#content aside {
+  width: calc(40% - 1rem);
+}
+
+#userAgent {
+  margin: 0.5rem 0;
+}
+
+#content aside a {
+  margin-bottom: 0.5rem;
+}
+
+#content h2 {
+  margin: 0 0 2rem;
+}
+
+@media screen and (max-width: 500px) {
+
+  #content section,
+  #content aside {
+    width: 100%;
+  }
+
+}
+
+@media print {
+  .noprint {
+    display: none;
+  }
+
+  #content {
+    height: 100vh;
+  }
+}
+
+.howto {
+  position: relative;
+}
+
+.download {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.download {
+  background-image: url(../logo/icon.png);
+  background-position: center;
+  background-size: contain;
+  background-clip: border-box;
+  width: 10rem;
+  height: 10rem;
+  z-index: 10;
+}
+
+.download:hover {
+  filter: grayscale();
+}

@@ -1,0 +1,346 @@
+html {
+  font-size: 16px;
+}
+
+html:has(#modal[open]) {
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#modal {
+  width: 750px;
+}
+
+@media screen and (max-width: 750px) {
+  html {
+    font-size: 2.2vw;
+  }
+
+  #modal {
+    width: 90vw;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 3vw;
+  }
+}
+
+@media print {
+  html {
+    font-size: 2.45vw;
+  }
+
+  header {
+    position: absolute;
+  }
+
+  footer {
+    place-self: end center;
+  }
+}
+
+@font-face {
+  font-family: "MS Mincho";
+  src: url("./logo/fonts/MSMincho.ttc");
+}
+
+@font-face {
+  font-family: "SimSong";
+  src: url("./logo/fonts/SimSun.ttc");
+}
+
+@font-face {
+  font-family: "ヒラギノ丸ゴ Pro W4";
+  src: url("./logo/fonts/HiraMaruPro-W4.otf");
+}
+
+@font-face {
+  font-family: "ProductSans";
+  src: url("./logo/fonts/ProductSans-Regular.ttf");
+}
+
+body {
+  font-family: "ヒラギノ丸ゴ Pro W4", "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro", "HG丸ｺﾞｼｯｸM-PRO", "HGMaruGothicMPRO", sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+header,
+footer {
+  gap: 1rem;
+  display: flex;
+  align-items: start;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+body,
+header button {
+  padding: 0;
+  margin: 0;
+}
+
+footer {
+  padding: 1rem;
+}
+
+#modal menu li {
+  padding: 1rem 0;
+}
+
+#modal a {
+  margin: 1rem 0;
+}
+
+header,
+#date,
+fieldset {
+  padding: 0.5rem;
+}
+
+#modal menu {
+  padding: 0 1rem;
+  margin: 0;
+}
+
+a.link,
+#content u,
+#modal u {
+  padding: 0.25rem;
+}
+
+select,
+legend,
+header input[type="button"] {
+  padding: 0.25rem 0;
+  margin: 0;
+}
+
+h1 img {
+  margin-top: 2.5rem;
+  pointer-events: none;
+  user-select: none;
+}
+
+#modal menu {
+  list-style: inside none;
+}
+
+h1 img,
+#content h2,
+#content img,
+header,
+footer,
+hr {
+  width: 100%;
+}
+
+h1 {
+  width: 75%;
+}
+
+h1,
+.logo,
+#content img {
+  max-width: 550px;
+}
+
+#alt {
+  max-width: 75%;
+}
+
+#note {
+  max-width: 90%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a.link {
+  display: inline-block;
+}
+
+#modal a {
+  display: block;
+}
+
+#content u,
+#modal u {
+  text-decoration: none;
+}
+
+h2 small {
+  overflow: hidden;
+  word-break: break-all;
+}
+
+a.link:hover,
+button:hover,
+header input[type="button"]:hover,
+#date:hover {
+  cursor: pointer;
+}
+
+footer button,
+a.link:hover,
+#date:hover,
+#content u,
+#modal u {
+  color: #fff;
+}
+
+button,
+select,
+h2 small,
+#modal a,
+#content b {
+  color: #f3c5c6;
+}
+
+legend,
+#modal menu {
+  color: #000;
+}
+
+a.link:hover,
+#date:hover,
+#content u,
+#modal::backdrop,
+#modal u {
+  background-color: #f3c5c6;
+}
+
+a.link {
+  border: 0.123rem solid #f3c5c6;
+}
+
+header input[type="button"]:hover {
+  border-bottom: solid 0.1rem #111;
+}
+
+a.link,
+#date {
+  transition: all 0.5s;
+}
+
+#modal {
+  border: none;
+  border-radius: 1rem;
+}
+
+#date:hover {
+  border-radius: 0.25rem;
+}
+
+#date {
+  text-shadow: #fff 0.1rem 0.1rem 0;
+}
+
+#date:hover {
+  text-shadow: #111 0.1rem 0.1rem 0;
+}
+
+main {
+  background: #111;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 500;
+}
+
+#closeBtn {
+  font-size: 250%;
+}
+
+h3 {
+  font-size: 150%;
+}
+
+h1,
+#date,
+#modal a,
+legend,
+select {
+  font-size: 125%;
+}
+
+h2,
+footer button,
+#note,
+#content a,
+#content b {
+  font-size: 111%;
+}
+
+header input[type="button"] {
+  font-size: 100%;
+}
+
+h2 button {
+  font-size: inherit;
+}
+
+button,
+select {
+  font-family: inherit;
+}
+
+button,
+select,
+input[type="button"] {
+  appearance: none;
+  background: transparent;
+}
+
+button,
+select,
+fieldset,
+input[type="button"] {
+  border: none;
+  outline: none;
+}
+
+select {
+  border-bottom: 0.15rem solid;
+}
+
+header button {
+  background-image: url(./logo/icon.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 4.5rem;
+  height: 4.5rem;
+}
+
+#closeBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1rem;
+  margin: 0;
+}
+
+hr {
+  border: none;
+  clear: both;
+}
+
+.pehu {
+  font-family: "MS Mincho", "SimSong", serif;
+}

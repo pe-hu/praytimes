@@ -1,0 +1,48 @@
+{
+  "datetime": "2020/04/05 10:00:00",
+  "cover": "https://archive.org/download/praytimes_2020/0405/cover.jpeg",
+  "title": "<b>4</b>月<b>5</b>日",
+  "description": [
+    "We had recorded a video of the flowers at プレイタイムズ on 5th April."
+  ],
+  "note": [
+    [
+      "5th April. The first sunday of a month is our プレイタイムズ day.",
+      "It was sunny and was truly a spring day. I felt good with smooth breeze and plants looked fresh.<br> We gathered on Hangout at 11a.m to watch flowers in each places. Display was filled with colorful flowers.<br> We all welcomed and enjoyed spring even in this sad and serious situation.<br> I was glad with not only being happy and also I could see everyone looked happy.<br> We looked forward to watching this Hangout archive we recorded and wanted to enjoy it. I believe it would be such a nice visual.",
+      "However, I made a big mistake.. I recorded only 10 minutes of first part.<br> My first dearest pc of my life... it can't record Hangout without the internet..<br> I brought my wifi out of my house without thinking nothing. Oh my goodness.. how stupid..",
+      "I'm so sad I won't be able to watch that video..<br> But what we did wasn't a special things and was our daily lives, so we can do the same thing again and again.<br> That's not what a person who made a mistake can say though."
+    ]
+  ],
+  "width": "1.4",
+  "height": "1",
+  "author": [
+    "Ayumi Akutagawa",
+    "Kaori Nakao",
+    "Kazuma Sasajima",
+    "Shoji Funakawa"
+  ],
+  "directory": "https://archive.org/download/praytimes_2020/",
+  "play": [
+    {
+      "id": "one",
+      "cover": "praytimes_2020.thumbs/0405/003_000001.jpg",
+      "src": [
+        "0405/001.mp4",
+        "0405/002.mp4",
+        "0405/003.mp4",
+        "0405/004.mp4"
+      ]
+    },
+    {
+      "id": "two",
+      "cover": "praytimes_2020.thumbs/0405/003_000149.jpg",
+      "src": [
+        "0405/005.mp4",
+        "0405/006.mp4",
+        "0405/007.mp4"
+      ]
+    }
+  ],
+  "audio": "0405/flowers.m4a",
+  "youtube": "bVyJ3xpF9jI"
+}

@@ -2,7 +2,8 @@
   "date": "ていのうきもちわるい",
   "datetime": "2020/03/08 10:30:00",
   "description": "これは、私たちが持ち寄った長いもので作ったシンボルタワー",
-  "randomdraggable": [
+  "directory": "https://archive.org/download/praytimes_2020/inn/symbol/",
+  "imgAll": [
     {
       "img": "01.JPG",
       "alt": "中尾と林が四角い石の中に立っている。"
