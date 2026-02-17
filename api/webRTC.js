@@ -56,14 +56,14 @@ async function startStreamedVideo() {
     if (!navigator.mediaDevices?.enumerateDevices) {
         console.log("enumerateDevices() not supported.");
     } else {
-        const videoDevices = document.querySelector("#videoDevices button");
+        const videoDevices = document.querySelector("#videoDevices");
         navigator.mediaDevices.enumerateDevices()
             .then((devices) => {
                 // 入出力機器を列挙
                 devices.forEach((device) => {
                     if (device.kind == "videoinput") {
                         thisID = device.deviceId;
-                        videoDevices.innerHTML = `${device.label} <small>${device.deviceId}</small>`;
+                        videoDevices.innerHTML = device.label;
                     };
                 });
 

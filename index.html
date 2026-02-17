@@ -21,40 +21,22 @@
     <meta content="http://praytimes.pe.hu/logo/card.png" property="og:image">
     <meta content="http://praytimes.pe.hu/logo/card.png" name="twitter:image:src">
 
-    <script src="./script.js"></script>
-    <script src="./live/newDate.js"></script>
-    <script src="./live/webRTC.js"></script>
+    <script src="./menu.js"></script>
 
     <script type="text/javascript">
         document.addEventListener("readystatechange", event => {
             if (event.target.readyState === "interactive") {
-                const h1 = document.querySelector("h1");
-                const h2 = document.querySelector("h2");
-                const h2b = document.querySelector("h2 b");
-                h2.addEventListener("click", function () {
-                    if (h2.className === "start") {
-                        startStreamedVideo();
-                    } else if (h2.className === "stop") {
-                        h1.hidden = false;
-                        h2.className = "start";
-                        h2b.textContent = "PLAY";
-                        stopStreamedVideo("#randomdraggable label[for='userMedia'] video");
-                    };
-                }, false);
-
-                const userAgent = document.querySelector("#userAgent");
-                userAgent.innerText = window.navigator.userAgent;
-                windowScreen();
-            } else if (document.readyState === "complete") {
                 // メニューを開く
-                const openBtns = document.querySelectorAll("header #date, #content button");
+                const openBtns = document.querySelectorAll("#content button");
                 openBtns.forEach((openBtn) => {
                     openBtn.addEventListener("click", () => {
                         openModal();
                     }, false);
                 }, false);
 
-                setInterval('showClock()', 1000);
+                setInterval("showClock()", 1000);
+            } else if (document.readyState === "complete") {
+                //
             };
         }, false);
     </script>
@@ -63,12 +45,6 @@
     <link rel="stylesheet" href="./stylesheet.css">
     <link rel="stylesheet" href="./content.css">
     <link rel="stylesheet" href="./inn/main.css">
-
-    <style>
-        h1 {
-            mix-blend-mode: difference;
-        }
-    </style>
 </head>
 
 <body>
@@ -77,26 +53,21 @@
         <menu></menu>
     </dialog>
 
-    <header>
-        <time id="date"></time>
-    </header>
-
     <main>
         <h1>
             <img src="./logo/logo_white.png" alt="プレイタイムズ">
         </h1>
-        <h2 class="start">
-            <b>PLAY</b>
-            <br>
-            <button type="button"></button>
+        <h2>
+            <button class="start" type="button"></button>
         </h2>
-        <canvas id="live"></canvas>
+        <div id="player"></div>
         <nav id="randomdraggable"></nav>
     </main>
 
     <article id="content">
-        <h2 id="videoDevices">
-            <button type="button">端末のカメラやマイクの入力ストリーム</button>
+        <h2>
+            <time id="date"></time>
+            <time id="time"></time>
         </h2>
         <section>
             <img class="logo" src="./logo/logo_pink.png" alt="プレイタイムズ">
@@ -107,12 +78,12 @@
             </h3>
             <hr>
             <p>
-                <u>User-Agent</u><br>
-                <b id="userAgent">デバイス（PC/Mobile）・OS（Windows/Mac/iOS/Android）、ブラウザ（Chrome/Safariなど）の種類やバージョンなどの情報</b>
+                <u>How to Use</u><br>
+                <b>？？？</b>
             </p>
         </section>
-        <aside id="code">
-            <code></code>
+        <aside id="link">
+            <u>Hyperlink(s)</u>
         </aside>
         <aside class="howto" hidden>
             <h2>参加方法 How to Join</h2>
@@ -139,6 +110,10 @@
             <button class="download" type="button"></button>
         </aside>
     </article>
+
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="./api/youtube.js"></script>
 
     <footer>
         <a class="pehu" href="https://vg.pe.hu/jp/" target="_blank">

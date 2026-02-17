@@ -30,20 +30,6 @@ html:has(#modal[open]) {
   }
 }
 
-@media print {
-  html {
-    font-size: 2.45vw;
-  }
-
-  header {
-    position: absolute;
-  }
-
-  footer {
-    place-self: end center;
-  }
-}
-
 @font-face {
   font-family: "MS Mincho";
   src: url("./logo/fonts/MSMincho.ttc");
@@ -77,12 +63,27 @@ header {
 }
 
 header,
-footer {
+footer,
+#content h2 {
   gap: 1rem;
   display: flex;
   align-items: start;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+@media print {
+  html {
+    font-size: 1.8vw;
+  }
+
+  header {
+    position: absolute;
+  }
+
+  footer {
+    place-self: end center;
+  }
 }
 
 body,
@@ -104,7 +105,7 @@ footer {
 }
 
 header,
-#date,
+header time,
 fieldset {
   padding: 0.5rem;
 }
@@ -189,14 +190,12 @@ h2 small {
 
 a.link:hover,
 button:hover,
-header input[type="button"]:hover,
-#date:hover {
+header input[type="button"]:hover {
   cursor: pointer;
 }
 
 footer button,
 a.link:hover,
-#date:hover,
 #content u,
 #modal u {
   color: #fff;
@@ -216,7 +215,6 @@ legend,
 }
 
 a.link:hover,
-#date:hover,
 #content u,
 #modal::backdrop,
 #modal u {
@@ -231,26 +229,13 @@ header input[type="button"]:hover {
   border-bottom: solid 0.1rem #111;
 }
 
-a.link,
-#date {
+a.link {
   transition: all 0.5s;
 }
 
 #modal {
   border: none;
   border-radius: 1rem;
-}
-
-#date:hover {
-  border-radius: 0.25rem;
-}
-
-#date {
-  text-shadow: #fff 0.1rem 0.1rem 0;
-}
-
-#date:hover {
-  text-shadow: #111 0.1rem 0.1rem 0;
 }
 
 main {
@@ -272,7 +257,7 @@ h3 {
 }
 
 h1,
-#date,
+header time,
 #modal a,
 legend,
 select {

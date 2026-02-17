@@ -127,7 +127,7 @@ function randomdVideos(obj) {
                 const all = document.querySelectorAll("video");
                 all.forEach((iii) => {
                     iii.remove();
-                })
+                });
 
                 const h2 = document.querySelector("h2");
                 const h2b = document.querySelector("h2 b");

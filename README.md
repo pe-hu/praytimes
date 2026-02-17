@@ -11,3 +11,7 @@ WebRTC API と メディアキャプチャとストリーム API を一緒に使
 [WebRTC](https://webrtc.org/?hl=ja)
 [WebRTC スタートガイド](https://web.dev/articles/webrtc-basics?hl=ja)
 [WebRTCハンズオン 本編](https://qiita.com/yusuke84/items/43a20e3b6c78ae9a8f6c)
+
+___
+
+[24/7 Livestreaming Webcams | Are.na](https://www.are.na/newlifecollection/24-7-livestreaming-webcams)

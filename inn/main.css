@@ -29,6 +29,7 @@
 }
 
 main,
+main #player,
 #randomdraggable {
     width: 100%;
 }
@@ -38,10 +39,24 @@ main,
     max-height: 10rem;
 }
 
+main #player,
 #randomdraggable label,
 #randomdraggable label img,
-#randomdraggable label video {
+#randomdraggable label video,
+#randomdraggable label iframe {
     height: 100%;
+}
+
+main #player,
+#randomdraggable label iframe {
+    user-select: none;
+    pointer-events: none;
+}
+
+#randomdraggable label iframe {
+    aspect-ratio: 16/9;
+    border: none;
+    outline: none;
 }
 
 main,
@@ -63,6 +78,10 @@ main h2.start b,
 
 #randomdraggable label {
     background: #000;
+}
+
+#randomdraggable label iframe {
+    background: #f3c5c6;
 }
 
 main h2,
@@ -113,7 +132,7 @@ main h2 button {
     margin-top: 2.5rem;
 }
 
-main canvas#live {
+main #player {
     position: absolute;
     background-size: contain;
     background-position: center;
@@ -148,6 +167,7 @@ main canvas#live {
 }
 
 #randomdraggable label img,
-#randomdraggable label video {
+#randomdraggable label video,
+#randomdraggable label iframe {
     border-radius: 0.25rem;
 }

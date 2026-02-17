@@ -21,6 +21,17 @@ const indexMenu = [
     }
 ];
 
+const options = {month: "long"};
+function showClock() {
+    let nowDate = new Date(), hhmmss, hh, mm, ss;
+    hh = Number(nowDate.getHours());
+    mm = Number(nowDate.getMinutes());
+    ss = Number(nowDate.getSeconds());
+    hhmmss = hh.toString().padStart(2, "0") + ":" + mm.toString().padStart(2, "0") + ":" + ss.toString().padStart(2, "0");
+    document.getElementById("date").textContent = new Intl.DateTimeFormat("en-US", options).format(nowDate) + " " + nowDate.getDate() + " " + nowDate.getFullYear();
+    document.getElementById("time").textContent = hhmmss;
+};
+
 function openModal() {
     if (typeof document.querySelector("#modal").showModal === "function") {
         document.querySelector("#modal").showModal();
@@ -33,7 +44,6 @@ window.addEventListener("load", () => {
     const dialogModal = document.querySelector("#modal"),
         closeBtn = document.querySelector("#closeBtn"),
         dialogMenu = document.querySelector("#modal menu");
-
 
     indexMenu.forEach((link) => {
         const li = document.createElement("li");
