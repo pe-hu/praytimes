@@ -21,6 +21,14 @@ const indexMenu = [
     }
 ];
 
+async function fetchMD(url = "", query = "") {
+    fetch(url)
+        .then(response => response.text())
+        .then(md => {
+            document.querySelector(query).innerText = md;
+        }, false);
+};
+
 const options = {month: "long"};
 function showClock() {
     let nowDate = new Date(), hhmmss, hh, mm, ss;
@@ -43,7 +51,7 @@ function openModal() {
 window.addEventListener("load", () => {
     const dialogModal = document.querySelector("#modal"),
         closeBtn = document.querySelector("#closeBtn"),
-        dialogMenu = document.querySelector("#modal menu");
+        dialogMenu = document.querySelector("#menu");
 
     indexMenu.forEach((link) => {
         const li = document.createElement("li");

@@ -87,7 +87,8 @@ footer,
 }
 
 body,
-header button {
+header button,
+#content #menu {
   padding: 0;
   margin: 0;
 }
@@ -96,11 +97,11 @@ footer {
   padding: 1rem;
 }
 
-#modal menu li {
-  padding: 1rem 0;
+#menu li {
+  padding: 0 0 1rem;
 }
 
-#modal a {
+#menu a {
   margin: 1rem 0;
 }
 
@@ -110,7 +111,7 @@ fieldset {
   padding: 0.5rem;
 }
 
-#modal menu {
+#modal #menu {
   padding: 0 1rem;
   margin: 0;
 }
@@ -134,7 +135,7 @@ h1 img {
   user-select: none;
 }
 
-#modal menu {
+#menu {
   list-style: inside none;
 }
 
@@ -174,7 +175,7 @@ a.link {
   display: inline-block;
 }
 
-#modal a {
+#menu a {
   display: block;
 }
 
@@ -204,13 +205,13 @@ a.link:hover,
 button,
 select,
 h2 small,
-#modal a,
+#menu a,
 #content b {
   color: #f3c5c6;
 }
 
 legend,
-#modal menu {
+#menu {
   color: #000;
 }
 
@@ -258,7 +259,7 @@ h3 {
 
 h1,
 header time,
-#modal a,
+#menu a,
 legend,
 select {
   font-size: 125%;
@@ -267,7 +268,7 @@ select {
 h2,
 footer button,
 #note,
-#content a,
+#content section a,
 #content b {
   font-size: 111%;
 }

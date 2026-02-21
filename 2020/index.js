@@ -9,14 +9,6 @@ async function indexJSON(requestURL) {
     playVideo(index);
 };
 
-async function fetchMD(url = "", query = "") {
-    fetch(url)
-        .then(response => response.text())
-        .then(md => {
-            document.querySelector(query).innerText = md;
-        }, false);
-};
-
 async function fetchHTML(url = "", query = "") {
     fetch(url)
         .then(response => response.text())

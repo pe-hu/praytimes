@@ -1,5 +1,5 @@
 #content,
-#content aside#link {
+#content #link {
   display: flex;
 }
 
@@ -12,12 +12,12 @@
   min-height: calc(100vh - 3.5rem);
 }
 
-#content aside#link {
+#content #link {
   align-items: flex-start;
+  gap: 0.5rem;
   flex-flow: column;
 }
 
-#userAgent,
 .download {
   display: block;
 }
@@ -35,16 +35,13 @@
   width: calc(40% - 1rem);
 }
 
-#userAgent {
-  margin: 0.5rem 0;
-}
-
-#content aside#link u,
-#content aside a {
+#content section a {
   margin-bottom: 0.5rem;
 }
 
-#content h2 {
+#content #readme,
+#content h2,
+#content aside h3 {
   margin: 0 0 2rem;
 }
 

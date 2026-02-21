@@ -26,17 +26,9 @@
     <script type="text/javascript">
         document.addEventListener("readystatechange", event => {
             if (event.target.readyState === "interactive") {
-                // メニューを開く
-                const openBtns = document.querySelectorAll("#content button");
-                openBtns.forEach((openBtn) => {
-                    openBtn.addEventListener("click", () => {
-                        openModal();
-                    }, false);
-                }, false);
-
                 setInterval("showClock()", 1000);
             } else if (document.readyState === "complete") {
-                //
+                fetchMD("./README.md", "#readme");
             };
         }, false);
     </script>
@@ -50,7 +42,6 @@
 <body>
     <dialog id="modal">
         <button type="button" id="closeBtn">×</button>
-        <menu></menu>
     </dialog>
 
     <main>
@@ -70,44 +61,14 @@
             <time id="time"></time>
         </h2>
         <section>
-            <img class="logo" src="./logo/logo_pink.png" alt="プレイタイムズ">
-            <h3>とは、異なる場所や同じ場所で営まれる生活を集め、鑑賞することを目的とした、私たちにとっての祈り／遊びの場です。</h3>
-            <h3>
-                this is a place of pray / play for us to gather and
-                appreciate life in different places or in the same place.
-            </h3>
+            <div id="readme"></div>
             <hr>
-            <p>
-                <u>How to Use</u><br>
-                <b>？？？</b>
-            </p>
+            <nav id="link">
+                <u>外部リンク</u>
+            </nav>
         </section>
-        <aside id="link">
-            <u>Hyperlink(s)</u>
-        </aside>
-        <aside class="howto" hidden>
-            <h2>参加方法 How to Join</h2>
-            <ol>
-                <li>
-                    スマートフォンにGoogleハングアウトのアプリをダウンロード<br>
-                    Let"s get Google hangouts App on your Android or iPhone.
-                </li>
-                <p>
-                    <a class="link" href="https://play.google.com/store/apps/details?id=com.google.android.talk">
-                        Google Play
-                    </a>
-                    <a class="link"
-                        href="https://apps.apple.com/jp/app/%E3%83%8F%E3%83%B3%E3%82%B0%E3%82%A2%E3%82%A6%E3%83%88/id643496868">
-                        App Store
-                    </a>
-                </p>
-                <li>
-                    プレイタイムズへの招待リンクへアクセス<br>
-                    Let"s access a link of "プレイタイムズ".
-                </li>
-                <p><a class="link" href="./2020/">come on join us!</a></p>
-            </ol>
-            <button class="download" type="button"></button>
+        <aside>
+            <menu id="menu"></menu>
         </aside>
     </article>
 

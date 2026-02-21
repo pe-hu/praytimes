@@ -39,6 +39,7 @@ main #player,
     max-height: 10rem;
 }
 
+main #live,
 main #player,
 #randomdraggable label,
 #randomdraggable label img,
@@ -47,6 +48,7 @@ main #player,
     height: 100%;
 }
 
+main #live,
 main #player,
 #randomdraggable label iframe {
     user-select: none;
@@ -132,6 +134,7 @@ main h2 button {
     margin-top: 2.5rem;
 }
 
+main #live,
 main #player {
     position: absolute;
     background-size: contain;
